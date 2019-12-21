@@ -23,6 +23,7 @@ public class Atleta implements Serializable {
     private String nome;
     private String cidade;
     private String nomeResponsavel;
+    private String celularResponsavel;
     private String celular;
     private String telefone;
     private String email;
@@ -67,6 +68,14 @@ public class Atleta implements Serializable {
 
     public void setNomeResponsavel(String nomeResponsavel) {
         this.nomeResponsavel = nomeResponsavel;
+    }
+
+    public String getCelularResponsavel() {
+        return celularResponsavel;
+    }
+
+    public void setCelularResponsavel(String celularResponsavel) {
+        this.celularResponsavel = celularResponsavel;
     }
 
     public String getCelular() {
@@ -132,8 +141,5 @@ public class Atleta implements Serializable {
     public void setObservador(Observador observador) {
         this.observador = observador;
     }
-    
-    
-
     
 }
