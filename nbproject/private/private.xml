@@ -2,23 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/C:/Users/benep/Pictures/Login%20-%20Tcc/Login/src/model/Usuarios.java</file>
-            <file>file:/C:/Users/benep/Pictures/Login%20-%20Tcc/Login/src/model/Atleta.java</file>
-            <file>file:/C:/Users/benep/Pictures/Login%20-%20Tcc/Login/src/camisa10/Camisa10.java</file>
-            <file>file:/C:/Users/benep/Pictures/Login%20-%20Tcc/Login/src/dao/DaoAtleta.java</file>
-            <file>file:/C:/Users/benep/Pictures/Login%20-%20Tcc/Login/src/dao/DaoAtletaImp.java</file>
-            <file>file:/C:/Users/benep/Pictures/Login%20-%20Tcc/Login/src/view/CadObservador.java</file>
-            <file>file:/C:/Users/benep/Pictures/Login%20-%20Tcc/Login/src/view/Principal.java</file>
-            <file>file:/C:/Users/benep/Pictures/Login%20-%20Tcc/Login/src/dao/DaoObservador.java</file>
-            <file>file:/C:/Users/benep/Pictures/Login%20-%20Tcc/Login/src/dao/DaoObservadorImp.java</file>
-            <file>file:/C:/Users/benep/Pictures/Login%20-%20Tcc/Login/src/controller/ObservadorController.java</file>
-            <file>file:/C:/Users/benep/Pictures/Login%20-%20Tcc/Login/src/view/CadAtleta.java</file>
-            <file>file:/C:/Users/benep/Pictures/Login%20-%20Tcc/Login/src/controller/UsuarioController.java</file>
-            <file>file:/C:/Users/benep/Pictures/Login%20-%20Tcc/Login/src/model/Observador.java</file>
-            <file>file:/C:/Users/benep/Pictures/Login%20-%20Tcc/Login/src/dao/DaoUsuario.java</file>
-            <file>file:/C:/Users/benep/Pictures/Login%20-%20Tcc/Login/src/controller/AtletaController.java</file>
-            <file>file:/C:/Users/benep/Pictures/Login%20-%20Tcc/Login/src/view/Login.java</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>

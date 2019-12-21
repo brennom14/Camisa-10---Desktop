@@ -41,7 +41,7 @@ public class Camisa10 {
         atleta1.setPosicao("Meia");
         atleta1.setAltura("1.72");
         atleta1.setSexo("Masculino");
-        atleta1.setLastClube("Sao Paulo");
+        atleta1.setLastClube("Sao Paulo Futebol Clube");
         atleta1.setObservador(obs1);
 
         atleta2.setId(0);
