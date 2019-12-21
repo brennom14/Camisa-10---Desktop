@@ -402,7 +402,15 @@ public class CadAtleta extends javax.swing.JInternalFrame {
             if (cbxObservador.getSelectedItem().equals(this.obs.get(i).getNome())) {
                 ob.setId(this.obs.get(i).getId());
                 ob.setNome(this.obs.get(i).getNome());
-                ob.setCnpj(this.obs.get(i).getCnpj());
+                ob.setDataNascimento(this.obs.get(i).getDataNascimento());
+                ob.setCpf(this.obs.get(i).getCpf());
+                ob.setSexo(this.obs.get(i).getSexo());
+                ob.setCidade(this.obs.get(i).getCidade());
+                ob.setObsDesde(this.obs.get(i).getObsDesde());
+                ob.setAnexo(this.obs.get(i).getAnexo());
+                ob.setAtletasAssociado(this.obs.get(i).getAtletasAssociado());
+                ob.setCelular(this.obs.get(i).getCelular());
+                ob.setEmail(this.obs.get(i).getEmail());
             }
         }
         
@@ -462,9 +470,17 @@ public class CadAtleta extends javax.swing.JInternalFrame {
         Observador ob = new Observador();
         for (int i = 0; i < obs.size(); i++) {
             if (cbxObservador.getSelectedItem().equals(obs.get(i).getNome())) {
-                ob.setId(obs.get(i).getId());
-                ob.setNome(obs.get(i).getNome());
-                ob.setCnpj(obs.get(i).getCnpj());
+                ob.setId(this.obs.get(i).getId());
+                ob.setNome(this.obs.get(i).getNome());
+                ob.setDataNascimento(this.obs.get(i).getDataNascimento());
+                ob.setCpf(this.obs.get(i).getCpf());
+                ob.setSexo(this.obs.get(i).getSexo());
+                ob.setCidade(this.obs.get(i).getCidade());
+                ob.setObsDesde(this.obs.get(i).getObsDesde());
+                ob.setAnexo(this.obs.get(i).getAnexo());
+                ob.setAtletasAssociado(this.obs.get(i).getAtletasAssociado());
+                ob.setCelular(this.obs.get(i).getCelular());
+                ob.setEmail(this.obs.get(i).getEmail());
             }
         }
 
@@ -491,9 +507,17 @@ public class CadAtleta extends javax.swing.JInternalFrame {
         Observador ob = new Observador();
         for (int i = 0; i < obs.size(); i++) {
             if (cbxObservador.getSelectedItem().equals(obs.get(i).getNome())) {
-                ob.setId(obs.get(i).getId());
-                ob.setNome(obs.get(i).getNome());
-                ob.setCnpj(obs.get(i).getCnpj());
+                ob.setId(this.obs.get(i).getId());
+                ob.setNome(this.obs.get(i).getNome());
+                ob.setDataNascimento(this.obs.get(i).getDataNascimento());
+                ob.setCpf(this.obs.get(i).getCpf());
+                ob.setSexo(this.obs.get(i).getSexo());
+                ob.setCidade(this.obs.get(i).getCidade());
+                ob.setObsDesde(this.obs.get(i).getObsDesde());
+                ob.setAnexo(this.obs.get(i).getAnexo());
+                ob.setAtletasAssociado(this.obs.get(i).getAtletasAssociado());
+                ob.setCelular(this.obs.get(i).getCelular());
+                ob.setEmail(this.obs.get(i).getEmail());
             }
         }
         a.setId(Integer.parseInt(txtId.getText()));

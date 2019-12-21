@@ -27,7 +27,16 @@ public class Camisa10 {
         Observador obs1 = new Observador();
         obs1.setId(0);
         obs1.setNome("João Miguel");
-        obs1.setCnpj("33.180.677/0001-08");
+        obs1.setDataNascimento("12/04/2002");
+        obs1.setCpf("074.934.151-37");
+        obs1.setSexo("Masculino");
+        obs1.setCidade("São João");
+        obs1.setObsDesde("12/04/2002");
+        obs1.setAnexo("foto.jpg");
+        obs1.setCelular("999999999");
+        obs1.setEmail("12/04/2002");
+        
+        
 
         Atleta atleta1 = new Atleta();
         Atleta atleta2 = new Atleta();

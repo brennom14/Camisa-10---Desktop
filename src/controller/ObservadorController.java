@@ -25,7 +25,7 @@ public class ObservadorController {
     }
 
     public void inserir(Observador obs) {
-        if (obs == null && obs.getNome().equals("") && obs.getCnpj().equals("")) {
+        if (obs == null && obs.getNome().equals("") && obs.getNome().equals("")&& obs.getDataNascimento().equals("")&& obs.getCpf().equals("")&& obs.getSexo().equals("")&& obs.getCidade().equals("")&& obs.getObsDesde().equals("")&& obs.getAnexo().equals("")&& obs.getAtletasAssociado().equals("")&& obs.getCelular().equals("")&& obs.getEmail().equals("")) {
             JOptionPane.showMessageDialog(null, "Erro ao tentar salvar - Todos os campos devem ser preenchidos");
         } else {
             dao.salvar(obs);
@@ -34,7 +34,7 @@ public class ObservadorController {
     }
 
     public void editar(Observador obs) {
-        if (obs == null && obs.getNome().equals("") && obs.getCnpj().equals("")) {
+        if (obs == null && obs.getNome().equals("") && obs.getNome().equals("")&& obs.getDataNascimento().equals("")&& obs.getCpf().equals("")&& obs.getSexo().equals("")&& obs.getCidade().equals("")&& obs.getObsDesde().equals("")&& obs.getAnexo().equals("")&& obs.getAtletasAssociado().equals("")&& obs.getCelular().equals("")&& obs.getEmail().equals("")) {
             JOptionPane.showMessageDialog(null, "Erro ao tentar editar - Todos os campos devem ser preenchidos");
         } else {
             dao.alterar(obs);
@@ -43,7 +43,7 @@ public class ObservadorController {
     }
 
     public void excluir(Observador obs) {
-        if (obs == null && obs.getNome().equals("") && obs.getCnpj().equals("")) {
+        if (obs == null && obs.getNome().equals("") && obs.getNome().equals("")&& obs.getDataNascimento().equals("")&& obs.getCpf().equals("")&& obs.getSexo().equals("")&& obs.getCidade().equals("")&& obs.getObsDesde().equals("")&& obs.getAnexo().equals("")&& obs.getAtletasAssociado().equals("")&& obs.getCelular().equals("")&& obs.getEmail().equals("")) {
             JOptionPane.showMessageDialog(null, "Erro ao tentar excluir - Todos os campos devem ser preenchidos");
         } else {
             dao.excluir(obs);
