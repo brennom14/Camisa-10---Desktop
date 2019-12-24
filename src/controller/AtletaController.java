@@ -27,7 +27,7 @@ public class AtletaController {
     }
 
     public void inserir(Atleta at) {
-        if (at == null && at.getNome().equals("") && at.getCidade().equals("")&& at.getNomeResponsavel().equals("")&& at.getCelular().equals("")&& at.getTelefone().equals("")&& at.getEmail().equals("")&& at.getPosicao().equals("")&& at.getAltura().equals("")&& at.getSexo().equals("")&& at.getLastClube().equals("")&& at.getCelularResponsavel().equals("")) {
+        if (at == null && at.getNome().equals("") && at.getCidade().equals("")&& at.getNomeResponsavel().equals("")&& at.getCelular().equals("")&& at.getTelefone().equals("")&& at.getEmail().equals("")&& at.getPosicao().equals("")&& at.getAltura().equals("")&& at.getSexo().equals("")&& at.getLastClube().equals("")&& at.getCelularResponsavel().equals("")&& at.getData().equals("")) {
             JOptionPane.showMessageDialog(null, "Erro ao tentar salvar - Todos os campos devem ser preenchidos");
         } else {
             dao.salvar(at);
@@ -36,7 +36,7 @@ public class AtletaController {
     }
 
     public void editar(Atleta at) {
-        if (at == null && at.getNome().equals("") && at.getCidade().equals("")&& at.getNomeResponsavel().equals("")&& at.getCelular().equals("")&& at.getTelefone().equals("")&& at.getEmail().equals("")&& at.getPosicao().equals("")&& at.getAltura().equals("")&& at.getSexo().equals("")&& at.getLastClube().equals("")&& at.getCelularResponsavel().equals("")) {
+        if (at == null && at.getNome().equals("") && at.getCidade().equals("")&& at.getNomeResponsavel().equals("")&& at.getCelular().equals("")&& at.getTelefone().equals("")&& at.getEmail().equals("")&& at.getPosicao().equals("")&& at.getAltura().equals("")&& at.getSexo().equals("")&& at.getLastClube().equals("")&& at.getCelularResponsavel().equals("")&& at.getData().equals("")) {
             JOptionPane.showMessageDialog(null, "Erro ao tentar editar - Todos os campos devem ser preenchidos");
         } else {
             dao.alterar(at);
