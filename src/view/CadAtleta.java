@@ -51,11 +51,11 @@ public class CadAtleta extends javax.swing.JInternalFrame {
             }
             atualizaLista();
             indice = 0;
-           try {
-             mostrarDadosDoBancoNaTela();
-         } catch (ParseException ex) {
-             Logger.getLogger(CadAtleta.class.getName()).log(Level.SEVERE, null, ex);
-         }
+            try {
+                mostrarDadosDoBancoNaTela();
+            } catch (ParseException ex) {
+                Logger.getLogger(CadAtleta.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
 
     }
@@ -107,8 +107,8 @@ public class CadAtleta extends javax.swing.JInternalFrame {
         lblLast = new javax.swing.JLabel();
         txtNumeroResponsavel = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
-        txtData = new com.toedter.calendar.JDateChooser();
         jLabel2 = new javax.swing.JLabel();
+        txtData = new com.toedter.calendar.JDateChooser();
 
         jPasswordField1.setText("jPasswordField1");
 
@@ -228,15 +228,15 @@ public class CadAtleta extends javax.swing.JInternalFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(lblId)
                                     .addComponent(jLabel2))
                                 .addGap(18, 18, 18)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtData, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtData, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(lblNomeResponsavel)
@@ -324,21 +324,8 @@ public class CadAtleta extends javax.swing.JInternalFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel2)
-                                    .addComponent(txtData, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(13, 13, 13)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(txtCelular, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(lbNome))
-                                .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(lblCelular))
-                                .addGap(12, 12, 12))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(txtTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(lbTelefone))
@@ -349,7 +336,20 @@ public class CadAtleta extends javax.swing.JInternalFrame {
                                 .addGap(25, 25, 25)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(txtSexo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(lblSexo))))
+                                    .addComponent(lblSexo)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel2)
+                                    .addComponent(txtData, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(19, 19, 19)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(txtCelular, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(lbNome))
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(lblCelular))
+                                .addGap(12, 12, 12)))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(24, 24, 24)
@@ -358,7 +358,6 @@ public class CadAtleta extends javax.swing.JInternalFrame {
                                     .addComponent(lblObservador))
                                 .addGap(17, 17, 17))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(txtNResponsavel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(lblNomeResponsavel))
@@ -389,7 +388,7 @@ public class CadAtleta extends javax.swing.JInternalFrame {
                                             .addComponent(lblEmail))
                                         .addGap(14, 14, 14)))
                                 .addComponent(txtPosicao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
                                 .addComponent(btnAnterior))))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -420,7 +419,6 @@ public class CadAtleta extends javax.swing.JInternalFrame {
         txtPosicao.setText("");
         txtNumeroResponsavel.setText("");
         txtData.setDate(null);
-        
         cbxObservador.setSelectedItem("--Selecionar--");
     }//GEN-LAST:event_btnNovoActionPerformed
 
@@ -442,7 +440,7 @@ public class CadAtleta extends javax.swing.JInternalFrame {
                 ob.setEmail(this.obs.get(i).getEmail());
             }
         }
-        
+
         a.setId(Integer.parseInt(txtId.getText()));
         a.setNome(txtNome.getText());
         a.setCidade(txtCidade.getText());
@@ -455,25 +453,29 @@ public class CadAtleta extends javax.swing.JInternalFrame {
         a.setSexo(txtSexo.getText());
         a.setLastClube(txtLast.getText());
         a.setCelularResponsavel(txtNumeroResponsavel.getText());
+        java.util.Date pegainicio = txtData.getDate();
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+        String data = sdf.format(pegainicio);
+        a.setData(data);
         a.setObservador(ob);
         control.editar(a);
-        
+
         atualizaLista();
-        indice = at.size()-1;
+        indice = at.size() - 1;
         try {
-             mostrarDadosDoBancoNaTela();
-         } catch (ParseException ex) {
-             Logger.getLogger(CadAtleta.class.getName()).log(Level.SEVERE, null, ex);
-         }
+            mostrarDadosDoBancoNaTela();
+        } catch (ParseException ex) {
+            Logger.getLogger(CadAtleta.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_btnEditarActionPerformed
 
     private void btnPrimeiroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPrimeiroActionPerformed
         indice = 0;
         try {
-             mostrarDadosDoBancoNaTela();
-         } catch (ParseException ex) {
-             Logger.getLogger(CadAtleta.class.getName()).log(Level.SEVERE, null, ex);
-         }
+            mostrarDadosDoBancoNaTela();
+        } catch (ParseException ex) {
+            Logger.getLogger(CadAtleta.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_btnPrimeiroActionPerformed
 
     private void btnAnteriorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAnteriorActionPerformed
@@ -483,34 +485,34 @@ public class CadAtleta extends javax.swing.JInternalFrame {
             JOptionPane.showMessageDialog(this, "Você já está no primeiro cadastro");
         } else {
             try {
-             mostrarDadosDoBancoNaTela();
-         } catch (ParseException ex) {
-             Logger.getLogger(CadAtleta.class.getName()).log(Level.SEVERE, null, ex);
-         }
+                mostrarDadosDoBancoNaTela();
+            } catch (ParseException ex) {
+                Logger.getLogger(CadAtleta.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
     }//GEN-LAST:event_btnAnteriorActionPerformed
 
     private void btnProximoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProximoActionPerformed
         indice++;
-        if (indice > at.size()-1) {
+        if (indice > at.size() - 1) {
             indice--;
             JOptionPane.showMessageDialog(this, "Você já está no último cadastro");
         } else {
             try {
-             mostrarDadosDoBancoNaTela();
-         } catch (ParseException ex) {
-             Logger.getLogger(CadAtleta.class.getName()).log(Level.SEVERE, null, ex);
-         }
+                mostrarDadosDoBancoNaTela();
+            } catch (ParseException ex) {
+                Logger.getLogger(CadAtleta.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
     }//GEN-LAST:event_btnProximoActionPerformed
 
     private void btnUltimoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUltimoActionPerformed
         indice = at.size() - 1;
         try {
-             mostrarDadosDoBancoNaTela();
-         } catch (ParseException ex) {
-             Logger.getLogger(CadAtleta.class.getName()).log(Level.SEVERE, null, ex);
-         }
+            mostrarDadosDoBancoNaTela();
+        } catch (ParseException ex) {
+            Logger.getLogger(CadAtleta.class.getName()).log(Level.SEVERE, null, ex);
+        }
 
     }//GEN-LAST:event_btnUltimoActionPerformed
 
@@ -544,15 +546,19 @@ public class CadAtleta extends javax.swing.JInternalFrame {
         a.setSexo(txtSexo.getText());
         a.setLastClube(txtLast.getText());
         a.setCelularResponsavel(txtNumeroResponsavel.getText());
+        java.util.Date pegainicio = txtData.getDate();
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+        String data = sdf.format(pegainicio);
+        a.setData(data);
         a.setObservador(ob);
         atualizaLista();
         indice = at.size() - 1;
         control.inserir(a);
         try {
-             mostrarDadosDoBancoNaTela();
-         } catch (ParseException ex) {
-             Logger.getLogger(CadAtleta.class.getName()).log(Level.SEVERE, null, ex);
-         }
+            mostrarDadosDoBancoNaTela();
+        } catch (ParseException ex) {
+            Logger.getLogger(CadAtleta.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_btnSalvarActionPerformed
 
     private void btnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirActionPerformed
@@ -586,19 +592,19 @@ public class CadAtleta extends javax.swing.JInternalFrame {
         a.setLastClube(txtLast.getText());
         a.setCelularResponsavel(txtNumeroResponsavel.getText());
         java.util.Date pegainicio = txtData.getDate();
-        SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
-        String data = formato.format(pegainicio);
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+        String data = sdf.format(pegainicio);
         a.setData(data);
         a.setObservador(ob);
         atualizaLista();
         indice = at.size() - 1;
         control.excluir(a);
-        
+
         try {
-             mostrarDadosDoBancoNaTela();
-         } catch (ParseException ex) {
-             Logger.getLogger(CadAtleta.class.getName()).log(Level.SEVERE, null, ex);
-         }
+            mostrarDadosDoBancoNaTela();
+        } catch (ParseException ex) {
+            Logger.getLogger(CadAtleta.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_btnExcluirActionPerformed
 
     private void txtSexoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSexoActionPerformed
@@ -653,38 +659,35 @@ public class CadAtleta extends javax.swing.JInternalFrame {
     private javax.swing.JTextField txtTelefone;
     // End of variables declaration//GEN-END:variables
 
-    public void mostrarDadosDoBancoNaTela()throws ParseException {
-        
-    if(at.isEmpty())
-    {
-        JOptionPane.showMessageDialog(null, "Não existem clubes cadastrados");
-    }
-    else{
-        
-        
-       for(int i =0;i<obs.size();i++){
-                    System.out.println(at.get(indice).getObservador().getId() );
-            if (at.get(indice).getObservador().getId() == obs.get(i).getId()) {
-                cbxObservador.setSelectedItem(obs.get(i).getNome());
-            }
+    public void mostrarDadosDoBancoNaTela() throws ParseException {
 
-        }
-        txtId.setText(""+ at.get(indice).getId());
-        txtNome.setText("" + at.get(indice).getNome());
-        txtCelular.setText("" + at.get(indice).getCelular());
-        txtTelefone.setText("" + at.get(indice).getTelefone());
-        txtCidade.setText("" + at.get(indice).getCidade());
-        txtLast.setText("" + at.get(indice).getLastClube());
-        txtAltura.setText("" + at.get(indice).getPosicao());
-        txtSexo.setText("" + at.get(indice).getAltura());
-        txtEmail.setText("" + at.get(indice).getSexo());
-        txtPosicao.setText("" + at.get(indice).getPosicao());
-        txtNResponsavel.setText("" + at.get(indice).getNomeResponsavel());
-        txtNumeroResponsavel.setText("" + at.get(indice).getCelularResponsavel());
-        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy"); 
+        if (at.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Não existem clubes cadastrados");
+        } else {
+
+            for (int i = 0; i < obs.size(); i++) {
+                System.out.println(at.get(indice).getObservador().getId());
+                if (at.get(indice).getObservador().getId() == obs.get(i).getId()) {
+                    cbxObservador.setSelectedItem(obs.get(i).getNome());
+                }
+
+            }
+            txtId.setText("" + at.get(indice).getId());
+            txtNome.setText("" + at.get(indice).getNome());
+            txtCelular.setText("" + at.get(indice).getCelular());
+            txtTelefone.setText("" + at.get(indice).getTelefone());
+            txtCidade.setText("" + at.get(indice).getCidade());
+            txtLast.setText("" + at.get(indice).getLastClube());
+            txtAltura.setText("" + at.get(indice).getPosicao());
+            txtSexo.setText("" + at.get(indice).getAltura());
+            txtEmail.setText("" + at.get(indice).getSexo());
+            txtPosicao.setText("" + at.get(indice).getPosicao());
+            txtNResponsavel.setText("" + at.get(indice).getNomeResponsavel());
+            txtNumeroResponsavel.setText("" + at.get(indice).getCelularResponsavel());
+            SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
             Date data = sdf.parse(at.get(indice).getData());
             txtData.setDate(data);
-    }
+        }
     }
 
     public void atualizaLista() {
