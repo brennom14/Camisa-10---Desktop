@@ -132,12 +132,14 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="btnUltimo" min="-2" pref="65" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="txtAltura" min="-2" pref="97" max="-2" attributes="0"/>
                       <Component id="txtSexo" alignment="0" min="-2" pref="97" max="-2" attributes="0"/>
                       <Component id="cbxObservador" alignment="0" pref="171" max="32767" attributes="0"/>
                       <Component id="txtCidade" min="-2" pref="115" max="-2" attributes="0"/>
                       <Component id="txtLast" alignment="0" max="32767" attributes="0"/>
-                      <Component id="txtTelefone" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                          <Component id="txtTelefone" alignment="0" max="32767" attributes="0"/>
+                          <Component id="txtAltura" alignment="0" pref="97" max="32767" attributes="0"/>
+                      </Group>
                   </Group>
                   <Component id="btnExcluir" min="-2" max="-2" attributes="0"/>
               </Group>
@@ -479,7 +481,7 @@
     <Component class="javax.swing.JFormattedTextField" name="txtTelefone">
       <Properties>
         <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
-          <Format format="###-####" subtype="-1" type="5"/>
+          <Format format="(##)####-####" subtype="-1" type="5"/>
         </Property>
       </Properties>
     </Component>
