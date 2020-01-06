@@ -77,10 +77,10 @@
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                   <Component id="txtId" min="-2" pref="36" max="-2" attributes="0"/>
-                                  <Component id="txtData" min="-2" pref="80" max="-2" attributes="0"/>
                                   <Component id="txtCpf" pref="142" max="32767" attributes="0"/>
                                   <Component id="txtSexo" alignment="0" max="32767" attributes="0"/>
                                   <Component id="txtCidade" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="txtData" alignment="0" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                           <Group type="102" attributes="0">
@@ -141,20 +141,22 @@
                   <Component id="lblNome" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="lblCnpj" alignment="3" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="lblAnexo" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="txtData" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="txtAnexo" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="lblCnpj" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtAnexo" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Component id="txtData" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace type="separate" max="32767" attributes="0"/>
+              <EmptySpace pref="19" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="lblCpf" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="lblAtletas" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="txtCpf" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="txtAtAssociado" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace type="separate" max="32767" attributes="0"/>
+              <EmptySpace type="separate" pref="20" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="lblSexo" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="lblCelular" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -182,7 +184,7 @@
                   <Component id="lblObs" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="txtObs" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="25" max="32767" attributes="0"/>
+              <EmptySpace pref="26" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="btnPrimeiro" alignment="1" min="-2" max="-2" attributes="0"/>
@@ -364,7 +366,7 @@
     </Component>
     <Component class="javax.swing.JTextField" name="txtEmail">
     </Component>
-    <Component class="javax.swing.JTextField" name="txtData">
+    <Component class="com.toedter.calendar.JDateChooser" name="txtData">
     </Component>
   </SubComponents>
 </Form>

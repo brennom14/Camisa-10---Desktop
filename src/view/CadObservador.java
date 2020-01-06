@@ -8,8 +8,13 @@ package view;
 import controller.ObservadorController;
 import dao.DaoAtletaImp;
 import dao.DaoObservadorImp;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import model.Atleta;
@@ -33,7 +38,11 @@ public class CadObservador extends javax.swing.JInternalFrame {
         control =  new ObservadorController();
         atualizaLista();
         indice = 0;
-        mostrarDadosDoBancoNaTela();
+        try {
+            mostrarDadosDoBancoNaTela();
+        } catch (ParseException ex) {
+            Logger.getLogger(CadObservador.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**
@@ -76,7 +85,7 @@ public class CadObservador extends javax.swing.JInternalFrame {
         txtAtAssociado = new javax.swing.JTextField();
         txtCelular = new javax.swing.JTextField();
         txtEmail = new javax.swing.JTextField();
-        txtData = new javax.swing.JTextField();
+        txtData = new com.toedter.calendar.JDateChooser();
 
         jLabel8.setText("jLabel8");
 
@@ -212,10 +221,10 @@ public class CadObservador extends javax.swing.JInternalFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtData, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(txtCpf, javax.swing.GroupLayout.DEFAULT_SIZE, 142, Short.MAX_VALUE)
                                     .addComponent(txtSexo)
-                                    .addComponent(txtCidade)))
+                                    .addComponent(txtCidade)
+                                    .addComponent(txtData, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(lblObs)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -259,18 +268,19 @@ public class CadObservador extends javax.swing.JInternalFrame {
                     .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblNome))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblCnpj)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblAnexo)
-                    .addComponent(txtData, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtAnexo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, Short.MAX_VALUE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(lblCnpj)
+                        .addComponent(txtAnexo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtData, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 19, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblCpf)
                     .addComponent(lblAtletas)
                     .addComponent(txtCpf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtAtAssociado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, Short.MAX_VALUE)
+                .addGap(18, 20, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblSexo)
                     .addComponent(lblCelular)
@@ -291,7 +301,7 @@ public class CadObservador extends javax.swing.JInternalFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblObs)
                     .addComponent(txtObs, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(btnPrimeiro, javax.swing.GroupLayout.Alignment.TRAILING)
@@ -313,14 +323,21 @@ public class CadObservador extends javax.swing.JInternalFrame {
 
     private void btnPrimeiroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPrimeiroActionPerformed
         indice = 0;
-        mostrarDadosDoBancoNaTela();
+        try {
+            mostrarDadosDoBancoNaTela();
+        } catch (ParseException ex) {
+            Logger.getLogger(CadObservador.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_btnPrimeiroActionPerformed
 
     private void bntEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bntEditarActionPerformed
         Observador ob = new Observador();
         ob.setId(Integer.parseInt(txtId.getText()));
         ob.setNome(txtNome.getText());
-        ob.setDataNascimento(txtData.getText());
+        java.util.Date pegainicio = txtData.getDate();
+        SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
+        String datainicio = formato.format(pegainicio);
+        ob.setDataNascimento(datainicio);
         ob.setCpf(txtCpf.getText());
         ob.setSexo(txtSexo.getText());
         ob.setCidade(txtCidade.getText());
@@ -333,12 +350,16 @@ public class CadObservador extends javax.swing.JInternalFrame {
         );
          atualizaLista();
         indice= obs.size()-1;
-     mostrarDadosDoBancoNaTela();
+        try {
+            mostrarDadosDoBancoNaTela();
+        } catch (ParseException ex) {
+            Logger.getLogger(CadObservador.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_bntEditarActionPerformed
 
     private void btnNovoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNovoActionPerformed
         txtNome.setText("");
-        txtData.setText("");
+        txtData.setDate(null);
         txtCpf.setText("");
         txtSexo.setText("");
         txtCidade.setText("");
@@ -352,7 +373,10 @@ public class CadObservador extends javax.swing.JInternalFrame {
     private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
         Observador ob = new Observador();
         ob.setNome(txtNome.getText());
-        ob.setDataNascimento(txtData.getText());
+        java.util.Date pegainicio = txtData.getDate();
+        SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
+        String datainicio = formato.format(pegainicio);
+        ob.setDataNascimento(datainicio);
         ob.setCpf(txtCpf.getText());
         ob.setSexo(txtSexo.getText());
         ob.setCidade(txtCidade.getText());
@@ -364,14 +388,21 @@ public class CadObservador extends javax.swing.JInternalFrame {
         control.inserir(ob);
         atualizaLista();
         indice= obs.size()-1;
-        mostrarDadosDoBancoNaTela();
+        try {
+            mostrarDadosDoBancoNaTela();
+        } catch (ParseException ex) {
+            Logger.getLogger(CadObservador.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_btnSalvarActionPerformed
 
     private void btnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirActionPerformed
      Observador ob = new Observador();
      ob.setId(Integer.parseInt(txtId.getText()));
      ob.setNome(txtNome.getText());
-        ob.setDataNascimento(txtData.getText());
+        java.util.Date pegainicio = txtData.getDate();
+        SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
+        String datainicio = formato.format(pegainicio);
+        ob.setDataNascimento(datainicio);
         ob.setCpf(txtCpf.getText());
         ob.setSexo(txtSexo.getText());
         ob.setCidade(txtCidade.getText());
@@ -383,7 +414,11 @@ public class CadObservador extends javax.swing.JInternalFrame {
      control.excluir(ob);
      atualizaLista();
      indice= obs.size()-1;
-     mostrarDadosDoBancoNaTela();
+        try {
+            mostrarDadosDoBancoNaTela();
+        } catch (ParseException ex) {
+            Logger.getLogger(CadObservador.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_btnExcluirActionPerformed
 
     private void btnAnteriorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAnteriorActionPerformed
@@ -392,7 +427,11 @@ public class CadObservador extends javax.swing.JInternalFrame {
             indice++;
             JOptionPane.showMessageDialog(this, "Você já está no primeiro cadastro");
         } else {
-            mostrarDadosDoBancoNaTela();
+            try {
+                mostrarDadosDoBancoNaTela();
+            } catch (ParseException ex) {
+                Logger.getLogger(CadObservador.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
     }//GEN-LAST:event_btnAnteriorActionPerformed
 
@@ -402,13 +441,21 @@ public class CadObservador extends javax.swing.JInternalFrame {
             indice--;
             JOptionPane.showMessageDialog(this, "Você já está no último cadastro");
         } else {
-            mostrarDadosDoBancoNaTela();
+           try {
+               mostrarDadosDoBancoNaTela();
+           } catch (ParseException ex) {
+               Logger.getLogger(CadObservador.class.getName()).log(Level.SEVERE, null, ex);
+           }
         }
     }//GEN-LAST:event_btnProximoActionPerformed
 
     private void btnUltimoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUltimoActionPerformed
         indice = obs.size() - 1;
-        mostrarDadosDoBancoNaTela();
+        try {
+            mostrarDadosDoBancoNaTela();
+        } catch (ParseException ex) {
+            Logger.getLogger(CadObservador.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_btnUltimoActionPerformed
 
     private void txtAtAssociadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAtAssociadoActionPerformed
@@ -443,7 +490,7 @@ public class CadObservador extends javax.swing.JInternalFrame {
     private javax.swing.JTextField txtCelular;
     private javax.swing.JTextField txtCidade;
     private javax.swing.JTextField txtCpf;
-    private javax.swing.JTextField txtData;
+    private com.toedter.calendar.JDateChooser txtData;
     private javax.swing.JTextField txtEmail;
     private javax.swing.JTextField txtId;
     private javax.swing.JTextField txtNome;
@@ -451,13 +498,15 @@ public class CadObservador extends javax.swing.JInternalFrame {
     private javax.swing.JTextField txtSexo;
     // End of variables declaration//GEN-END:variables
 
-    public void mostrarDadosDoBancoNaTela(){
+    public void mostrarDadosDoBancoNaTela() throws ParseException{
         if (obs.isEmpty()) {
             JOptionPane.showMessageDialog(this,"Ainda não tem observadores cadastrados");
         }else{
             txtId.setText(""+obs.get(indice).getId());
             txtNome.setText(""+obs.get(indice).getNome());
-            txtData.setText(""+obs.get(indice).getDataNascimento());
+            SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy"); 
+            Date dteinicio = sdf.parse(obs.get(indice).getDataNascimento());
+            txtData.setDate(dteinicio);
             txtCpf.setText(""+obs.get(indice).getCpf());
             txtSexo.setText(""+obs.get(indice).getSexo());
             txtCidade.setText(""+obs.get(indice).getCidade());
