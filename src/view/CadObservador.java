@@ -384,6 +384,7 @@ public class CadObservador extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_bntEditarActionPerformed
 
     private void btnNovoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNovoActionPerformed
+        txtId.setText("");
         txtNome.setText("");
         txtData.setDate(null);
         txtCpf.setText("");
