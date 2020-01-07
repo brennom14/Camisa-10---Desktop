@@ -314,9 +314,8 @@ public class CadAtleta extends javax.swing.JInternalFrame {
                         .addComponent(cbxObservador, 0, 171, Short.MAX_VALUE)
                         .addComponent(txtCidade, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(txtLast)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(txtTelefone, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtAltura, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 97, Short.MAX_VALUE)))
+                        .addComponent(txtTelefone)
+                        .addComponent(txtAltura, javax.swing.GroupLayout.DEFAULT_SIZE, 97, Short.MAX_VALUE))
                     .addComponent(btnExcluir))
                 .addContainerGap())
         );
@@ -384,8 +383,8 @@ public class CadAtleta extends javax.swing.JInternalFrame {
                         .addGap(45, 107, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(btnPrimeiro, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(btnProximo)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(btnProximo, javax.swing.GroupLayout.Alignment.TRAILING)
                                 .addComponent(btnUltimo))))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -604,10 +603,11 @@ public class CadAtleta extends javax.swing.JInternalFrame {
         a.setSexo(txtSexo.getText());
         a.setLastClube(txtLast.getText());
         a.setCelularResponsavel(txtNumeroResponsavel.getText());
-//        java.util.Date pegainicio = txtData.getDate();
-//        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-//        String data = sdf.format(pegainicio);
-//        a.setData(data);
+        Date pegainicio = txtData.getDate();
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+        String data = sdf.format(pegainicio);
+        a.setData(data);
+        System.out.println(a.getData());
         a.setObservador(ob);
         atualizaLista();
         indice = at.size() - 1;

@@ -60,7 +60,7 @@ public class CadObservador extends javax.swing.JInternalFrame {
         txtId = new javax.swing.JTextField();
         lblNome = new javax.swing.JLabel();
         txtNome = new javax.swing.JTextField();
-        lblCnpj = new javax.swing.JLabel();
+        lblDatadeNascimento = new javax.swing.JLabel();
         btnPrimeiro = new javax.swing.JButton();
         btnAnterior = new javax.swing.JButton();
         btnProximo = new javax.swing.JButton();
@@ -77,15 +77,15 @@ public class CadObservador extends javax.swing.JInternalFrame {
         lblCidade = new javax.swing.JLabel();
         lblEmail = new javax.swing.JLabel();
         lblObs = new javax.swing.JLabel();
-        txtCpf = new javax.swing.JTextField();
-        txtObs = new javax.swing.JTextField();
         txtCidade = new javax.swing.JTextField();
         txtSexo = new javax.swing.JTextField();
         txtAnexo = new javax.swing.JTextField();
         txtAtAssociado = new javax.swing.JTextField();
-        txtCelular = new javax.swing.JTextField();
         txtEmail = new javax.swing.JTextField();
         txtData = new com.toedter.calendar.JDateChooser();
+        txtCpf = new javax.swing.JFormattedTextField();
+        txtObs = new com.toedter.calendar.JDateChooser();
+        txtCelular = new javax.swing.JFormattedTextField();
 
         jLabel8.setText("jLabel8");
 
@@ -100,7 +100,7 @@ public class CadObservador extends javax.swing.JInternalFrame {
 
         lblNome.setText("Nome:");
 
-        lblCnpj.setText("Data de Nascimento:");
+        lblDatadeNascimento.setText("Data de Nascimento:");
 
         btnPrimeiro.setText("|<");
         btnPrimeiro.addActionListener(new java.awt.event.ActionListener() {
@@ -180,6 +180,18 @@ public class CadObservador extends javax.swing.JInternalFrame {
             }
         });
 
+        try {
+            txtCpf.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+
+        try {
+            txtCelular.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##)#####-####")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -208,52 +220,53 @@ public class CadObservador extends javax.swing.JInternalFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(lblCnpj)
-                                            .addComponent(lblId, javax.swing.GroupLayout.Alignment.TRAILING))
-                                        .addComponent(lblCpf, javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(lblSexo, javax.swing.GroupLayout.Alignment.TRAILING))
-                                    .addComponent(lblCidade, javax.swing.GroupLayout.Alignment.TRAILING))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtCpf, javax.swing.GroupLayout.DEFAULT_SIZE, 142, Short.MAX_VALUE)
-                                    .addComponent(txtSexo)
-                                    .addComponent(txtCidade)
-                                    .addComponent(txtData, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(lblObs)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(txtObs, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(txtObs, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(layout.createSequentialGroup()
+                                            .addGap(85, 85, 85)
+                                            .addComponent(lblId))
+                                        .addComponent(lblSexo, javax.swing.GroupLayout.Alignment.TRAILING))
+                                    .addComponent(lblCidade, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(lblDatadeNascimento, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(lblNome, javax.swing.GroupLayout.Alignment.TRAILING))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(txtSexo)
+                                        .addComponent(txtCidade)
+                                        .addComponent(txtData, javax.swing.GroupLayout.DEFAULT_SIZE, 142, Short.MAX_VALUE)))))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(lblEmail)
-                                .addGap(18, 18, 18)
-                                .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(lblNome, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(lblAnexo, javax.swing.GroupLayout.Alignment.TRAILING))
-                                .addGap(21, 21, 21)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtAnexo, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addComponent(lblAtletas)
                                 .addGap(18, 18, 18)
                                 .addComponent(txtAtAssociado, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(lblCelular)
-                                .addGap(18, 18, 18)
-                                .addComponent(txtCelular, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(ltlTitulo)
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lblAnexo)
+                                    .addComponent(lblCpf))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(txtCpf)
+                                    .addComponent(txtAnexo, javax.swing.GroupLayout.DEFAULT_SIZE, 105, Short.MAX_VALUE))
+                                .addGap(3, 3, 3))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lblEmail)
+                                    .addComponent(lblCelular))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(txtEmail, javax.swing.GroupLayout.DEFAULT_SIZE, 108, Short.MAX_VALUE)
+                                    .addComponent(txtCelular)))))
+                    .addComponent(ltlTitulo))
                 .addGap(21, 21, 21))
         );
         layout.setVerticalGroup(
@@ -262,59 +275,68 @@ public class CadObservador extends javax.swing.JInternalFrame {
                 .addContainerGap()
                 .addComponent(ltlTitulo)
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblId)
-                    .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblNome))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblAnexo)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(lblCnpj)
-                        .addComponent(txtAnexo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(txtData, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 19, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblCpf)
-                    .addComponent(lblAtletas)
-                    .addComponent(txtCpf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtAtAssociado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 20, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblSexo)
-                    .addComponent(lblCelular)
-                    .addComponent(txtCelular, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtSexo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(22, 22, 22)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblEmail)
-                            .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
+                            .addComponent(lblId)
+                            .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtCpf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtCidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblCidade))))
-                .addGap(25, 25, 25)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblObs)
-                    .addComponent(txtObs, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(btnPrimeiro, javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(btnAnterior, javax.swing.GroupLayout.Alignment.TRAILING))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(btnProximo)
-                        .addComponent(btnUltimo)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnExcluir, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(bntEditar, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(btnSalvar, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(btnNovo, javax.swing.GroupLayout.Alignment.TRAILING))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(txtAnexo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(lblAnexo)
+                                    .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(lblNome))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(lblAtletas)
+                                    .addComponent(txtAtAssociado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lblDatadeNascimento)
+                                    .addComponent(txtData, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(18, 18, Short.MAX_VALUE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(lblSexo)
+                                    .addComponent(lblCelular)
+                                    .addComponent(txtSexo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(txtCidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(lblCidade)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(26, 26, 26)
+                                .addComponent(txtCelular, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(lblEmail)
+                                    .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(22, 22, 22)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(lblObs)
+                            .addComponent(txtObs, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(btnPrimeiro, javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(btnAnterior, javax.swing.GroupLayout.Alignment.TRAILING))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(btnProximo)
+                                .addComponent(btnUltimo)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnExcluir, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(bntEditar, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(btnSalvar, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(btnNovo, javax.swing.GroupLayout.Alignment.TRAILING)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(lblCpf)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
 
@@ -334,14 +356,18 @@ public class CadObservador extends javax.swing.JInternalFrame {
         Observador ob = new Observador();
         ob.setId(Integer.parseInt(txtId.getText()));
         ob.setNome(txtNome.getText());
-        java.util.Date pegainicio = txtData.getDate();
-        SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
-        String datainicio = formato.format(pegainicio);
-        ob.setDataNascimento(datainicio);
+        Date pegainicio = txtData.getDate();
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+        String data = sdf.format(pegainicio);
+        ob.setDataNascimento(data);
+        System.out.println(ob.getDataNascimento());
         ob.setCpf(txtCpf.getText());
         ob.setSexo(txtSexo.getText());
         ob.setCidade(txtCidade.getText());
-        ob.setObsDesde(txtObs.getText());
+        Date dtobs = txtObs.getDate();
+        String obs1 = sdf.format(dtobs);
+        ob.setObsDesde(obs1);
+        System.out.println(ob.getObsDesde());
         ob.setAnexo(txtAnexo.getText());
         ob.setAtletasAssociado(txtAtAssociado.getText());
         ob.setCelular(txtCelular.getText());
@@ -363,7 +389,7 @@ public class CadObservador extends javax.swing.JInternalFrame {
         txtCpf.setText("");
         txtSexo.setText("");
         txtCidade.setText("");
-        txtObs.setText("");
+        txtObs.setDate(null);
         txtAnexo.setText("");
         txtAtAssociado.setText("");
         txtCelular.setText("");
@@ -374,13 +400,17 @@ public class CadObservador extends javax.swing.JInternalFrame {
         Observador ob = new Observador();
         ob.setNome(txtNome.getText());
         java.util.Date pegainicio = txtData.getDate();
-        SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
-        String datainicio = formato.format(pegainicio);
-        ob.setDataNascimento(datainicio);
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+        String data1 = sdf.format(pegainicio);
+        ob.setDataNascimento(data1);
+        System.out.println(ob.getDataNascimento());
         ob.setCpf(txtCpf.getText());
         ob.setSexo(txtSexo.getText());
         ob.setCidade(txtCidade.getText());
-        ob.setObsDesde(txtObs.getText());
+        Date dtobs = txtObs.getDate();
+        String obs1 = sdf.format(dtobs);
+        ob.setObsDesde(obs1);
+        System.out.println(ob.getObsDesde());
         ob.setAnexo(txtAnexo.getText());
         ob.setAtletasAssociado(txtAtAssociado.getText());
         ob.setCelular(txtCelular.getText());
@@ -399,14 +429,18 @@ public class CadObservador extends javax.swing.JInternalFrame {
      Observador ob = new Observador();
      ob.setId(Integer.parseInt(txtId.getText()));
      ob.setNome(txtNome.getText());
-        java.util.Date pegainicio = txtData.getDate();
-        SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
-        String datainicio = formato.format(pegainicio);
-        ob.setDataNascimento(datainicio);
+        Date pegainicio = txtData.getDate();
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+        String data = sdf.format(pegainicio);
+        ob.setDataNascimento(data);
+        System.out.println(ob.getDataNascimento());
         ob.setCpf(txtCpf.getText());
         ob.setSexo(txtSexo.getText());
         ob.setCidade(txtCidade.getText());
-        ob.setObsDesde(txtObs.getText());
+        Date dtobs = txtObs.getDate();
+        String obs1 = sdf.format(dtobs);
+        ob.setObsDesde(obs1);
+        System.out.println(ob.getObsDesde());
         ob.setAnexo(txtAnexo.getText());
         ob.setAtletasAssociado(txtAtAssociado.getText());
         ob.setCelular(txtCelular.getText());
@@ -477,8 +511,8 @@ public class CadObservador extends javax.swing.JInternalFrame {
     private javax.swing.JLabel lblAtletas;
     private javax.swing.JLabel lblCelular;
     private javax.swing.JLabel lblCidade;
-    private javax.swing.JLabel lblCnpj;
     private javax.swing.JLabel lblCpf;
+    private javax.swing.JLabel lblDatadeNascimento;
     private javax.swing.JLabel lblEmail;
     private javax.swing.JLabel lblId;
     private javax.swing.JLabel lblNome;
@@ -487,14 +521,14 @@ public class CadObservador extends javax.swing.JInternalFrame {
     private javax.swing.JLabel ltlTitulo;
     private javax.swing.JTextField txtAnexo;
     private javax.swing.JTextField txtAtAssociado;
-    private javax.swing.JTextField txtCelular;
+    private javax.swing.JFormattedTextField txtCelular;
     private javax.swing.JTextField txtCidade;
-    private javax.swing.JTextField txtCpf;
+    private javax.swing.JFormattedTextField txtCpf;
     private com.toedter.calendar.JDateChooser txtData;
     private javax.swing.JTextField txtEmail;
     private javax.swing.JTextField txtId;
     private javax.swing.JTextField txtNome;
-    private javax.swing.JTextField txtObs;
+    private com.toedter.calendar.JDateChooser txtObs;
     private javax.swing.JTextField txtSexo;
     // End of variables declaration//GEN-END:variables
 
@@ -510,7 +544,8 @@ public class CadObservador extends javax.swing.JInternalFrame {
             txtCpf.setText(""+obs.get(indice).getCpf());
             txtSexo.setText(""+obs.get(indice).getSexo());
             txtCidade.setText(""+obs.get(indice).getCidade());
-            txtObs.setText(""+obs.get(indice).getObsDesde());
+            Date observador = sdf.parse(obs.get(indice).getObsDesde());
+            txtObs.setDate(observador);
             txtAnexo.setText(""+obs.get(indice).getAnexo());
             txtAtAssociado.setText(""+obs.get(indice).getAtletasAssociado());
             txtCelular.setText(""+obs.get(indice).getCelular());
