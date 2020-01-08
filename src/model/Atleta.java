@@ -32,11 +32,34 @@ public class Atleta implements Serializable {
     private String altura;
     private String sexo;
     private String lastClube;
+    private String link;
+    private String peDominante;
+    private String peso;
     @ManyToOne
     @JoinColumn(name = "observador", referencedColumnName = "id", nullable = false)
     private Observador observador;
 
     public Atleta() {
+    }
+
+    public Atleta(int id, String nome, String data, String cidade, String nomeResponsavel, String celularResponsavel, String celular, String telefone, String email, String posicao, String altura, String sexo, String lastClube, String link, String peDominante, String peso, Observador observador) {
+        this.id = id;
+        this.nome = nome;
+        this.data = data;
+        this.cidade = cidade;
+        this.nomeResponsavel = nomeResponsavel;
+        this.celularResponsavel = celularResponsavel;
+        this.celular = celular;
+        this.telefone = telefone;
+        this.email = email;
+        this.posicao = posicao;
+        this.altura = altura;
+        this.sexo = sexo;
+        this.lastClube = lastClube;
+        this.link = link;
+        this.peDominante = peDominante;
+        this.peso = peso;
+        this.observador = observador;
     }
 
     public int getId() {
@@ -143,6 +166,30 @@ public class Atleta implements Serializable {
         this.lastClube = lastClube;
     }
 
+    public String getLink() {
+        return link;
+    }
+
+    public void setLink(String link) {
+        this.link = link;
+    }
+
+    public String getPeDominante() {
+        return peDominante;
+    }
+
+    public void setPeDominante(String peDominante) {
+        this.peDominante = peDominante;
+    }
+
+    public String getPeso() {
+        return peso;
+    }
+
+    public void setPeso(String peso) {
+        this.peso = peso;
+    }
+
     public Observador getObservador() {
         return observador;
     }
@@ -150,6 +197,8 @@ public class Atleta implements Serializable {
     public void setObservador(Observador observador) {
         this.observador = observador;
     }
+
+    
 }
 
    
