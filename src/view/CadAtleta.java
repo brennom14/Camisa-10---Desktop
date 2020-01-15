@@ -320,9 +320,9 @@ public class CadAtleta extends javax.swing.JInternalFrame {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(btnProximo, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(btnEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -330,8 +330,7 @@ public class CadAtleta extends javax.swing.JInternalFrame {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(btnExcluir)
                                     .addComponent(btnUltimo, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                         .addComponent(jLabel3)
@@ -345,10 +344,9 @@ public class CadAtleta extends javax.swing.JInternalFrame {
                                 .addGap(18, 18, 18)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(txtSexo, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(txtPeso, javax.swing.GroupLayout.DEFAULT_SIZE, 121, Short.MAX_VALUE)
-                                        .addComponent(txtPosicao)
-                                        .addComponent(txtAltura))
+                                    .addComponent(txtPeso, javax.swing.GroupLayout.DEFAULT_SIZE, 121, Short.MAX_VALUE)
+                                    .addComponent(txtPosicao)
+                                    .addComponent(txtAltura)
                                     .addComponent(txtPe, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(cbxObservador, 0, 171, Short.MAX_VALUE)
                                     .addComponent(txtLast, javax.swing.GroupLayout.DEFAULT_SIZE, 171, Short.MAX_VALUE)
@@ -393,11 +391,12 @@ public class CadAtleta extends javax.swing.JInternalFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblCelular)
-                            .addComponent(txtCelular, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblSexo)
-                            .addComponent(txtSexo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(txtCelular, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(lblSexo)
+                                .addComponent(txtSexo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(32, 32, 32))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(txtNResponsavel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -487,7 +486,7 @@ public class CadAtleta extends javax.swing.JInternalFrame {
                 ob.setCidade(this.obs.get(i).getCidade());
                 ob.setObsDesde(this.obs.get(i).getObsDesde());
                 ob.setAnexo(this.obs.get(i).getAnexo());
-                ob.setAtletasAssociado(this.obs.get(i).getAtletasAssociado());
+                ob.setClubeAssociado(this.obs.get(i).getClubeAssociado());
                 ob.setCelular(this.obs.get(i).getCelular());
                 ob.setEmail(this.obs.get(i).getEmail());
             }
@@ -585,7 +584,7 @@ public class CadAtleta extends javax.swing.JInternalFrame {
                 ob.setCidade(this.obs.get(i).getCidade());
                 ob.setObsDesde(this.obs.get(i).getObsDesde());
                 ob.setAnexo(this.obs.get(i).getAnexo());
-                ob.setAtletasAssociado(this.obs.get(i).getAtletasAssociado());
+                ob.setClubeAssociado(this.obs.get(i).getClubeAssociado());
                 ob.setCelular(this.obs.get(i).getCelular());
                 ob.setEmail(this.obs.get(i).getEmail());
             }
@@ -634,7 +633,7 @@ public class CadAtleta extends javax.swing.JInternalFrame {
                 ob.setCidade(this.obs.get(i).getCidade());
                 ob.setObsDesde(this.obs.get(i).getObsDesde());
                 ob.setAnexo(this.obs.get(i).getAnexo());
-                ob.setAtletasAssociado(this.obs.get(i).getAtletasAssociado());
+                ob.setClubeAssociado(this.obs.get(i).getClubeAssociado());
                 ob.setCelular(this.obs.get(i).getCelular());
                 ob.setEmail(this.obs.get(i).getEmail());
             }

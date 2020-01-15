@@ -80,7 +80,7 @@ public class CadObservador extends javax.swing.JInternalFrame {
         txtCidade = new javax.swing.JTextField();
         txtSexo = new javax.swing.JTextField();
         txtAnexo = new javax.swing.JTextField();
-        txtAtAssociado = new javax.swing.JTextField();
+        txtAssociado = new javax.swing.JTextField();
         txtEmail = new javax.swing.JTextField();
         txtData = new com.toedter.calendar.JDateChooser();
         txtCpf = new javax.swing.JFormattedTextField();
@@ -164,7 +164,7 @@ public class CadObservador extends javax.swing.JInternalFrame {
 
         lblSexo.setText("Sexo:");
 
-        lblAtletas.setText("Atletas Associados:");
+        lblAtletas.setText("Clube Associado:");
 
         lblCelular.setText("Celular:");
 
@@ -174,9 +174,9 @@ public class CadObservador extends javax.swing.JInternalFrame {
 
         lblObs.setText("Observador Desde?:");
 
-        txtAtAssociado.addActionListener(new java.awt.event.ActionListener() {
+        txtAssociado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtAtAssociadoActionPerformed(evt);
+                txtAssociadoActionPerformed(evt);
             }
         });
 
@@ -243,12 +243,12 @@ public class CadObservador extends javax.swing.JInternalFrame {
                                         .addComponent(txtSexo)
                                         .addComponent(txtCidade)
                                         .addComponent(txtData, javax.swing.GroupLayout.DEFAULT_SIZE, 142, Short.MAX_VALUE)))))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addComponent(lblAtletas)
                                 .addGap(18, 18, 18)
-                                .addComponent(txtAtAssociado, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(txtAssociado, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(lblAnexo)
@@ -281,18 +281,18 @@ public class CadObservador extends javax.swing.JInternalFrame {
                             .addComponent(lblId)
                             .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtCpf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(txtAnexo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(lblAnexo)
                                     .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(lblNome))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(lblAtletas)
-                                    .addComponent(txtAtAssociado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(txtAssociado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addGap(0, 0, Short.MAX_VALUE)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -300,7 +300,7 @@ public class CadObservador extends javax.swing.JInternalFrame {
                                     .addComponent(txtData, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(18, 18, Short.MAX_VALUE)
+                                .addGap(18, 27, Short.MAX_VALUE)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(lblSexo)
                                     .addComponent(lblCelular)
@@ -320,7 +320,7 @@ public class CadObservador extends javax.swing.JInternalFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(lblObs)
                             .addComponent(txtObs, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(btnPrimeiro, javax.swing.GroupLayout.Alignment.TRAILING)
@@ -369,7 +369,7 @@ public class CadObservador extends javax.swing.JInternalFrame {
         ob.setObsDesde(obs1);
         System.out.println(ob.getObsDesde());
         ob.setAnexo(txtAnexo.getText());
-        ob.setAtletasAssociado(txtAtAssociado.getText());
+        ob.setClubeAssociado(txtAssociado.getText());
         ob.setCelular(txtCelular.getText());
         ob.setEmail(txtEmail.getText());
         control.editar(ob
@@ -392,7 +392,7 @@ public class CadObservador extends javax.swing.JInternalFrame {
         txtCidade.setText("");
         txtObs.setDate(null);
         txtAnexo.setText("");
-        txtAtAssociado.setText("");
+        txtAssociado.setText("");
         txtCelular.setText("");
         txtEmail.setText("");
     }//GEN-LAST:event_btnNovoActionPerformed
@@ -413,7 +413,7 @@ public class CadObservador extends javax.swing.JInternalFrame {
         ob.setObsDesde(obs1);
         System.out.println(ob.getObsDesde());
         ob.setAnexo(txtAnexo.getText());
-        ob.setAtletasAssociado(txtAtAssociado.getText());
+        ob.setClubeAssociado(txtAssociado.getText());
         ob.setCelular(txtCelular.getText());
         ob.setEmail(txtEmail.getText());
         control.inserir(ob);
@@ -443,7 +443,7 @@ public class CadObservador extends javax.swing.JInternalFrame {
         ob.setObsDesde(obs1);
         System.out.println(ob.getObsDesde());
         ob.setAnexo(txtAnexo.getText());
-        ob.setAtletasAssociado(txtAtAssociado.getText());
+        ob.setClubeAssociado(txtAssociado.getText());
         ob.setCelular(txtCelular.getText());
         ob.setEmail(txtEmail.getText());
      control.excluir(ob);
@@ -493,9 +493,9 @@ public class CadObservador extends javax.swing.JInternalFrame {
         }
     }//GEN-LAST:event_btnUltimoActionPerformed
 
-    private void txtAtAssociadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAtAssociadoActionPerformed
+    private void txtAssociadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAssociadoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtAtAssociadoActionPerformed
+    }//GEN-LAST:event_txtAssociadoActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -521,7 +521,7 @@ public class CadObservador extends javax.swing.JInternalFrame {
     private javax.swing.JLabel lblSexo;
     private javax.swing.JLabel ltlTitulo;
     private javax.swing.JTextField txtAnexo;
-    private javax.swing.JTextField txtAtAssociado;
+    private javax.swing.JTextField txtAssociado;
     private javax.swing.JFormattedTextField txtCelular;
     private javax.swing.JTextField txtCidade;
     private javax.swing.JFormattedTextField txtCpf;
@@ -548,7 +548,7 @@ public class CadObservador extends javax.swing.JInternalFrame {
             Date observador = sdf.parse(obs.get(indice).getObsDesde());
             txtObs.setDate(observador);
             txtAnexo.setText(""+obs.get(indice).getAnexo());
-            txtAtAssociado.setText(""+obs.get(indice).getAtletasAssociado());
+            txtAssociado.setText(""+obs.get(indice).getClubeAssociado());
             txtCelular.setText(""+obs.get(indice).getCelular());
             txtEmail.setText(""+obs.get(indice).getEmail());
             

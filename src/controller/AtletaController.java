@@ -9,22 +9,31 @@ import dao.DaoAtleta;
 import dao.DaoAtletaImp;
 import dao.DaoObservador;
 import dao.DaoObservadorImp;
+import java.util.HashMap;
 import java.util.List;
 import javax.swing.JOptionPane;
 import model.Atleta;
 import model.Observador;
+import net.sf.jasperreports.engine.JRException;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
+import net.sf.jasperreports.view.JasperViewer;
+
 
 /**
  *
  * @author brenn
  */
 public class AtletaController {
+    DaoAtleta dao = new DaoAtletaImp();
+    List<Atleta> lista = null;
 
-    DaoAtleta dao;
-
-    public AtletaController() {
-        this.dao = (DaoAtleta) new DaoAtletaImp();
+    public List<Atleta> getAtleta() {
+        List<Atleta> atletas = dao.getAtleta();
+        return atletas;
     }
+    
 
     public void inserir(Atleta at) {
         if (at == null && at.getNome().equals("") && at.getCidade().equals("")&& at.getNomeResponsavel().equals("")&& at.getCelular().equals("")&& at.getTelefone().equals("")&& at.getEmail().equals("")&& at.getPosicao().equals("")&& at.getAltura().equals("")&& at.getSexo().equals("")&& at.getLastClube().equals("")&& at.getCelularResponsavel().equals("")&& at.getData().equals("")&& at.getPeso().equals("")&& at.getPeDominante().equals("")&& at.getLink().equals("")) {
@@ -56,8 +65,24 @@ public class AtletaController {
           JOptionPane.showMessageDialog(null, "Você cancelou a exclusão");
       }
     }
-
-    public List<Atleta> getAtleta() {
-        return dao.getAtleta();
+    public void gerarRelatorio()
+    {
+        try{
+            lista = getAtleta();
+            System.out.println(lista.get(0).getNome());
+            HashMap filtro = new HashMap();
+            
+            JRBeanCollectionDataSource colecao = new JRBeanCollectionDataSource(getAtleta(),false);
+            JasperPrint imprimir = JasperFillManager.fillReport("C:/Users/benep/Documents/Camisa-10---Desktop/src/relatorios/RelCliente.jasper",filtro,colecao);
+            JasperViewer visualizar = new JasperViewer(imprimir, false);
+            visualizar.setVisible(true);
+            
+            
+            
+        }catch(JRException erro){
+            JOptionPane.showMessageDialog(null,"Erro ao gerar relatório"+ erro);
+            erro.printStackTrace();
+        }
     }
+
 }

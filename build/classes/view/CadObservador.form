@@ -92,12 +92,12 @@
                               </Group>
                           </Group>
                       </Group>
-                      <EmptySpace pref="40" max="32767" attributes="0"/>
+                      <EmptySpace pref="52" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
                               <Component id="lblAtletas" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="txtAtAssociado" min="-2" pref="108" max="-2" attributes="0"/>
+                              <Component id="txtAssociado" min="-2" pref="108" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
@@ -145,16 +145,17 @@
                       </Group>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="txtAnexo" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="lblAnexo" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="txtNome" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="lblNome" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace pref="21" max="32767" attributes="0"/>
+                              <EmptySpace pref="16" max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="lblAtletas" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="txtAtAssociado" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txtAssociado" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
@@ -167,7 +168,7 @@
                       </Group>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace type="separate" max="32767" attributes="0"/>
+                              <EmptySpace type="separate" pref="27" max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="lblSexo" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="lblCelular" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -194,7 +195,7 @@
                           <Component id="lblObs" min="-2" max="-2" attributes="0"/>
                           <Component id="txtObs" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="29" max="32767" attributes="0"/>
+                      <EmptySpace pref="31" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="btnPrimeiro" alignment="1" min="-2" max="-2" attributes="0"/>
@@ -340,7 +341,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="lblAtletas">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Atletas Associados:"/>
+        <Property name="text" type="java.lang.String" value="Clube Associado:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="lblCelular">
@@ -369,9 +370,9 @@
     </Component>
     <Component class="javax.swing.JTextField" name="txtAnexo">
     </Component>
-    <Component class="javax.swing.JTextField" name="txtAtAssociado">
+    <Component class="javax.swing.JTextField" name="txtAssociado">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtAtAssociadoActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtAssociadoActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="txtEmail">

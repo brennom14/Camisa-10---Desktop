@@ -12,7 +12,7 @@
             <MenuItem class="javax.swing.JMenuItem" name="menuItemClube">
               <Properties>
                 <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
-                  <KeyStroke key="Ctrl+C"/>
+                  <KeyStroke key="Ctrl+A"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Atleta"/>
               </Properties>
@@ -23,7 +23,7 @@
             <MenuItem class="javax.swing.JMenuItem" name="menuItemPatrocinador">
               <Properties>
                 <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
-                  <KeyStroke key="Ctrl+0"/>
+                  <KeyStroke key="Ctrl+O"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Observador"/>
               </Properties>
@@ -33,31 +33,34 @@
             </MenuItem>
           </SubComponents>
         </Menu>
-        <Menu class="javax.swing.JMenu" name="menuRelatorio">
+        <Menu class="javax.swing.JMenu" name="RelObservador">
           <Properties>
             <Property name="text" type="java.lang.String" value="Relat&#xf3;rio"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="RelObservadorActionPerformed"/>
+          </Events>
           <SubComponents>
-            <MenuItem class="javax.swing.JMenuItem" name="relatorioClube">
+            <MenuItem class="javax.swing.JMenuItem" name="relatorioAtleta">
               <Properties>
                 <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
-                  <KeyStroke key="Shift+C"/>
+                  <KeyStroke key="Alt+R"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Clube"/>
+                <Property name="text" type="java.lang.String" value="Atleta"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="relatorioClubeActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="relatorioAtletaActionPerformed"/>
               </Events>
             </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="relatorioPatrocinador">
+            <MenuItem class="javax.swing.JMenuItem" name="relatorioObservador">
               <Properties>
                 <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
-                  <KeyStroke key="Shift+P"/>
+                  <KeyStroke key="Alt+E"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Patrocinador"/>
+                <Property name="text" type="java.lang.String" value="Observador"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="relatorioPatrocinadorActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="relatorioObservadorActionPerformed"/>
               </Events>
             </MenuItem>
           </SubComponents>
@@ -68,6 +71,7 @@
           </Properties>
           <Events>
             <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="menuSairMouseClicked"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="menuSairActionPerformed"/>
           </Events>
         </Menu>
       </SubComponents>

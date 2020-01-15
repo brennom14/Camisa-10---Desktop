@@ -27,14 +27,14 @@ public class Observador implements Serializable {
     private String cidade;
     private String obsDesde;
     private String anexo;
-    private String AtletasAssociado;
+    private String ClubeAssociado;
     private String celular;
     private String email;
 
     public Observador() {
     }
 
-    public Observador(int id, String nome, String dataNascimento, String Cpf, String sexo, String cidade, String obsDesde, String anexo, String AtletasAssociado, String celular, String email) {
+    public Observador(int id, String nome, String dataNascimento, String Cpf, String sexo, String cidade, String obsDesde, String anexo, String ClubeAssociado, String celular, String email) {
         this.id = id;
         this.nome = nome;
         this.dataNascimento = dataNascimento;
@@ -43,10 +43,12 @@ public class Observador implements Serializable {
         this.cidade = cidade;
         this.obsDesde = obsDesde;
         this.anexo = anexo;
-        this.AtletasAssociado = AtletasAssociado;
+        this.ClubeAssociado = ClubeAssociado;
         this.celular = celular;
         this.email = email;
     }
+
+    
     @OneToMany(mappedBy = "observador", targetEntity = Atleta.class, fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private Set<Atleta> atleta;
 
@@ -114,12 +116,12 @@ public class Observador implements Serializable {
         this.anexo = anexo;
     }
 
-    public String getAtletasAssociado() {
-        return AtletasAssociado;
+    public String getClubeAssociado() {
+        return ClubeAssociado;
     }
 
-    public void setAtletasAssociado(String AtletasAssociado) {
-        this.AtletasAssociado = AtletasAssociado;
+    public void setClubeAssociado(String ClubeAssociado) {
+        this.ClubeAssociado = ClubeAssociado;
     }
 
     public String getCelular() {
@@ -137,10 +139,13 @@ public class Observador implements Serializable {
     public void setEmail(String email) {
         this.email = email;
     }
+
+    public Set<Atleta> getAtleta() {
+        return atleta;
+    }
+
+    public void setAtleta(Set<Atleta> atleta) {
+        this.atleta = atleta;
+    }
+
 }
-    
-    
-    
-    
-     
-    
