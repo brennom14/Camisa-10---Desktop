@@ -69,7 +69,7 @@ public class ObservadorController {
             HashMap filtros1 = new HashMap();
             
             JRBeanCollectionDataSource colecao1 = new JRBeanCollectionDataSource(getObservador(),false);
-            JasperPrint imprimir1 = JasperFillManager.fillReport("C:/Users/benep/Documents/Camisa-10---Desktop/src/relatorios/RelatorioObservador.jasper",filtros1,colecao1);
+            JasperPrint imprimir1 = JasperFillManager.fillReport("C:\\Users\\benep\\Documents\\Camisa-10---Desktop\\src\\relatorios\\RelatorioObservador.jasper",filtros1,colecao1);
             JasperViewer visualizar1 = new JasperViewer(imprimir1, false);
             visualizar1.setVisible(true);
             
