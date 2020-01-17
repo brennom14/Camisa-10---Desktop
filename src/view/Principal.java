@@ -44,7 +44,7 @@ public class Principal extends javax.swing.JFrame {
 
         desktop = new javax.swing.JDesktopPane();
         nomeProjeto = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         menuCadastrar = new javax.swing.JMenu();
         menuItemAtleta = new javax.swing.JMenuItem();
@@ -65,17 +65,18 @@ public class Principal extends javax.swing.JFrame {
         desktop.setLayout(desktopLayout);
         desktopLayout.setHorizontalGroup(
             desktopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 621, Short.MAX_VALUE)
+            .addGap(0, 661, Short.MAX_VALUE)
         );
         desktopLayout.setVerticalGroup(
             desktopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 0, Short.MAX_VALUE)
         );
 
-        nomeProjeto.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        nomeProjeto.setFont(new java.awt.Font("MS Reference Sans Serif", 0, 48)); // NOI18N
         nomeProjeto.setText("Camisa10");
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/soccer (1).png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Futebol-amador-Rodrigo-Erib-2 (2).jpg"))); // NOI18N
+        jLabel1.setText("jLabel1");
 
         menuCadastrar.setText("Cadastrar");
 
@@ -164,25 +165,24 @@ public class Principal extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(desktop, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(desktop, javax.swing.GroupLayout.PREFERRED_SIZE, 661, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(51, 51, 51)
-                        .addComponent(nomeProjeto))
+                        .addGap(28, 28, 28)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 541, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel2)))
-                .addContainerGap(18, Short.MAX_VALUE))
+                        .addGap(202, 202, 202)
+                        .addComponent(nomeProjeto)))
+                .addContainerGap(169, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(35, 35, 35)
                 .addComponent(nomeProjeto)
-                .addGap(39, 39, 39)
-                .addComponent(jLabel2)
-                .addGap(0, 55, Short.MAX_VALUE))
-            .addComponent(desktop)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel1)
+                .addContainerGap(110, Short.MAX_VALUE))
+            .addComponent(desktop, javax.swing.GroupLayout.DEFAULT_SIZE, 588, Short.MAX_VALUE)
         );
 
         pack();
@@ -228,8 +228,8 @@ public class Principal extends javax.swing.JFrame {
     private void menuItemObservadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemObservadorActionPerformed
         // TODO add your handling code here:
         CadObservador co = new CadObservador();
-        desktop.add(co);
         co.setVisible(true);
+        desktop.add(co);
     }//GEN-LAST:event_menuItemObservadorActionPerformed
 
     private void menuItemAtletaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemAtletaActionPerformed
@@ -276,7 +276,7 @@ public class Principal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JDesktopPane desktop;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenu menuCadastrar;

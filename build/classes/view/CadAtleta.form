@@ -19,8 +19,16 @@
     </Component>
     <Component class="javax.swing.JProgressBar" name="jProgressBar1">
     </Component>
+    <Component class="javax.swing.JTextField" name="jTextField4">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jTextField4"/>
+      </Properties>
+    </Component>
   </NonVisualComponents>
   <Properties>
+    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+      <Color blue="ff" green="ff" red="ff" type="rgb"/>
+    </Property>
     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
       <Border info="org.netbeans.modules.form.compat2.border.MatteColorBorderInfo">
         <MatteColorBorder/>
@@ -51,252 +59,258 @@
           <Group type="102" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="btnNovo" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="1" attributes="0">
-                                          <Component id="btnAnterior" min="-2" pref="65" max="-2" attributes="0"/>
-                                          <Component id="btnSalvar" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                  </Group>
-                                  <Component id="lblTitulo" alignment="0" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
-                          <Component id="btnPrimeiro" alignment="0" min="-2" pref="62" max="-2" attributes="0"/>
+                          <Component id="btnPrimeiro" alignment="0" min="-2" pref="83" max="-2" attributes="0"/>
+                          <Component id="btnNovo" alignment="0" min="-2" pref="83" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace max="32767" attributes="0"/>
+                      <EmptySpace min="198" max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
-                                  <Component id="lbTelefone" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="txtTelefone" max="32767" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="1" attributes="0">
-                                  <Component id="lblEmail" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="txtEmail" min="-2" pref="121" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="102" attributes="0">
-                                          <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" alignment="1" attributes="0">
-                                          <Component id="llbCidade" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" alignment="1" attributes="0">
-                                          <Group type="103" groupAlignment="1" attributes="0">
-                                              <Component id="lblCelular" min="-2" max="-2" attributes="0"/>
-                                              <Component id="lblNomeResponsavel" min="-2" max="-2" attributes="0"/>
-                                              <Component id="jLabel2" alignment="1" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      </Group>
-                                  </Group>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="txtCelular" min="-2" pref="121" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                          <Component id="txtNResponsavel" pref="121" max="32767" attributes="0"/>
-                                          <Component id="txtNumeroResponsavel" max="32767" attributes="0"/>
-                                          <Component id="txtCidade" max="32767" attributes="0"/>
-                                      </Group>
-                                      <Component id="txtData" alignment="0" min="-2" pref="121" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="68" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="lbNome" alignment="1" min="-2" max="-2" attributes="0"/>
-                                  <Component id="lblId" alignment="1" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="txtNome" min="-2" pref="121" max="-2" attributes="0"/>
-                                  <Component id="txtId" min="-2" pref="49" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
-                      </Group>
-                      <EmptySpace max="32767" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="1" attributes="0">
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="1" attributes="0">
-                                  <Component id="btnProximo" min="-2" pref="55" max="-2" attributes="0"/>
-                                  <Component id="btnEditar" min="-2" pref="55" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="btnExcluir" min="-2" max="-2" attributes="0"/>
-                                  <Component id="btnUltimo" min="-2" pref="65" max="-2" attributes="0"/>
+                                  <Component id="lbNome" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblId" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <Group type="102" alignment="1" attributes="0">
+                          <Component id="lblPeso" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="lbTelefone" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblEmail" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="llbCidade" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblCelular" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblPosicao" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblSexo" alignment="1" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="-2" pref="137" max="-2" attributes="0"/>
+                              <Component id="lblTitulo" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="103" groupAlignment="1" attributes="0">
-                                      <Component id="jLabel3" alignment="1" min="-2" max="-2" attributes="0"/>
-                                      <Component id="lblLast" alignment="1" min="-2" max="-2" attributes="0"/>
-                                      <Component id="lblObservador" alignment="1" min="-2" max="-2" attributes="0"/>
-                                      <Component id="lblLink" alignment="1" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Component id="lblAltura" alignment="1" min="-2" max="-2" attributes="0"/>
-                                  <Component id="lblSexo" alignment="1" min="-2" max="-2" attributes="0"/>
-                                  <Component id="lblPeso" alignment="1" min="-2" max="-2" attributes="0"/>
-                                  <Component id="lblPosicao" alignment="1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txtCelular" min="-2" pref="178" max="-2" attributes="0"/>
+                                  <Component id="txtSexo" min="-2" pref="178" max="-2" attributes="0"/>
+                                  <Component id="txtPosicao" min="-2" pref="178" max="-2" attributes="0"/>
+                                  <Component id="txtNome" alignment="0" min="-2" pref="178" max="-2" attributes="0"/>
+                                  <Component id="txtId" alignment="0" min="-2" pref="53" max="-2" attributes="0"/>
+                                  <Component id="txtCidade" alignment="0" min="-2" pref="178" max="-2" attributes="0"/>
+                                  <Component id="txtEmail" alignment="0" min="-2" pref="178" max="-2" attributes="0"/>
+                                  <Component id="txtTelefone" min="-2" pref="178" max="-2" attributes="0"/>
+                                  <Component id="txtPeso" alignment="0" min="-2" pref="178" max="-2" attributes="0"/>
+                                  <Component id="btnAnterior" alignment="1" min="-2" pref="83" max="-2" attributes="0"/>
+                                  <Component id="btnSalvar" alignment="1" min="-2" pref="83" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="txtSexo" min="-2" pref="97" max="-2" attributes="0"/>
-                                  <Component id="txtPeso" pref="121" max="32767" attributes="0"/>
-                                  <Component id="txtPosicao" max="32767" attributes="0"/>
-                                  <Component id="txtAltura" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="txtPe" alignment="0" min="-2" pref="115" max="-2" attributes="0"/>
-                                  <Component id="cbxObservador" pref="171" max="32767" attributes="0"/>
-                                  <Component id="txtLast" pref="171" max="32767" attributes="0"/>
-                                  <Component id="txtLink" alignment="0" max="32767" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <EmptySpace max="32767" attributes="0"/>
+                                      <Component id="jLabel2" min="-2" pref="120" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="188" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Group type="102" attributes="0">
+                                              <Group type="103" groupAlignment="1" attributes="0">
+                                                  <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="lblLast" alignment="1" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="lblObservador" min="-2" pref="72" max="-2" attributes="0"/>
+                                                  <Component id="lblLink" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="lblNomeResponsavel" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="lblAltura" alignment="1" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Component id="txtNumeroResponsavel" max="32767" attributes="0"/>
+                                                  <Component id="txtLast" alignment="1" max="32767" attributes="0"/>
+                                                  <Component id="cbxObservador" alignment="1" max="32767" attributes="0"/>
+                                                  <Component id="txtLink" alignment="1" max="32767" attributes="0"/>
+                                                  <Group type="102" attributes="0">
+                                                      <Group type="103" groupAlignment="0" attributes="0">
+                                                          <Component id="txtNResponsavel" min="-2" pref="178" max="-2" attributes="0"/>
+                                                          <Component id="txtPe" min="-2" pref="178" max="-2" attributes="0"/>
+                                                          <Component id="txtData" alignment="0" min="-2" pref="178" max="-2" attributes="0"/>
+                                                      </Group>
+                                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                                  </Group>
+                                                  <Component id="txtAltura" max="32767" attributes="0"/>
+                                              </Group>
+                                          </Group>
+                                          <Group type="102" attributes="0">
+                                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Component id="btnProximo" alignment="1" min="-2" pref="78" max="-2" attributes="0"/>
+                                                  <Component id="btnEditar" alignment="1" min="-2" pref="78" max="-2" attributes="0"/>
+                                              </Group>
+                                              <EmptySpace min="-2" pref="113" max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Component id="btnUltimo" alignment="1" min="-2" pref="75" max="-2" attributes="0"/>
+                                                  <Component id="btnExcluir" alignment="1" min="-2" pref="75" max="-2" attributes="0"/>
+                                              </Group>
+                                          </Group>
+                                      </Group>
+                                  </Group>
                               </Group>
                           </Group>
                       </Group>
-                      <EmptySpace min="-2" pref="62" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                   </Group>
               </Group>
+          </Group>
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace max="32767" attributes="0"/>
+              <Component id="jTextField3" min="-2" pref="86" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="152" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+              <Component id="lblTitulo" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="jTextField3" min="-2" pref="34" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="125" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="lblTitulo" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+                  <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="txtId" alignment="1" min="-2" max="-2" attributes="0"/>
                           <Component id="lblId" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="txtId" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="txtNome" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="lbNome" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="txtPosicao" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="lblPosicao" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="txtPeso" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="lblPeso" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace pref="24" max="32767" attributes="0"/>
-                  </Group>
-              </Group>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="lblAltura" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="txtAltura" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                  </Group>
-                  <Group type="103" alignment="1" groupAlignment="0" attributes="0">
-                      <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-                      <Component id="txtData" min="-2" max="-2" attributes="0"/>
-                  </Group>
-              </Group>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="lblCelular" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="txtCelular" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="lblSexo" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="txtSexo" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblCelular" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" alignment="1" attributes="0">
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="txtPosicao" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblPosicao" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="txtCelular" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="103" alignment="1" groupAlignment="3" attributes="0">
-                      <Component id="txtNResponsavel" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="lblNomeResponsavel" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="txtPe" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-              </Group>
-              <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jLabel1" alignment="1" min="-2" max="-2" attributes="0"/>
-                  <Group type="103" alignment="1" groupAlignment="3" attributes="0">
-                      <Component id="txtNumeroResponsavel" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="lblLast" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="txtLast" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-              </Group>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="txtCidade" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="llbCidade" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="txtEmail" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="lblEmail" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="lblEmail" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtEmail" alignment="1" min="-2" pref="21" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="19" max="32767" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="txtTelefone" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtTelefone" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="lbTelefone" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
                   </Group>
-                  <Group type="102" attributes="0">
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Component id="txtData" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="18" pref="18" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="txtAltura" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblAltura" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                                      <Component id="txtPe" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="txtSexo" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblSexo" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="cbxObservador" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="lblObservador" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtNResponsavel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblNomeResponsavel" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="txtNumeroResponsavel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="lblLink" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="txtLink" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtLast" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblLast" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Component id="cbxObservador" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblObservador" min="-2" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
               </Group>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="btnPrimeiro" alignment="1" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="txtPeso" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
+                      <Component id="lblPeso" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
                   <Group type="103" alignment="1" groupAlignment="3" attributes="0">
-                      <Component id="btnProximo" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="btnUltimo" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtLink" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblLink" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <Component id="btnAnterior" alignment="1" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="btnNovo" min="-2" max="-2" attributes="0"/>
-                  <Component id="btnSalvar" min="-2" max="-2" attributes="0"/>
-                  <Component id="btnEditar" alignment="0" min="-2" pref="41" max="-2" attributes="0"/>
-                  <Component id="btnExcluir" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Component id="btnPrimeiro" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="btnUltimo" min="-2" max="-2" attributes="0"/>
+                                  <Component id="btnProximo" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="btnEditar" min="-2" max="-2" attributes="0"/>
+                                  <Component id="btnExcluir" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                      </Group>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
+                      <Component id="btnAnterior" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Component id="btnNovo" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnSalvar" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                  </Group>
               </Group>
-              <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -305,28 +319,40 @@
     <Component class="javax.swing.JLabel" name="lblTitulo">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Times New Roman" size="18" style="0"/>
+          <Font name="Times New Roman" size="36" style="0"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Cadastro de Atleta"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="lblId">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Times New Roman" size="15" style="0"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="ID:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="llbCidade">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Times New Roman" size="15" style="0"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Cidade"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="lblSexo">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Times New Roman" size="15" style="0"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Sexo"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="lblObservador">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Times New Roman" size="15" style="0"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Observador:"/>
       </Properties>
     </Component>
@@ -341,7 +367,9 @@
     </Component>
     <Component class="javax.swing.JButton" name="btnPrimeiro">
       <Properties>
-        <Property name="text" type="java.lang.String" value="|&lt;"/>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/img/begin.png"/>
+        </Property>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnPrimeiroActionPerformed"/>
@@ -349,7 +377,9 @@
     </Component>
     <Component class="javax.swing.JButton" name="btnAnterior">
       <Properties>
-        <Property name="text" type="java.lang.String" value="&lt;&lt;"/>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/img/back.png"/>
+        </Property>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAnteriorActionPerformed"/>
@@ -357,7 +387,9 @@
     </Component>
     <Component class="javax.swing.JButton" name="btnProximo">
       <Properties>
-        <Property name="text" type="java.lang.String" value="&gt;&gt;"/>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/img/next.png"/>
+        </Property>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnProximoActionPerformed"/>
@@ -365,7 +397,9 @@
     </Component>
     <Component class="javax.swing.JButton" name="btnUltimo">
       <Properties>
-        <Property name="text" type="java.lang.String" value="&gt;|"/>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/img/last.png"/>
+        </Property>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnUltimoActionPerformed"/>
@@ -373,8 +407,14 @@
     </Component>
     <Component class="javax.swing.JButton" name="btnNovo">
       <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+        </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+        </Property>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/img/add-file.png"/>
+          <Image iconType="3" name="/img/add.png"/>
         </Property>
       </Properties>
       <Events>
@@ -394,7 +434,7 @@
     <Component class="javax.swing.JButton" name="btnEditar">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/img/resume.png"/>
+          <Image iconType="3" name="/img/portfolio.png"/>
         </Property>
       </Properties>
       <Events>
@@ -404,7 +444,7 @@
     <Component class="javax.swing.JButton" name="btnExcluir">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/img/trash-can.png"/>
+          <Image iconType="3" name="/img/trash.png"/>
         </Property>
       </Properties>
       <Events>
@@ -436,31 +476,49 @@
     </Component>
     <Component class="javax.swing.JLabel" name="lblCelular">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Times New Roman" size="15" style="0"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Celular:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="lbTelefone">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Times New Roman" size="15" style="0"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Telefone:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="lbNome">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Times New Roman" size="15" style="0"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Nome:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="lblNomeResponsavel">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Respons&#xe1;vel:"/>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Times New Roman" size="15" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Nome do Respons&#xe1;vel:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="lblAltura">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Times New Roman" size="15" style="0"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Altura(CM):"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="lblEmail">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Times New Roman" size="15" style="0"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Email:"/>
       </Properties>
     </Component>
@@ -468,6 +526,9 @@
     </Component>
     <Component class="javax.swing.JLabel" name="lblPosicao">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Times New Roman" size="15" style="0"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Posi&#xe7;&#xe3;o:"/>
       </Properties>
     </Component>
@@ -478,16 +539,25 @@
     </Component>
     <Component class="javax.swing.JLabel" name="lblLast">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Times New Roman" size="15" style="0"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Ultimo Clube:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Times New Roman" size="15" style="0"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Celular do Respons&#xe1;vel:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel2">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Times New Roman" size="15" style="0"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Data de nascimento:"/>
       </Properties>
     </Component>
@@ -516,6 +586,9 @@
     </Component>
     <Component class="javax.swing.JLabel" name="lblPeso">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Times New Roman" size="15" style="0"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Peso(KG):"/>
       </Properties>
     </Component>
@@ -523,17 +596,37 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel3">
       <Properties>
-        <Property name="text" type="java.lang.String" value="P&#xe9; Dominante"/>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Times New Roman" size="15" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="P&#xe9; Dominante:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtPe">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtPeActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="lblLink">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Link Youtube:"/>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Times New Roman" size="15" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Link do V&#xed;deo"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtLink">
+    </Component>
+    <Component class="javax.swing.JTextField" name="jTextField3">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="18" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Foto"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField3ActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>
