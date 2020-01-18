@@ -65,7 +65,7 @@ public class Principal extends javax.swing.JFrame {
         desktop.setLayout(desktopLayout);
         desktopLayout.setHorizontalGroup(
             desktopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 808, Short.MAX_VALUE)
+            .addGap(0, 947, Short.MAX_VALUE)
         );
         desktopLayout.setVerticalGroup(
             desktopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -169,10 +169,10 @@ public class Principal extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 541, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(nomeProjeto))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(78, 78, 78)
-                        .addComponent(nomeProjeto)))
+                        .addGap(7, 7, 7)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 399, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(40, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
