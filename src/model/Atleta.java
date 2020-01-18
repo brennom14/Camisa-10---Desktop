@@ -35,6 +35,7 @@ public class Atleta implements Serializable {
     private String link;
     private String peDominante;
     private String peso;
+    private byte[] imagem;
     @ManyToOne
     @JoinColumn(name = "observador", referencedColumnName = "id", nullable = false)
     private Observador observador;
@@ -42,7 +43,7 @@ public class Atleta implements Serializable {
     public Atleta() {
     }
 
-    public Atleta(int id, String nome, String data, String cidade, String nomeResponsavel, String celularResponsavel, String celular, String telefone, String email, String posicao, String altura, String sexo, String lastClube, String link, String peDominante, String peso, Observador observador) {
+    public Atleta(int id, String nome, String data, String cidade, String nomeResponsavel, String celularResponsavel, String celular, String telefone, String email, String posicao, String altura, String sexo, String lastClube, String link, String peDominante, String peso, byte[] imagem, Observador observador) {
         this.id = id;
         this.nome = nome;
         this.data = data;
@@ -59,6 +60,7 @@ public class Atleta implements Serializable {
         this.link = link;
         this.peDominante = peDominante;
         this.peso = peso;
+        this.imagem = imagem;
         this.observador = observador;
     }
 
@@ -190,6 +192,14 @@ public class Atleta implements Serializable {
         this.peso = peso;
     }
 
+    public byte[] getImagem() {
+        return imagem;
+    }
+
+    public void setImagem(byte[] imagem) {
+        this.imagem = imagem;
+    }
+
     public Observador getObservador() {
         return observador;
     }
@@ -197,8 +207,6 @@ public class Atleta implements Serializable {
     public void setObservador(Observador observador) {
         this.observador = observador;
     }
-
     
-}
 
-   
+}
