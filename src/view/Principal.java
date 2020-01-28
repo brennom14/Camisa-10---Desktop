@@ -32,6 +32,14 @@ public class Principal extends javax.swing.JFrame {
         initComponents();
         this.setExtendedState(MAXIMIZED_BOTH);
     }
+    public Principal(int status) {
+        initComponents();
+        this.setExtendedState(MAXIMIZED_BOTH);
+        if (status==2)
+        {
+            menuItemAtleta.setEnabled(false);
+        }
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.

@@ -22,28 +22,28 @@ public class Observador implements Serializable {
     private int id;
     private String nome;
     private String dataNascimento;
-    private String Cpf;
+    private String cpf;
     private String sexo;
     private String cidade;
     private String obsDesde;
     private String anexo;
-    private String ClubeAssociado;
+    private String clubeAssociado;
     private String celular;
     private String email;
 
     public Observador() {
     }
 
-    public Observador(int id, String nome, String dataNascimento, String Cpf, String sexo, String cidade, String obsDesde, String anexo, String ClubeAssociado, String celular, String email) {
+    public Observador(int id, String nome, String dataNascimento, String cpf, String sexo, String cidade, String obsDesde, String anexo, String clubeAssociado, String celular, String email) {
         this.id = id;
         this.nome = nome;
         this.dataNascimento = dataNascimento;
-        this.Cpf = Cpf;
+        this.cpf = cpf;
         this.sexo = sexo;
         this.cidade = cidade;
         this.obsDesde = obsDesde;
         this.anexo = anexo;
-        this.ClubeAssociado = ClubeAssociado;
+        this.clubeAssociado = clubeAssociado;
         this.celular = celular;
         this.email = email;
     }
@@ -77,11 +77,11 @@ public class Observador implements Serializable {
     }
 
     public String getCpf() {
-        return Cpf;
+        return cpf;
     }
 
-    public void setCpf(String Cpf) {
-        this.Cpf = Cpf;
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
     }
 
     public String getSexo() {
@@ -117,11 +117,11 @@ public class Observador implements Serializable {
     }
 
     public String getClubeAssociado() {
-        return ClubeAssociado;
+        return clubeAssociado;
     }
 
-    public void setClubeAssociado(String ClubeAssociado) {
-        this.ClubeAssociado = ClubeAssociado;
+    public void setClubeAssociado(String clubeAssociado) {
+        this.clubeAssociado = clubeAssociado;
     }
 
     public String getCelular() {

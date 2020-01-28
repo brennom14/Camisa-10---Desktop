@@ -35,7 +35,7 @@ public class Atleta implements Serializable {
     private String link;
     private String peDominante;
     private String peso;
-    private byte[] imagem;
+    private byte[] imagem; //urlimagem String /imgatleta/+url 
     @ManyToOne
     @JoinColumn(name = "observador", referencedColumnName = "id", nullable = false)
     private Observador observador;

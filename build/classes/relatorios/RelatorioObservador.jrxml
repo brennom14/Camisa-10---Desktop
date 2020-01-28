@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="RelatorioObservador" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="a7560693-d792-4be5-8306-0311dabc24fb">
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="RelatorioObservador" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="4f3b30e9-c19d-46d0-99e2-f3a96629e7ef">
 	<property name="ireport.zoom" value="1.0"/>
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
@@ -7,15 +7,9 @@
 		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
 	</parameter>
 	<queryString>
-		<![CDATA[select * from tb_observador where ClubeAssociado = $P{clube}]]>
+		<![CDATA[select * from tb_observador where clubeAssociado  = $P{clube}]]>
 	</queryString>
 	<field name="id" class="java.lang.Integer">
-		<fieldDescription><![CDATA[]]></fieldDescription>
-	</field>
-	<field name="ClubeAssociado" class="java.lang.String">
-		<fieldDescription><![CDATA[]]></fieldDescription>
-	</field>
-	<field name="Cpf" class="java.lang.String">
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
 	<field name="anexo" class="java.lang.String">
@@ -25,6 +19,12 @@
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
 	<field name="cidade" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="clubeAssociado" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cpf" class="java.lang.String">
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
 	<field name="dataNascimento" class="java.lang.String">
@@ -42,90 +42,44 @@
 	<field name="sexo" class="java.lang.String">
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
-	<group name="nome">
-		<groupExpression><![CDATA[$F{nome}]]></groupExpression>
-	</group>
 	<background>
 		<band splitType="Stretch"/>
 	</background>
 	<title>
-		<band height="79" splitType="Stretch">
-			<staticText>
-				<reportElement x="5" y="29" width="216" height="32" uuid="f987a1ec-5eae-4423-b124-f0cdb2cf5ad1"/>
-				<textElement>
-					<font size="18"/>
-				</textElement>
-				<text><![CDATA[Relatório de Observador]]></text>
-			</staticText>
-			<textField pattern="dd/MM/yyyy">
-				<reportElement x="436" y="36" width="100" height="20" uuid="ab9e91c4-7557-446d-bca0-0cd4fdd2ad9b"/>
-				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
-			</textField>
-		</band>
+		<band height="79" splitType="Stretch"/>
 	</title>
 	<pageHeader>
-		<band splitType="Stretch"/>
+		<band height="35" splitType="Stretch"/>
 	</pageHeader>
 	<columnHeader>
-		<band height="20" splitType="Stretch">
+		<band height="22" splitType="Stretch">
 			<staticText>
-				<reportElement x="6" y="0" width="111" height="20" uuid="5fd66143-068d-4617-90fd-988c7e3abbd8"/>
-				<textElement>
-					<font isBold="true"/>
-				</textElement>
-				<text><![CDATA[Nome do Observador]]></text>
+				<reportElement x="38" y="2" width="100" height="20" uuid="2561a379-bd51-4c8d-9780-f40fd582d871"/>
+				<text><![CDATA[Clube Associado]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="131" y="0" width="100" height="20" uuid="6facfed2-b700-4409-b05e-30a4a25b651b"/>
-				<textElement>
-					<font isBold="true"/>
-				</textElement>
-				<text><![CDATA[Data de nascimento]]></text>
+				<reportElement x="166" y="2" width="100" height="20" uuid="e4787ebf-b2af-408d-b7cd-2aed230b5577"/>
+				<text><![CDATA[Data de Nascimento]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="232" y="0" width="100" height="20" uuid="c6bafaeb-d97e-43aa-a561-ee6c4de6f974"/>
-				<textElement>
-					<font isBold="true"/>
-				</textElement>
-				<text><![CDATA[Clube associado]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="336" y="0" width="100" height="20" uuid="62d5797d-303f-4b67-afad-8d39406b6fb6"/>
-				<textElement>
-					<font isBold="true"/>
-				</textElement>
-				<text><![CDATA[Sexo]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="405" y="0" width="100" height="20" uuid="261d575e-868e-45eb-868a-99229632117c"/>
-				<textElement>
-					<font isBold="true"/>
-				</textElement>
-				<text><![CDATA[Observador desde?]]></text>
+				<reportElement x="296" y="0" width="100" height="20" uuid="6961dfbb-3f0d-4797-8139-071e3e4bee47"/>
+				<text><![CDATA[Nome]]></text>
 			</staticText>
 		</band>
 	</columnHeader>
 	<detail>
-		<band height="28" splitType="Stretch">
+		<band height="47" splitType="Stretch">
 			<textField>
-				<reportElement x="6" y="8" width="100" height="20" uuid="d55a2024-5519-4665-8d09-0392b63d98b8"/>
-				<textFieldExpression><![CDATA[$F{nome}]]></textFieldExpression>
+				<reportElement x="38" y="27" width="100" height="20" uuid="9adbc39b-c34e-430f-948b-570cfe721fff"/>
+				<textFieldExpression><![CDATA[$F{clubeAssociado}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="150" y="8" width="100" height="20" uuid="02c1948f-fdb0-4c04-a04b-70e0729ae109"/>
+				<reportElement x="166" y="27" width="100" height="20" uuid="d7892841-a3e3-4daf-989b-c4640d4ba531"/>
 				<textFieldExpression><![CDATA[$F{dataNascimento}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="248" y="8" width="100" height="20" uuid="8d76c778-0eb9-45f6-b239-4ac07356d192"/>
-				<textFieldExpression><![CDATA[$F{ClubeAssociado}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="329" y="8" width="100" height="20" uuid="98e2206e-a9a4-4bf3-97ce-e41e71ed5840"/>
-				<textFieldExpression><![CDATA[$F{sexo}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="423" y="8" width="100" height="20" uuid="60342779-167e-4839-9130-6d40787a9b71"/>
-				<textFieldExpression><![CDATA[$F{obsDesde}]]></textFieldExpression>
+				<reportElement x="296" y="27" width="100" height="20" uuid="2f6c1a64-1766-4113-ac76-2e1b218a9101"/>
+				<textFieldExpression><![CDATA[$F{nome}]]></textFieldExpression>
 			</textField>
 		</band>
 	</detail>
@@ -133,17 +87,7 @@
 		<band height="45" splitType="Stretch"/>
 	</columnFooter>
 	<pageFooter>
-		<band height="54" splitType="Stretch">
-			<textField>
-				<reportElement x="416" y="26" width="80" height="20" uuid="60c5463a-a20f-46d4-b979-a7dbaefed40e"/>
-				<textElement textAlignment="Right"/>
-				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
-			</textField>
-			<textField evaluationTime="Report">
-				<reportElement x="496" y="25" width="40" height="20" uuid="ded17366-71d6-4f0a-b6b8-4b9c72fc9e07"/>
-				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
-			</textField>
-		</band>
+		<band height="54" splitType="Stretch"/>
 	</pageFooter>
 	<summary>
 		<band height="42" splitType="Stretch"/>

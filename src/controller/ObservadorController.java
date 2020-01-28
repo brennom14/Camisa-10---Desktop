@@ -5,16 +5,13 @@
  */
 package controller;
 
-import dao.DaoAtleta;
-import dao.DaoAtletaImp;
+
 import dao.DaoObservador;
 import dao.DaoObservadorImp;
 import java.util.HashMap;
 import java.util.List;
 import javax.swing.JOptionPane;
-import model.Atleta;
 import model.Observador;
-import model.Usuarios;
 import net.sf.jasperreports.engine.JRException;
 import net.sf.jasperreports.engine.JasperFillManager;
 import net.sf.jasperreports.engine.JasperPrint;
@@ -30,11 +27,14 @@ public class ObservadorController {
     DaoObservador dao = new DaoObservadorImp();
     List<Observador> lista1 = null;
 
-    public List<Observador> getObservador() {
+    public List<Observador> getObservadorPorClube(String clube) {
+        List<Observador> observadores = dao.getObservadorPorClube(clube);
+        return observadores;
+    }
+ public List<Observador> getObservador() {
         List<Observador> observadores = dao.getObservador();
         return observadores;
     }
-
     public void inserir(Observador obs) {
         if (obs == null && obs.getNome().equals("") && obs.getNome().equals("")&& obs.getDataNascimento().equals("")&& obs.getCpf().equals("")&& obs.getSexo().equals("")&& obs.getCidade().equals("")&& obs.getObsDesde().equals("")&& obs.getAnexo().equals("")&& obs.getClubeAssociado().equals("")&& obs.getCelular().equals("")&& obs.getEmail().equals("")) {
             JOptionPane.showMessageDialog(null, "Erro ao tentar salvar - Todos os campos devem ser preenchidos");
@@ -64,12 +64,18 @@ public class ObservadorController {
     public void gerarRelatorioObservador()
     {
         try{
-            lista1 = getObservador();
-            System.out.println(lista1.get(0).getNome());
-            HashMap filtros1 = new HashMap();
+              HashMap filtros1 = new HashMap();
+            String clubesc = JOptionPane.showInputDialog("Digite o clube");
+           filtros1.put("clube",clubesc);
+           lista1 = getObservadorPorClube(clubesc);
             
-            JRBeanCollectionDataSource colecao1 = new JRBeanCollectionDataSource(getObservador(),false);
-            JasperPrint imprimir1 = JasperFillManager.fillReport("C:\\Users\\benep\\Documents\\Camisa-10---Desktop\\src\\relatorios\\RelatorioObservador.jasper",filtros1,colecao1);
+          
+            
+
+            
+            JRBeanCollectionDataSource colecao1 = new JRBeanCollectionDataSource(getObservadorPorClube(clubesc),false);
+            
+            JasperPrint imprimir1 = JasperFillManager.fillReport("C:/Users/benep/Documents/TCC/Camisa-10---Desktop/src/relatorios/RelatorioObservador.jasper",filtros1,colecao1);
             JasperViewer visualizar1 = new JasperViewer(imprimir1, false);
             visualizar1.setVisible(true);
             

@@ -68,4 +68,19 @@ public class DaoObservadorImp implements DaoObservador {
         return lista;
 
     }
+    
+    @SuppressWarnings("unchecked")
+    @Override
+    public List<Observador > getObservadorPorClube (String clube) {
+        SessionFactory sf = HibernateUtil.getSessionFactory();
+        Session session = sf.openSession();
+        Transaction t = session.beginTransaction();
+        @SuppressWarnings("rawtypes")
+        List lista = session.createQuery("from Observador where clubeAssociado='"+clube+"' ").list();
+        t.commit();
+        session.flush();
+        session.close();
+        return lista;
+
+    }
 }

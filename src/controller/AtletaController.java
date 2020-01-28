@@ -36,7 +36,7 @@ public class AtletaController {
     
 
     public void inserir(Atleta at) {
-        if (at == null && at.getNome().equals("") && at.getCidade().equals("")&& at.getNomeResponsavel().equals("")&& at.getCelular().equals("")&& at.getTelefone().equals("")&& at.getEmail().equals("")&& at.getPosicao().equals("")&& at.getAltura().equals("")&& at.getSexo().equals("")&& at.getLastClube().equals("")&& at.getCelularResponsavel().equals("")&& at.getData().equals("")&& at.getPeso().equals("")&& at.getPeDominante().equals("")&& at.getLink().equals("")) {
+        if (at == null && at.getNome().equals("") && at.getCidade().equals("")&& at.getNomeResponsavel().equals("")&& at.getCelular().equals("")&& at.getTelefone().equals("")&& at.getEmail().equals("")&& at.getPosicao().equals("")&& at.getAltura().equals("")&& at.getSexo().equals("")&& at.getLastClube().equals("")&& at.getCelularResponsavel().equals("")&& at.getData().equals("")&& at.getPeso().equals("")&& at.getPeDominante().equals("")&& at.getLink().equals("")&& at.getImagem().equals("")) {
             JOptionPane.showMessageDialog(null, "Erro ao tentar salvar - Todos os campos devem ser preenchidos");
         } else {
             dao.salvar(at);
@@ -73,7 +73,7 @@ public class AtletaController {
             HashMap filtro = new HashMap();
             
             JRBeanCollectionDataSource colecao = new JRBeanCollectionDataSource(getAtleta(),false);
-            JasperPrint imprimir = JasperFillManager.fillReport("C:/Users/benep/Documents/Camisa-10---Desktop/src/relatorios/RelCliente.jasper",filtro,colecao);
+            JasperPrint imprimir = JasperFillManager.fillReport("C:/Users/benep/Documents/TCC/Camisa-10---Desktop/src/relatorios/RelCliente.jasper",filtro,colecao);
             JasperViewer visualizar = new JasperViewer(imprimir, false);
             visualizar.setVisible(true);
             

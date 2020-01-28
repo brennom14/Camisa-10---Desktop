@@ -176,7 +176,7 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_btnsairActionPerformed
 
     private void btnEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEntrarActionPerformed
-        int cont = 0;
+        int cont = 0, pos=-1;
         List<Usuarios> list = controle.getUsuarios();
         String usudig = txtLogin.getText();
         String senhadig = String.valueOf(txtSenha.getPassword());
@@ -185,12 +185,13 @@ public class Login extends javax.swing.JFrame {
             if(usudig.equals(list.get(i).getNome()) && senhadig.equals(list.get(i).getSenha()))
             {
                 cont++;
+                pos = i;
             }
             
         }
         if(cont !=0)
         {
-            new Principal().show();
+            new Principal().show();//list.get(pos).getStatus();
             this.dispose();
         }
         else
