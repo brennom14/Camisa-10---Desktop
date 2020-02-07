@@ -35,33 +35,12 @@ public class Atleta implements Serializable {
     private String link;
     private String peDominante;
     private String peso;
-    private byte[] imagem; //urlimagem String /imgatleta/+url 
+    private String [] imagem; //urlimagem String /imgatleta/+url 
     @ManyToOne
     @JoinColumn(name = "observador", referencedColumnName = "id", nullable = false)
     private Observador observador;
 
     public Atleta() {
-    }
-
-    public Atleta(int id, String nome, String data, String cidade, String nomeResponsavel, String celularResponsavel, String celular, String telefone, String email, String posicao, String altura, String sexo, String lastClube, String link, String peDominante, String peso, byte[] imagem, Observador observador) {
-        this.id = id;
-        this.nome = nome;
-        this.data = data;
-        this.cidade = cidade;
-        this.nomeResponsavel = nomeResponsavel;
-        this.celularResponsavel = celularResponsavel;
-        this.celular = celular;
-        this.telefone = telefone;
-        this.email = email;
-        this.posicao = posicao;
-        this.altura = altura;
-        this.sexo = sexo;
-        this.lastClube = lastClube;
-        this.link = link;
-        this.peDominante = peDominante;
-        this.peso = peso;
-        this.imagem = imagem;
-        this.observador = observador;
     }
 
     public int getId() {
@@ -192,12 +171,15 @@ public class Atleta implements Serializable {
         this.peso = peso;
     }
 
-    public byte[] getImagem() {
+    public String[] getImagem() {
         return imagem;
     }
 
-    public void setImagem(byte[] imagem) {
+    public void setImagem(String[] imagem) {
         this.imagem = imagem;
+    }
+    public void setImagem(String imagem) {
+        this.imagem[0] = imagem;
     }
 
     public Observador getObservador() {
@@ -207,6 +189,5 @@ public class Atleta implements Serializable {
     public void setObservador(Observador observador) {
         this.observador = observador;
     }
-    
 
 }

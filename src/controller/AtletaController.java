@@ -20,23 +20,27 @@ import net.sf.jasperreports.engine.JasperPrint;
 import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
 import net.sf.jasperreports.view.JasperViewer;
 
-
 /**
  *
  * @author brenn
  */
 public class AtletaController {
+
     DaoAtleta dao = new DaoAtletaImp();
     List<Atleta> lista = null;
+
+    public List<Atleta> getAtletaPorClube(String atleta) {
+        List<Atleta> atletas = dao.getAtletaPorClube(atleta);
+        return atletas;
+    }
 
     public List<Atleta> getAtleta() {
         List<Atleta> atletas = dao.getAtleta();
         return atletas;
     }
-    
 
     public void inserir(Atleta at) {
-        if (at == null && at.getNome().equals("") && at.getCidade().equals("")&& at.getNomeResponsavel().equals("")&& at.getCelular().equals("")&& at.getTelefone().equals("")&& at.getEmail().equals("")&& at.getPosicao().equals("")&& at.getAltura().equals("")&& at.getSexo().equals("")&& at.getLastClube().equals("")&& at.getCelularResponsavel().equals("")&& at.getData().equals("")&& at.getPeso().equals("")&& at.getPeDominante().equals("")&& at.getLink().equals("")&& at.getImagem().equals("")) {
+        if (at == null && at.getNome().equals("") && at.getCidade().equals("") && at.getNomeResponsavel().equals("") && at.getCelular().equals("") && at.getTelefone().equals("") && at.getEmail().equals("") && at.getPosicao().equals("") && at.getAltura().equals("") && at.getSexo().equals("") && at.getLastClube().equals("") && at.getCelularResponsavel().equals("") && at.getData().equals("") && at.getPeso().equals("") && at.getPeDominante().equals("") && at.getLink().equals("") && at.getImagem().equals("")) {
             JOptionPane.showMessageDialog(null, "Erro ao tentar salvar - Todos os campos devem ser preenchidos");
         } else {
             dao.salvar(at);
@@ -45,26 +49,25 @@ public class AtletaController {
     }
 
     public void editar(Atleta at) {
-        if (at == null && at.getNome().equals("") && at.getCidade().equals("")&& at.getNomeResponsavel().equals("")&& at.getCelular().equals("")&& at.getTelefone().equals("")&& at.getEmail().equals("")&& at.getPosicao().equals("")&& at.getAltura().equals("")&& at.getSexo().equals("")&& at.getLastClube().equals("")&& at.getCelularResponsavel().equals("")&& at.getData().equals("")&& at.getPeso().equals("")&& at.getPeDominante().equals("")&& at.getLink().equals("")) {
+        if (at == null && at.getNome().equals("") && at.getCidade().equals("") && at.getNomeResponsavel().equals("") && at.getCelular().equals("") && at.getTelefone().equals("") && at.getEmail().equals("") && at.getPosicao().equals("") && at.getAltura().equals("") && at.getSexo().equals("") && at.getLastClube().equals("") && at.getCelularResponsavel().equals("") && at.getData().equals("") && at.getPeso().equals("") && at.getPeDominante().equals("") && at.getLink().equals("")) {
             JOptionPane.showMessageDialog(null, "Erro ao tentar editar - Todos os campos devem ser preenchidos");
         } else {
             dao.alterar(at);
             JOptionPane.showMessageDialog(null, "Atleta alterado com sucesso");
         }
     }
-
+    public void editarImg(String[] img,int id) {dao.alterarImagem(img,id);}
+   
     public void excluir(Atleta at) {
-      int op = JOptionPane.showConfirmDialog(null, "Tem certeza que deseja excluir esse registro","Excluir",JOptionPane.YES_NO_OPTION);
-      if(op == 0)
-      {
-          dao.excluir(at);
-          JOptionPane.showMessageDialog(null, "Atleta excluído com sucesso");
-      }
-      else
-      {
-          JOptionPane.showMessageDialog(null, "Você cancelou a exclusão");
-      }
+        int op = JOptionPane.showConfirmDialog(null, "Tem certeza que deseja excluir esse registro", "Excluir", JOptionPane.YES_NO_OPTION);
+        if (op == 0) {
+            dao.excluir(at);
+            JOptionPane.showMessageDialog(null, "Atleta excluído com sucesso");
+        } else {
+            JOptionPane.showMessageDialog(null, "Você cancelou a exclusão");
+        }
     }
+
     public void gerarRelatorio()
     {
         try{

@@ -12,5 +12,6 @@ public interface DaoObservador {
     public void excluir(Observador observador);
 
     public List<Observador> getObservador();
-public List<Observador > getObservadorPorClube (String clube);
+    
+    public List<Observador> getObservadorPorClube(String clube);
 }

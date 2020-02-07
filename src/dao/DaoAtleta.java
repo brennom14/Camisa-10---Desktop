@@ -13,5 +13,9 @@ public interface DaoAtleta {
     public void excluir(Atleta atleta);
 
     public List<Atleta> getAtleta();
+        
+   public void alterarImagem(String[] img,int id);
+   
+    public List<Atleta > getAtletaPorClube (String clube);
 
 }

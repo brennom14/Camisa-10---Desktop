@@ -46,7 +46,19 @@
 		<band splitType="Stretch"/>
 	</background>
 	<title>
-		<band height="79" splitType="Stretch"/>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="21" y="19" width="215" height="20" uuid="cd00ec85-2a1e-49a8-a953-735563da9622"/>
+				<textElement>
+					<font fontName="Arial" size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Relatório de Observador]]></text>
+			</staticText>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="410" y="19" width="100" height="20" uuid="5bc8c263-bafe-4694-8177-8950fe94134d"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
 	</title>
 	<pageHeader>
 		<band height="35" splitType="Stretch"/>
@@ -54,32 +66,78 @@
 	<columnHeader>
 		<band height="22" splitType="Stretch">
 			<staticText>
-				<reportElement x="38" y="2" width="100" height="20" uuid="2561a379-bd51-4c8d-9780-f40fd582d871"/>
+				<reportElement x="223" y="2" width="124" height="20" uuid="2561a379-bd51-4c8d-9780-f40fd582d871"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
 				<text><![CDATA[Clube Associado]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="166" y="2" width="100" height="20" uuid="e4787ebf-b2af-408d-b7cd-2aed230b5577"/>
+				<reportElement x="99" y="2" width="124" height="20" uuid="e4787ebf-b2af-408d-b7cd-2aed230b5577"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
 				<text><![CDATA[Data de Nascimento]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="296" y="0" width="100" height="20" uuid="6961dfbb-3f0d-4797-8139-071e3e4bee47"/>
+				<reportElement x="21" y="2" width="124" height="20" uuid="6961dfbb-3f0d-4797-8139-071e3e4bee47"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
 				<text><![CDATA[Nome]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="324" y="2" width="124" height="20" uuid="c91ddd86-748c-439b-9adc-6e41fd27f391"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Observador desde?]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="448" y="2" width="124" height="20" uuid="f9e75f20-b870-405d-a254-46a02d89c6bf"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[E-mail]]></text>
 			</staticText>
 		</band>
 	</columnHeader>
 	<detail>
 		<band height="47" splitType="Stretch">
 			<textField>
-				<reportElement x="38" y="27" width="100" height="20" uuid="9adbc39b-c34e-430f-948b-570cfe721fff"/>
+				<reportElement x="223" y="27" width="100" height="20" uuid="9adbc39b-c34e-430f-948b-570cfe721fff"/>
+				<textElement>
+					<font fontName="Arial" size="11"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$F{clubeAssociado}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="166" y="27" width="100" height="20" uuid="d7892841-a3e3-4daf-989b-c4640d4ba531"/>
+				<reportElement x="99" y="27" width="100" height="20" uuid="d7892841-a3e3-4daf-989b-c4640d4ba531"/>
+				<textElement>
+					<font fontName="Arial" size="11"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$F{dataNascimento}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="296" y="27" width="100" height="20" uuid="2f6c1a64-1766-4113-ac76-2e1b218a9101"/>
+				<reportElement x="21" y="27" width="100" height="20" uuid="2f6c1a64-1766-4113-ac76-2e1b218a9101"/>
+				<textElement>
+					<font fontName="Arial" size="11"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$F{nome}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="324" y="27" width="100" height="20" uuid="92cac9f4-3159-47c0-9003-8e15c9ab9bbf"/>
+				<textElement>
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{obsDesde}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="448" y="27" width="100" height="20" uuid="e669643e-d084-475e-8f36-fbdd1f891569"/>
+				<textElement>
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{email}]]></textFieldExpression>
 			</textField>
 		</band>
 	</detail>
@@ -87,7 +145,17 @@
 		<band height="45" splitType="Stretch"/>
 	</columnFooter>
 	<pageFooter>
-		<band height="54" splitType="Stretch"/>
+		<band height="54" splitType="Stretch">
+			<textField>
+				<reportElement x="399" y="22" width="80" height="20" uuid="d3fa41d2-340f-4ffe-abce-d1a546c5d482"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="479" y="22" width="40" height="20" uuid="6d1253d7-061f-4fff-b33c-f26946fd8b4b"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
 	</pageFooter>
 	<summary>
 		<band height="42" splitType="Stretch"/>

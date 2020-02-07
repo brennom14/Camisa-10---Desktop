@@ -3,8 +3,11 @@
 	<property name="ireport.zoom" value="1.0"/>
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
+	<parameter name="atleta" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
 	<queryString>
-		<![CDATA[select * from tb_atleta order by nome;]]>
+		<![CDATA[select * from tb_atleta where nome = $P{atleta}]]>
 	</queryString>
 	<field name="id" class="java.lang.Integer">
 		<fieldDescription><![CDATA[]]></fieldDescription>
@@ -15,19 +18,37 @@
 	<field name="celular" class="java.lang.String">
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
+	<field name="celularResponsavel" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
 	<field name="cidade" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="data" class="java.lang.String">
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
 	<field name="email" class="java.lang.String">
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
+	<field name="imagem" class="java.lang.Object">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
 	<field name="lastClube" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="link" class="java.lang.String">
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
 	<field name="nome" class="java.lang.String">
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
 	<field name="nomeResponsavel" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="peDominante" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="peso" class="java.lang.String">
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
 	<field name="posicao" class="java.lang.String">
@@ -42,21 +63,6 @@
 	<field name="observador" class="java.lang.Integer">
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
-	<field name="celularResponsavel" class="java.lang.String">
-		<fieldDescription><![CDATA[]]></fieldDescription>
-	</field>
-	<field name="data" class="java.lang.String">
-		<fieldDescription><![CDATA[]]></fieldDescription>
-	</field>
-	<field name="link" class="java.lang.String">
-		<fieldDescription><![CDATA[]]></fieldDescription>
-	</field>
-	<field name="peDominante" class="java.lang.String">
-		<fieldDescription><![CDATA[]]></fieldDescription>
-	</field>
-	<field name="peso" class="java.lang.String">
-		<fieldDescription><![CDATA[]]></fieldDescription>
-	</field>
 	<group name="nome">
 		<groupExpression><![CDATA[$F{nome}]]></groupExpression>
 	</group>
@@ -66,14 +72,14 @@
 	<title>
 		<band height="60" splitType="Stretch">
 			<staticText>
-				<reportElement x="40" y="13" width="225" height="36" uuid="ba6b2b95-d15b-46f6-a314-7a026ec70382"/>
+				<reportElement x="2" y="5" width="225" height="36" uuid="ba6b2b95-d15b-46f6-a314-7a026ec70382"/>
 				<textElement>
 					<font size="20"/>
 				</textElement>
 				<text><![CDATA[Relatório de Atletas]]></text>
 			</staticText>
 			<textField pattern="EEEEE dd MMMMM yyyy">
-				<reportElement x="344" y="22" width="129" height="22" uuid="2a4ef5ea-2184-4ad8-b667-e499e59a89d3"/>
+				<reportElement x="385" y="19" width="129" height="22" uuid="2a4ef5ea-2184-4ad8-b667-e499e59a89d3"/>
 				<textElement>
 					<font size="9"/>
 				</textElement>
@@ -160,11 +166,11 @@
 				<textFieldExpression><![CDATA[$F{peso}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="345" y="0" width="100" height="20" uuid="0a65c809-bb7e-433d-b7d3-3b6e52d3be2a"/>
+				<reportElement x="355" y="0" width="100" height="20" uuid="0a65c809-bb7e-433d-b7d3-3b6e52d3be2a"/>
 				<textFieldExpression><![CDATA[$F{peDominante}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="430" y="0" width="100" height="20" uuid="31e02e78-9a13-4115-bb80-b86158298156"/>
+				<reportElement x="445" y="0" width="100" height="20" uuid="31e02e78-9a13-4115-bb80-b86158298156"/>
 				<textFieldExpression><![CDATA[$F{cidade}]]></textFieldExpression>
 			</textField>
 		</band>
