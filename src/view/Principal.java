@@ -50,44 +50,42 @@ public class Principal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jMenu2 = new javax.swing.JMenu();
         desktop = new javax.swing.JDesktopPane();
-        jLabel1 = new javax.swing.JLabel();
         nomeProjeto = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         menuCadastrar = new javax.swing.JMenu();
         menuItemAtleta = new javax.swing.JMenuItem();
         menuItemObservador = new javax.swing.JMenuItem();
         menuRelatorio = new javax.swing.JMenu();
-        relatorioAtletaClube = new javax.swing.JMenuItem();
         relatorioObservadorClube = new javax.swing.JMenu();
+        TodosObservadores = new javax.swing.JMenuItem();
         relClube = new javax.swing.JMenuItem();
+        jMenu3 = new javax.swing.JMenu();
+        TodosAtletas = new javax.swing.JMenuItem();
+        jMenuItem2 = new javax.swing.JMenuItem();
+        porPosicao = new javax.swing.JMenuItem();
+        PorAltura = new javax.swing.JMenuItem();
         menuSobre = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
         menuSair = new javax.swing.JMenu();
+
+        jMenu2.setText("jMenu2");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         desktop.setBackground(new java.awt.Color(255, 255, 255));
         desktop.setForeground(new java.awt.Color(255, 204, 0));
 
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Futebol-amador-Rodrigo-Erib-2 (2).jpg"))); // NOI18N
-
-        desktop.setLayer(jLabel1, javax.swing.JLayeredPane.DEFAULT_LAYER);
-
         javax.swing.GroupLayout desktopLayout = new javax.swing.GroupLayout(desktop);
         desktop.setLayout(desktopLayout);
         desktopLayout.setHorizontalGroup(
             desktopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, desktopLayout.createSequentialGroup()
-                .addGap(0, 954, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 447, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGap(0, 1401, Short.MAX_VALUE)
         );
         desktopLayout.setVerticalGroup(
             desktopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(desktopLayout.createSequentialGroup()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 385, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 203, Short.MAX_VALUE))
+            .addGap(0, 588, Short.MAX_VALUE)
         );
 
         nomeProjeto.setFont(new java.awt.Font("MS Reference Sans Serif", 0, 48)); // NOI18N
@@ -123,18 +121,16 @@ public class Principal extends javax.swing.JFrame {
             }
         });
 
-        relatorioAtletaClube.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_R, java.awt.event.InputEvent.ALT_MASK));
-        relatorioAtletaClube.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/analysis.png"))); // NOI18N
-        relatorioAtletaClube.setText("Atleta");
-        relatorioAtletaClube.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                relatorioAtletaClubeActionPerformed(evt);
-            }
-        });
-        menuRelatorio.add(relatorioAtletaClube);
-
         relatorioObservadorClube.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/analysis.png"))); // NOI18N
         relatorioObservadorClube.setText("Observador");
+
+        TodosObservadores.setText("Relatório de todos observadores");
+        TodosObservadores.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TodosObservadoresActionPerformed(evt);
+            }
+        });
+        relatorioObservadorClube.add(TodosObservadores);
 
         relClube.setText("Relatório por Clube");
         relClube.addActionListener(new java.awt.event.ActionListener() {
@@ -145,6 +141,43 @@ public class Principal extends javax.swing.JFrame {
         relatorioObservadorClube.add(relClube);
 
         menuRelatorio.add(relatorioObservadorClube);
+
+        jMenu3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/analysis.png"))); // NOI18N
+        jMenu3.setText("Atleta");
+
+        TodosAtletas.setText("Relatório de todos Atletas");
+        TodosAtletas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TodosAtletasActionPerformed(evt);
+            }
+        });
+        jMenu3.add(TodosAtletas);
+
+        jMenuItem2.setText("Relatório por Atleta");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
+        jMenu3.add(jMenuItem2);
+
+        porPosicao.setText("Relatório por posição");
+        porPosicao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                porPosicaoActionPerformed(evt);
+            }
+        });
+        jMenu3.add(porPosicao);
+
+        PorAltura.setText("Relatório por altura");
+        PorAltura.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PorAlturaActionPerformed(evt);
+            }
+        });
+        jMenu3.add(PorAltura);
+
+        menuRelatorio.add(jMenu3);
 
         jMenuBar1.add(menuRelatorio);
 
@@ -234,19 +267,52 @@ public class Principal extends javax.swing.JFrame {
         ca.setVisible(true);
     }//GEN-LAST:event_menuItemAtletaActionPerformed
 
-    private void relatorioAtletaClubeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_relatorioAtletaClubeActionPerformed
-        int confirma = JOptionPane.showConfirmDialog(null, "Confirma a impressão desse relatório?","Atenção", JOptionPane.YES_NO_OPTION);
-        if(confirma == JOptionPane.YES_OPTION){
-            controller.gerarRelatorio();
-        }
-    }//GEN-LAST:event_relatorioAtletaClubeActionPerformed
-
     private void relClubeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_relClubeActionPerformed
          int confirma = JOptionPane.showConfirmDialog(null, "Confirma a impressão desse relatório?","Atenção", JOptionPane.YES_NO_OPTION);
         if(confirma == JOptionPane.YES_OPTION){
             observador.gerarRelatorioObservador();
         }
     }//GEN-LAST:event_relClubeActionPerformed
+
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        // TODO add your handling code here:
+        int confirma = JOptionPane.showConfirmDialog(null, "Confirma a impressão desse relatório?","Atenção", JOptionPane.YES_NO_OPTION);
+        if(confirma == JOptionPane.YES_OPTION){
+            controller.gerarRelatorio();
+        }
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
+
+    private void TodosAtletasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TodosAtletasActionPerformed
+        // TODO add your handling code here:
+        int confirma = JOptionPane.showConfirmDialog(null, "Confirma a impressão desse relatório?","Atenção", JOptionPane.YES_NO_OPTION);
+        if(confirma == JOptionPane.YES_OPTION){
+            controller.gerarRelatorioAtleta();
+        }
+    }//GEN-LAST:event_TodosAtletasActionPerformed
+
+    private void TodosObservadoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TodosObservadoresActionPerformed
+        // TODO add your handling code here:
+        int confirma = JOptionPane.showConfirmDialog(null, "Confirma a impressão desse relatório?","Atenção", JOptionPane.YES_NO_OPTION);
+        if(confirma == JOptionPane.YES_OPTION){
+            observador.gerarRelatorioObservadores();
+        }
+    }//GEN-LAST:event_TodosObservadoresActionPerformed
+
+    private void porPosicaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_porPosicaoActionPerformed
+        // TODO add your handling code here:
+        int confirma = JOptionPane.showConfirmDialog(null, "Confirma a impressão desse relatório?","Atenção", JOptionPane.YES_NO_OPTION);
+        if(confirma == JOptionPane.YES_OPTION){
+            controller.gerarPosAtleta();
+        }
+    }//GEN-LAST:event_porPosicaoActionPerformed
+
+    private void PorAlturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PorAlturaActionPerformed
+        // TODO add your handling code here:
+        int confirma = JOptionPane.showConfirmDialog(null, "Confirma a impressão desse relatório?","Atenção", JOptionPane.YES_NO_OPTION);
+        if(confirma == JOptionPane.YES_OPTION){
+            controller.gerarAlturaAtleta();
+        }
+    }//GEN-LAST:event_PorAlturaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -284,10 +350,15 @@ public class Principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem PorAltura;
+    private javax.swing.JMenuItem TodosAtletas;
+    private javax.swing.JMenuItem TodosObservadores;
     private javax.swing.JDesktopPane desktop;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenu jMenu3;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenu menuCadastrar;
     private javax.swing.JMenuItem menuItemAtleta;
     private javax.swing.JMenuItem menuItemObservador;
@@ -295,8 +366,8 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JMenu menuSair;
     private javax.swing.JMenu menuSobre;
     private javax.swing.JLabel nomeProjeto;
+    private javax.swing.JMenuItem porPosicao;
     private javax.swing.JMenuItem relClube;
-    private javax.swing.JMenuItem relatorioAtletaClube;
     private javax.swing.JMenu relatorioObservadorClube;
     // End of variables declaration//GEN-END:variables
 }

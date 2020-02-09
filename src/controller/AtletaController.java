@@ -29,6 +29,14 @@ public class AtletaController {
     DaoAtleta dao = new DaoAtletaImp();
     List<Atleta> lista = null;
 
+    public List<Atleta> getAtletaPorPosicao(String atleta) {
+        List<Atleta> atletas = dao.getAtletaPorPosicao(atleta);
+        return atletas;
+    }
+    public List<Atleta> getAtletaPorAltura(String atleta) {
+        List<Atleta> atletas = dao.getAtletaPorAltura(atleta);
+        return atletas;
+    }
     public List<Atleta> getAtletaPorClube(String atleta) {
         List<Atleta> atletas = dao.getAtletaPorClube(atleta);
         return atletas;
@@ -56,8 +64,11 @@ public class AtletaController {
             JOptionPane.showMessageDialog(null, "Atleta alterado com sucesso");
         }
     }
-    public void editarImg(String[] img,int id) {dao.alterarImagem(img,id);}
-   
+
+    public void editarImg(String[] img, int id) {
+        dao.alterarImagem(img, id);
+    }
+
     public void excluir(Atleta at) {
         int op = JOptionPane.showConfirmDialog(null, "Tem certeza que deseja excluir esse registro", "Excluir", JOptionPane.YES_NO_OPTION);
         if (op == 0) {
@@ -68,24 +79,76 @@ public class AtletaController {
         }
     }
 
-    public void gerarRelatorio()
-    {
-        try{
-            lista = getAtleta();
-            System.out.println(lista.get(0).getNome());
-            HashMap filtro = new HashMap();
-            
-            JRBeanCollectionDataSource colecao = new JRBeanCollectionDataSource(getAtleta(),false);
-            JasperPrint imprimir = JasperFillManager.fillReport("C:/Users/benep/Documents/TCC/Camisa-10---Desktop/src/relatorios/RelCliente.jasper",filtro,colecao);
+    public void gerarRelatorio() {
+        try {
+            HashMap filtros = new HashMap();
+            String atletaesc = JOptionPane.showInputDialog("Digite o nome do atleta");
+            filtros.put("atleta", atletaesc);
+            lista = getAtletaPorClube(atletaesc);
+
+            JRBeanCollectionDataSource colecao = new JRBeanCollectionDataSource(getAtletaPorClube(atletaesc), false);
+
+            JasperPrint imprimir = JasperFillManager.fillReport("C:/Users/benep/Documents/TCC/Camisa-10---Desktop//src/relatorios/RelCliente.jasper", filtros, colecao);
             JasperViewer visualizar = new JasperViewer(imprimir, false);
             visualizar.setVisible(true);
-            
-            
-            
-        }catch(JRException erro){
-            JOptionPane.showMessageDialog(null,"Erro ao gerar relatório"+ erro);
+
+        } catch (JRException erro) {
+            JOptionPane.showMessageDialog(null, "Erro ao gerar relatório" + erro);
             erro.printStackTrace();
         }
     }
 
+    public void gerarRelatorioAtleta() {
+        try {
+            lista = getAtleta();
+            System.out.println(lista.get(0).getNome());
+            HashMap filtro = new HashMap();
+
+            JRBeanCollectionDataSource colecao = new JRBeanCollectionDataSource(getAtleta(), false);
+            JasperPrint imprimir = JasperFillManager.fillReport("C:/Users/benep/Documents/TCC/Camisa-10---Desktop/src/relatorios/RelTodosAtletas.jasper", filtro, colecao);
+            JasperViewer visualizar = new JasperViewer(imprimir, false);
+            visualizar.setVisible(true);
+
+        } catch (JRException erro) {
+            JOptionPane.showMessageDialog(null, "Erro ao gerar relatório" + erro);
+            erro.printStackTrace();
+        }
+    }
+
+    public void gerarPosAtleta() {
+        try {
+            HashMap filtros = new HashMap();
+            String posatleta = JOptionPane.showInputDialog("Digite o nome do atleta");
+            filtros.put("position", posatleta);
+            lista = getAtletaPorPosicao(posatleta);
+
+            JRBeanCollectionDataSource colecao = new JRBeanCollectionDataSource(getAtletaPorPosicao(posatleta), false);
+
+            JasperPrint imprimir = JasperFillManager.fillReport("C:/Users/benep/Documents/TCC/Camisa-10---Desktop//src/relatorios/RelPosicao.jasper", filtros, colecao);
+            JasperViewer visualizar = new JasperViewer(imprimir, false);
+            visualizar.setVisible(true);
+
+        } catch (JRException erro) {
+            JOptionPane.showMessageDialog(null, "Erro ao gerar relatório" + erro);
+            erro.printStackTrace();
+        }
+    }
+    public void gerarAlturaAtleta() {
+        try {
+            HashMap filtros = new HashMap();
+            String altatleta = JOptionPane.showInputDialog("Digite a altura desejada");
+            filtros.put("alt", altatleta);
+            lista = getAtletaPorAltura(altatleta);
+
+            JRBeanCollectionDataSource colecao = new JRBeanCollectionDataSource(getAtletaPorAltura(altatleta), false);
+
+            JasperPrint imprimir = JasperFillManager.fillReport("C:/Users/benep/Documents/TCC/Camisa-10---Desktop//src/relatorios/RelatorioAltura.jasper", filtros, colecao);
+            JasperViewer visualizar = new JasperViewer(imprimir, false);
+            visualizar.setVisible(true);
+
+        } catch (JRException erro) {
+            JOptionPane.showMessageDialog(null, "Erro ao gerar relatório" + erro);
+            erro.printStackTrace();
+        }
+    }
 }

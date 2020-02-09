@@ -166,6 +166,8 @@ public class CadAtleta extends javax.swing.JInternalFrame {
         setIconifiable(true);
         setMaximizable(true);
 
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+
         txtCidade.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
 
         txtAltura.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N

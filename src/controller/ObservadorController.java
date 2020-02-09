@@ -81,5 +81,24 @@ public class ObservadorController {
             erro.printStackTrace();
         }
     }
+    public void gerarRelatorioObservadores() {
+        try{
+            lista1 = getObservador();
+            System.out.println(lista1.get(0).getNome());
+            HashMap filtro1 = new HashMap();
+            
+            JRBeanCollectionDataSource colecao1 = new JRBeanCollectionDataSource(getObservador(),false);
+            JasperPrint imprimir1 = JasperFillManager.fillReport("C:/Users/benep/Documents/TCC/Camisa-10---Desktop/src/relatorios/RelatorioTodosObservadores.jasper",filtro1,colecao1);
+            JasperViewer visualizar1 = new JasperViewer(imprimir1, false);
+            visualizar1.setVisible(true);
+            
+            
+            
+        }catch(JRException erro){
+            JOptionPane.showMessageDialog(null,"Erro ao gerar relatório"+ erro);
+            erro.printStackTrace();
+        }
+    }
+
 
 }

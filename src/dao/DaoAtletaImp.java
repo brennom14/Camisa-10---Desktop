@@ -43,18 +43,17 @@ public class DaoAtletaImp implements DaoAtleta {
         session.flush();
         session.close();
     }
-    
+
     @Override
-    public void alterarImagem(String[] img,int id) {
+    public void alterarImagem(String[] img, int id) {
         SessionFactory sf = HibernateUtil.getSessionFactory();
         Session session = sf.openSession();
         Transaction t = session.beginTransaction();
-        session.createQuery("UPDATE Atleta SET imagem="+img+" WHERE 'id'="+id);
+        session.createQuery("UPDATE Atleta SET imagem=" + img + " WHERE 'id'=" + id);
         t.commit();
         session.flush();
         session.close();
     }
-    
 
     @Override
     public void excluir(Atleta atleta) {
@@ -81,18 +80,46 @@ public class DaoAtletaImp implements DaoAtleta {
         return lista;
 
     }
+
     @SuppressWarnings("unchecked")
     @Override
-    public List<Atleta > getAtletaPorClube (String atleta) {
+    public List<Atleta> getAtletaPorClube(String atleta) {
         SessionFactory sf = HibernateUtil.getSessionFactory();
         Session session = sf.openSession();
         Transaction t = session.beginTransaction();
         @SuppressWarnings("rawtypes")
-        List lista = session.createQuery("from Atleta where nome='"+atleta+"' ").list();
+        List lista = session.createQuery("from Atleta where nome='" + atleta + "' ").list();
         t.commit();
         session.flush();
         session.close();
         return lista;
 
+    }
+
+    @SuppressWarnings("unchecked")
+    @Override
+    public List<Atleta> getAtletaPorPosicao(String atleta) {
+        SessionFactory sf = HibernateUtil.getSessionFactory();
+        Session session = sf.openSession();
+        Transaction t = session.beginTransaction();
+        @SuppressWarnings("rawtypes")
+        List lista = session.createQuery("from Atleta where posicao='" + atleta + "' ").list();
+        t.commit();
+        session.flush();
+        session.close();
+        return lista;
+    }
+    @SuppressWarnings("unchecked")
+    @Override
+    public List<Atleta> getAtletaPorAltura(String atleta) {
+        SessionFactory sf = HibernateUtil.getSessionFactory();
+        Session session = sf.openSession();
+        Transaction t = session.beginTransaction();
+        @SuppressWarnings("rawtypes")
+        List lista = session.createQuery("from Atleta where altura='" + atleta + "' ").list();
+        t.commit();
+        session.flush();
+        session.close();
+        return lista;
     }
 }
