@@ -182,7 +182,7 @@ public class Login extends javax.swing.JFrame {
         String senhadig = String.valueOf(txtSenha.getPassword());
         for(int i=0;i<list.size();i++)
         {
-            if(usudig.equals(list.get(i).getNome()) && senhadig.equals(list.get(i).getSenha()))
+            if(usudig.equals(list.get(i).getEmail()) && senhadig.equals(list.get(i).getSenha()))
             {
                 cont++;
                 pos = i;

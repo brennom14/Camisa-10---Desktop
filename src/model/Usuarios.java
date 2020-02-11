@@ -20,16 +20,11 @@ public class Usuarios implements Serializable {
     @GeneratedValue
     private int id;
 
-    private String nome;
+    private String email;
     private String senha;
+    private int status;
 
     public Usuarios() {
-    }
-
-    public Usuarios(int id, String nome, String senha) {
-        this.id = id;
-        this.nome = nome;
-        this.senha = senha;
     }
 
     public int getId() {
@@ -40,12 +35,12 @@ public class Usuarios implements Serializable {
         this.id = id;
     }
 
-    public String getNome() {
-        return nome;
+    public String getEmail() {
+        return email;
     }
 
-    public void setNome(String email) {
-        this.nome = email;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getSenha() {
@@ -55,5 +50,15 @@ public class Usuarios implements Serializable {
     public void setSenha(String senha) {
         this.senha = senha;
     }
+
+    public int getStatus() {
+        return status;
+    }
+
+    public void setStatus(int status) {
+        this.status = status;
+    }
+
+    
 
 }
