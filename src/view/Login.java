@@ -191,7 +191,8 @@ public class Login extends javax.swing.JFrame {
         }
         if(cont !=0)
         {
-            new Principal().show();//list.get(pos).getStatus();
+            int status = list.get(pos).getStatus();
+            new Principal(status).show();//list.get(pos).getStatus();
             this.dispose();
         }
         else

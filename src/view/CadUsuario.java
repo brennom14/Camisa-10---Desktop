@@ -61,7 +61,7 @@ public class CadUsuario extends javax.swing.JFrame {
 
         jLabel3.setText("Qual tipo de usuário irá se logar?");
 
-        cbxUsuario.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cbxUsuario.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--Selecionar--", "Administrador", "Atleta", "Observador" }));
 
         BtnCadastrar.setText("Cadastrar");
         BtnCadastrar.addActionListener(new java.awt.event.ActionListener() {
@@ -162,13 +162,33 @@ public class CadUsuario extends javax.swing.JFrame {
     private void BtnCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnCadastrarActionPerformed
         // TODO add your handling code here:
         int tipo =0;
+        int cont=0;
         if(cbxUsuario.getSelectedItem().toString() == "Administrador"){
         tipo =1;
         }
+        else
+        {
+            // txtEmail.equals("jose@gmail.com") cont>0
+            if(cbxUsuario.getSelectedItem().toString() == "Atleta" &&cont!=0)//&& email igual
+                {
+                    tipo =2;
+                }
+            else
+            {
+                if(cbxUsuario.getSelectedItem().toString() == "Observador")
+                {
+                    tipo =3;
+                }
+            }
+        }
+        
+        if(tipo!=0)
+        {
         u.setStatus(tipo);
         u.setEmail(txtEmail.getText());
         u.setSenha(txtSenha.getText());
         controle.inserir(u);
+        }
     }//GEN-LAST:event_BtnCadastrarActionPerformed
 
     private void BtnLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnLimparActionPerformed

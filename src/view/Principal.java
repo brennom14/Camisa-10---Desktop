@@ -37,7 +37,11 @@ public class Principal extends javax.swing.JFrame {
         this.setExtendedState(MAXIMIZED_BOTH);
         if (status==2)
         {
-            menuItemAtleta.setEnabled(false);
+            menuItemObservador.setEnabled(false);
+        }
+        if(status==3)
+        {
+            
         }
     }
 

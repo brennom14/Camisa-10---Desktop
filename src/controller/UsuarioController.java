@@ -8,11 +8,9 @@ package controller;
 import dao.DaoUsuarioImp;
 import java.util.List;
 import javax.swing.JOptionPane;
-import model.Observador;
 import org.hibernate.Session;
 import util.HibernateUtil;
 import model.Usuarios;
-import org.hibernate.criterion.Restrictions;
 
 /**
  *
@@ -24,7 +22,7 @@ public class UsuarioController {
     DaoUsuarioImp dao = new DaoUsuarioImp();
 
     public void inserir(Usuarios usu) {
-        if (usu == null && usu.getEmail().equals("") && usu.getSenha().equals("")) {
+        if (usu == null && usu.getEmail().equals("") && usu.getSenha().equals("") && usu.getStatus()<=0) {
             JOptionPane.showMessageDialog(null, "Erro ao tentar salvar - Todos os campos devem ser preenchidos");
         } else {
             dao.salvar(usu);
