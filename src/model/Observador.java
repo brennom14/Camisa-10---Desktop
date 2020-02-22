@@ -26,15 +26,15 @@ public class Observador implements Serializable {
     private String sexo;
     private String cidade;
     private String obsDesde;
-    private String anexo;
     private String clubeAssociado;
     private String celular;
     private String email;
+    private String[] imagem;
 
     public Observador() {
     }
 
-    public Observador(int id, String nome, String dataNascimento, String cpf, String sexo, String cidade, String obsDesde, String anexo, String clubeAssociado, String celular, String email) {
+    public Observador(int id, String nome, String dataNascimento, String cpf, String sexo, String cidade, String obsDesde, String clubeAssociado, String celular, String email, String[] imagem, Set<Atleta> atleta) {
         this.id = id;
         this.nome = nome;
         this.dataNascimento = dataNascimento;
@@ -42,13 +42,15 @@ public class Observador implements Serializable {
         this.sexo = sexo;
         this.cidade = cidade;
         this.obsDesde = obsDesde;
-        this.anexo = anexo;
         this.clubeAssociado = clubeAssociado;
         this.celular = celular;
         this.email = email;
+        this.imagem = imagem;
+        this.atleta = atleta;
     }
 
     
+
     @OneToMany(mappedBy = "observador", targetEntity = Atleta.class, fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private Set<Atleta> atleta;
 
@@ -108,14 +110,6 @@ public class Observador implements Serializable {
         this.obsDesde = obsDesde;
     }
 
-    public String getAnexo() {
-        return anexo;
-    }
-
-    public void setAnexo(String anexo) {
-        this.anexo = anexo;
-    }
-
     public String getClubeAssociado() {
         return clubeAssociado;
     }
@@ -140,6 +134,14 @@ public class Observador implements Serializable {
         this.email = email;
     }
 
+    public String[] getImagem() {
+        return imagem;
+    }
+
+    public void setImagem(String[] imagem) {
+        this.imagem = imagem;
+    }
+
     public Set<Atleta> getAtleta() {
         return atleta;
     }
@@ -147,5 +149,12 @@ public class Observador implements Serializable {
     public void setAtleta(Set<Atleta> atleta) {
         this.atleta = atleta;
     }
+
+    @Override
+    public String toString() {
+        return "Observador{" + "id=" + id + ", nome=" + nome + ", dataNascimento=" + dataNascimento + ", cpf=" + cpf + ", sexo=" + sexo + ", cidade=" + cidade + ", obsDesde=" + obsDesde + ", clubeAssociado=" + clubeAssociado + ", celular=" + celular + ", email=" + email + ", imagem=" + imagem + ", atleta=" + atleta + '}';
+    }
+
+    
 
 }

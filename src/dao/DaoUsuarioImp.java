@@ -67,4 +67,19 @@ public class DaoUsuarioImp implements DaoUsuario {
         return lista;
 
     }
+   /* @Override
+    @SuppressWarnings("unchecked")
+    public List<Usuarios> getUserObs() {
+        SessionFactory sf = HibernateUtil.getSessionFactory();
+        Session session = sf.openSession();
+        Transaction t = session.beginTransaction();
+        @SuppressWarnings("rawtypes")
+        List lista = session.createQuery("from Observador where valido='" + false + "' ").list();
+        t.commit();
+        session.flush();
+        session.close();
+        return lista;
+    }
+
+    }*/
 }

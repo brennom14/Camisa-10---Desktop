@@ -7,13 +7,10 @@ package controller;
 
 import dao.DaoAtleta;
 import dao.DaoAtletaImp;
-import dao.DaoObservador;
-import dao.DaoObservadorImp;
 import java.util.HashMap;
 import java.util.List;
 import javax.swing.JOptionPane;
 import model.Atleta;
-import model.Observador;
 import net.sf.jasperreports.engine.JRException;
 import net.sf.jasperreports.engine.JasperFillManager;
 import net.sf.jasperreports.engine.JasperPrint;

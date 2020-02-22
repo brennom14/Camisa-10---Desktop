@@ -61,7 +61,12 @@ public class CadUsuario extends javax.swing.JFrame {
 
         jLabel3.setText("Qual tipo de usuário irá se logar?");
 
-        cbxUsuario.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--Selecionar--", "Administrador", "Atleta", "Observador" }));
+        cbxUsuario.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Atleta", "Observador" }));
+        cbxUsuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbxUsuarioActionPerformed(evt);
+            }
+        });
 
         BtnCadastrar.setText("Cadastrar");
         BtnCadastrar.addActionListener(new java.awt.event.ActionListener() {
@@ -161,9 +166,13 @@ public class CadUsuario extends javax.swing.JFrame {
 
     private void BtnCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnCadastrarActionPerformed
         // TODO add your handling code here:
-        int tipo =0;
+        int tipo =2;
         int cont=0;
-        if(cbxUsuario.getSelectedItem().toString() == "Administrador"){
+        switch(cbxUsuario.getSelectedItem().toString())
+        { case "Administrador": tipo=1; break;
+        case "Observador": tipo=3; break; 
+        default: tipo=2; break; }
+        /*if(cbxUsuario.getSelectedItem().toString() == "Administrador"){
         tipo =1;
         }
         else
@@ -181,27 +190,32 @@ public class CadUsuario extends javax.swing.JFrame {
                 }
             }
         }
-        
-        if(tipo!=0)
-        {
+        */
+        //if(tipo!=0)       {
         u.setStatus(tipo);
         u.setEmail(txtEmail.getText());
         u.setSenha(txtSenha.getText());
+        
         controle.inserir(u);
-        }
+        this.dispose();
+        //}
     }//GEN-LAST:event_BtnCadastrarActionPerformed
 
     private void BtnLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnLimparActionPerformed
         // TODO add your handling code here:
         txtSenha.setText("");
         txtEmail.setText("");
-        cbxUsuario.setSelectedItem("--Selecionar--");
+        cbxUsuario.setSelectedItem("Atleta");
     }//GEN-LAST:event_BtnLimparActionPerformed
 
     private void BtnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnSairActionPerformed
         // TODO add your handling code here:
         System.exit(0);
     }//GEN-LAST:event_BtnSairActionPerformed
+
+    private void cbxUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxUsuarioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbxUsuarioActionPerformed
 
     /**
      * @param args the command line arguments

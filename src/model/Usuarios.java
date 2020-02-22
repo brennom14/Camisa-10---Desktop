@@ -23,6 +23,15 @@ public class Usuarios implements Serializable {
     private String email;
     private String senha;
     private int status;
+    private boolean valido;
+    
+    public boolean isValido() {
+        return valido;
+    }
+
+    public void setValido(boolean valido) {
+        this.valido = valido;
+    }
 
     public Usuarios() {
     }

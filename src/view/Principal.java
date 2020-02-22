@@ -7,12 +7,14 @@ package view;
 
 import controller.AtletaController;
 import controller.ObservadorController;
+import controller.UsuarioController;
 import java.awt.Desktop;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
 import model.Atleta;
 import model.Observador;
+import model.Usuarios;
 
 /**
  *
@@ -24,24 +26,34 @@ public class Principal extends javax.swing.JFrame {
     AtletaController controller = new AtletaController();
     List<Observador> observadores = new ArrayList<Observador>();
     ObservadorController observador = new ObservadorController();
-
+    Usuarios user;
     /**
      * Creates new form Principal
      */
     public Principal() {
         initComponents();
         this.setExtendedState(MAXIMIZED_BOTH);
+        
     }
-    public Principal(int status) {
+    public Principal(Usuarios use) {
         initComponents();
+        int s = use.getStatus();
+        user = use;
         this.setExtendedState(MAXIMIZED_BOTH);
-        if (status==2)
+        if (s==2)
         {
             menuItemObservador.setEnabled(false);
-        }
-        if(status==3)
-        {
+            relatorioObservador.setEnabled(false);
             
+        }
+        if(s==3)
+        {
+            relatorioObservador.setEnabled(false);
+            
+        }
+        if(s==1)
+        {
+        MenuValida.setEnabled(true);
         }
     }
 
@@ -62,7 +74,7 @@ public class Principal extends javax.swing.JFrame {
         menuItemAtleta = new javax.swing.JMenuItem();
         menuItemObservador = new javax.swing.JMenuItem();
         menuRelatorio = new javax.swing.JMenu();
-        relatorioObservadorClube = new javax.swing.JMenu();
+        relatorioObservador = new javax.swing.JMenu();
         TodosObservadores = new javax.swing.JMenuItem();
         relClube = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
@@ -72,6 +84,7 @@ public class Principal extends javax.swing.JFrame {
         PorAltura = new javax.swing.JMenuItem();
         menuSobre = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
+        MenuValida = new javax.swing.JMenu();
         menuSair = new javax.swing.JMenu();
 
         jMenu2.setText("jMenu2");
@@ -125,8 +138,8 @@ public class Principal extends javax.swing.JFrame {
             }
         });
 
-        relatorioObservadorClube.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/analysis.png"))); // NOI18N
-        relatorioObservadorClube.setText("Observador");
+        relatorioObservador.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/analysis.png"))); // NOI18N
+        relatorioObservador.setText("Observador");
 
         TodosObservadores.setText("Relatório de todos observadores");
         TodosObservadores.addActionListener(new java.awt.event.ActionListener() {
@@ -134,7 +147,7 @@ public class Principal extends javax.swing.JFrame {
                 TodosObservadoresActionPerformed(evt);
             }
         });
-        relatorioObservadorClube.add(TodosObservadores);
+        relatorioObservador.add(TodosObservadores);
 
         relClube.setText("Relatório por Clube");
         relClube.addActionListener(new java.awt.event.ActionListener() {
@@ -142,9 +155,9 @@ public class Principal extends javax.swing.JFrame {
                 relClubeActionPerformed(evt);
             }
         });
-        relatorioObservadorClube.add(relClube);
+        relatorioObservador.add(relClube);
 
-        menuRelatorio.add(relatorioObservadorClube);
+        menuRelatorio.add(relatorioObservador);
 
         jMenu3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/analysis.png"))); // NOI18N
         jMenu3.setText("Atleta");
@@ -198,6 +211,15 @@ public class Principal extends javax.swing.JFrame {
         menuSobre.add(jMenuItem1);
 
         jMenuBar1.add(menuSobre);
+
+        MenuValida.setText("Valida");
+        MenuValida.setEnabled(false);
+        MenuValida.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MenuValidaActionPerformed(evt);
+            }
+        });
+        jMenuBar1.add(MenuValida);
 
         menuSair.setText("Sair");
         menuSair.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -266,7 +288,7 @@ public class Principal extends javax.swing.JFrame {
 
     private void menuItemAtletaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemAtletaActionPerformed
         // TODO add your handling code here:
-        CadAtleta ca = new CadAtleta();
+        CadAtleta ca = new CadAtleta(user);
         desktop.add(ca);
         ca.setVisible(true);
     }//GEN-LAST:event_menuItemAtletaActionPerformed
@@ -318,6 +340,12 @@ public class Principal extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_PorAlturaActionPerformed
 
+    private void MenuValidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuValidaActionPerformed
+        UsuarioController userC = new UsuarioController();
+        
+        
+    }//GEN-LAST:event_MenuValidaActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -354,6 +382,7 @@ public class Principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenu MenuValida;
     private javax.swing.JMenuItem PorAltura;
     private javax.swing.JMenuItem TodosAtletas;
     private javax.swing.JMenuItem TodosObservadores;
@@ -372,6 +401,6 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel nomeProjeto;
     private javax.swing.JMenuItem porPosicao;
     private javax.swing.JMenuItem relClube;
-    private javax.swing.JMenu relatorioObservadorClube;
+    private javax.swing.JMenu relatorioObservador;
     // End of variables declaration//GEN-END:variables
 }

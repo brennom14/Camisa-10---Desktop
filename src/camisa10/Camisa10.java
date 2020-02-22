@@ -9,6 +9,7 @@ import controller.UsuarioController;
 import model.Atleta;
 import model.Observador;
 import util.HibernateUtil;
+import view.CadUsuario;
 import view.Login;
 
 /**

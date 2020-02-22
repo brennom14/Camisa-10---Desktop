@@ -68,6 +68,16 @@ public class DaoObservadorImp implements DaoObservador {
         return lista;
 
     }
+    @Override
+    public void alterarImagem(String[] img, int id) {
+        SessionFactory sf = HibernateUtil.getSessionFactory();
+        Session session = sf.openSession();
+        Transaction t = session.beginTransaction();
+        session.createQuery("UPDATE Atleta SET imagem=" + img + " WHERE 'id'=" + id);
+        t.commit();
+        session.flush();
+        session.close();
+    }
     
     @SuppressWarnings("unchecked")
     @Override

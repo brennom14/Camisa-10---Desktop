@@ -27,6 +27,9 @@ public class UsuarioController {
         } else {
             dao.salvar(usu);
             JOptionPane.showMessageDialog(null, "Usuário salvo com sucesso");
+            if (usu.getStatus() ==3) {
+               JOptionPane.showMessageDialog(null, "Usuário Com altenticação Pendente"); 
+            }
         }
     }
 
@@ -49,6 +52,10 @@ public class UsuarioController {
         }
     }
     public List<Usuarios> getUsuarios()
+    {
+        return dao.getUsuarios();
+    }
+    public List<Usuarios> getObsInvalidos()
     {
         return dao.getUsuarios();
     }

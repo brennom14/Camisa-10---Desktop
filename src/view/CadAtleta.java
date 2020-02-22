@@ -9,6 +9,7 @@ import com.mchange.io.FileUtils;
 //import org.apache.commons.io.FileUtils;
 import controller.AtletaController;
 import controller.ObservadorController;
+import controller.UsuarioController;
 import dao.DaoAtletaImp;
 import java.awt.Image;
 import java.io.ByteArrayOutputStream;
@@ -25,6 +26,7 @@ import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import model.Atleta;
 import model.Observador;
+import model.Usuarios;
 import static org.apache.poi.hssf.usermodel.HeaderFooter.file;
 import util.CopiarDiretorio;
 
@@ -39,6 +41,9 @@ public class CadAtleta extends javax.swing.JInternalFrame {
     ObservadorController patcontrol = null;
     boolean salvo = true;
     File f;
+    //****
+    Usuarios user;
+    /******
     /**
      * Creates new form CadClubes
      */
@@ -73,6 +78,57 @@ public class CadAtleta extends javax.swing.JInternalFrame {
             }
         }
 
+    }
+    public CadAtleta(Usuarios use) {
+       //****
+        int s = use.getStatus();
+        user = use;
+        //******
+        initComponents();
+        control = new AtletaController();
+        patcontrol = new ObservadorController();
+        carregacombo = patcontrol.getObservador();
+        obs = patcontrol.getObservador();
+        txtId.setEditable(false);
+
+        if (carregacombo.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Antes de cadastrar um clube você deve cadastrar um patrocinador");
+        } else {
+            while (!carregacombo.isEmpty()) {
+                cbxObservador.addItem(carregacombo.get(0).getNome());
+                carregacombo.remove(0);
+            }
+            atualizaLista();
+            indice = 0;
+            try {
+                mostrarDadosDoBancoNaTela();
+            } catch (ParseException ex) {
+                Logger.getLogger(CadAtleta.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }  
+       /* if (!txtEmail.getText().equals(use.getEmail())){
+             btnExcluir.setEnabled(false);
+         btnEditar.setEnabled(false);
+        }*/
+       //***********
+        if (s==2 || s==3)
+        {
+            btnNovo.setEnabled(false);
+           // relatorioObservador.setEnabled(false);
+            
+        }
+        if(s==3 || !txtEmail.getText().equals(use.getEmail()) )
+        {
+         btnExcluir.setEnabled(false);
+         btnEditar.setEnabled(false);
+        }
+        if(!use.isValido()){
+        btnNovo.setEnabled(true);
+        }
+        if(s==1 ){
+        txtEmail.setEditable(true);
+        }
+        //*****
     }
 
     /**
@@ -140,7 +196,6 @@ public class CadAtleta extends javax.swing.JInternalFrame {
         btnEditar = new javax.swing.JButton();
         btnExcluir = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
-        jTabbedPane1 = new javax.swing.JTabbedPane();
 
         jPasswordField1.setText("jPasswordField1");
 
@@ -173,6 +228,7 @@ public class CadAtleta extends javax.swing.JInternalFrame {
 
         txtAltura.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
 
+        txtEmail.setEditable(false);
         txtEmail.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
 
         lblCelular.setFont(new java.awt.Font("Times New Roman", 1, 15)); // NOI18N
@@ -363,18 +419,14 @@ public class CadAtleta extends javax.swing.JInternalFrame {
                                     .addComponent(jLabel3)
                                     .addComponent(txtPosicao, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addGap(101, 101, 101)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel4)
-                            .addComponent(btnCarregar, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jLabel4))
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addGroup(jPanel2Layout.createSequentialGroup()
                             .addGap(294, 294, 294)
                             .addComponent(lblTitulo))
                         .addGroup(jPanel2Layout.createSequentialGroup()
                             .addGap(221, 221, 221)
-                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(btnNovo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(btnAnterior, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(btnAnterior, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGap(92, 92, 92)
                             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                 .addComponent(btnProximo, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -384,7 +436,9 @@ public class CadAtleta extends javax.swing.JInternalFrame {
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(lblPosicao)
-                                .addComponent(txtNResponsavel, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(txtNResponsavel, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGap(84, 84, 84)
+                            .addComponent(btnCarregar, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(jPanel2Layout.createSequentialGroup()
                             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
@@ -399,7 +453,10 @@ public class CadAtleta extends javax.swing.JInternalFrame {
                                     .addGap(42, 42, 42)
                                     .addComponent(lblPeso))
                                 .addComponent(btnPrimeiro, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(btnSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(jPanel2Layout.createSequentialGroup()
+                                    .addComponent(btnSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(132, 132, 132)
+                                    .addComponent(btnNovo, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGroup(jPanel2Layout.createSequentialGroup()
                                     .addComponent(lblLast)
                                     .addGap(61, 61, 61)
@@ -422,47 +479,43 @@ public class CadAtleta extends javax.swing.JInternalFrame {
                                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                         .addComponent(btnExcluir, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(btnUltimo, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                        .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jLabel2)
+                                    .addComponent(llbCidade)
+                                    .addComponent(lblLink)
+                                    .addComponent(txtData, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                                        .addGap(0, 0, Short.MAX_VALUE)
+                                        .addComponent(txtCidade, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(lbTelefone)
+                                    .addComponent(lblSexo)
+                                    .addComponent(txtSexo)
+                                    .addComponent(txtTelefone, javax.swing.GroupLayout.DEFAULT_SIZE, 215, Short.MAX_VALUE))
+                                .addGap(346, 346, 346))
                             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addGroup(jPanel2Layout.createSequentialGroup()
-                                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(jLabel2)
-                                        .addComponent(llbCidade)
-                                        .addComponent(lblLink)
-                                        .addComponent(txtData, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                                            .addGap(0, 0, Short.MAX_VALUE)
-                                            .addComponent(txtCidade, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(lbTelefone)
-                                        .addComponent(lblSexo)
-                                        .addComponent(txtSexo)
-                                        .addComponent(txtTelefone, javax.swing.GroupLayout.DEFAULT_SIZE, 215, Short.MAX_VALUE))
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addGroup(jPanel2Layout.createSequentialGroup()
+                                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(lblId)
+                                        .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addGroup(jPanel2Layout.createSequentialGroup()
-                                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addComponent(lblId)
-                                                .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addGroup(jPanel2Layout.createSequentialGroup()
-                                                    .addComponent(txtNome, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                    .addGap(35, 35, 35))
-                                                .addGroup(jPanel2Layout.createSequentialGroup()
-                                                    .addComponent(lbNome)
-                                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                                            .addComponent(txtNome, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addGap(111, 111, 111))
                                         .addGroup(jPanel2Layout.createSequentialGroup()
-                                            .addComponent(lblCelular)
-                                            .addGap(168, 168, 168)
-                                            .addComponent(lblNomeResponsavel)
+                                            .addComponent(lbNome)
                                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                                    .addComponent(lblImagem, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(78, 78, 78))))
+                                    .addComponent(lblImagem, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(169, 169, 169))
+                                .addGroup(jPanel2Layout.createSequentialGroup()
+                                    .addComponent(lblCelular)
+                                    .addGap(168, 168, 168)
+                                    .addComponent(lblNomeResponsavel)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 538, Short.MAX_VALUE))))))
                 .addGap(127, 127, 127))
         );
         jPanel2Layout.setVerticalGroup(
@@ -473,15 +526,11 @@ public class CadAtleta extends javax.swing.JInternalFrame {
                 .addGap(64, 64, 64)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(lblImagem, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(29, 29, 29))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(103, 103, 103)))
+                        .addGap(15, 15, 15)
+                        .addComponent(lblImagem, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
                         .addComponent(btnCarregar)
-                        .addGap(0, 0, 0)
+                        .addGap(7, 7, 7)
                         .addComponent(jLabel4))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -589,14 +638,15 @@ public class CadAtleta extends javax.swing.JInternalFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 840, Short.MAX_VALUE)
-                .addGap(28, 28, 28))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 719, Short.MAX_VALUE)
+                .addGap(149, 149, 149))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 776, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 51, Short.MAX_VALUE))
+                .addContainerGap(42, Short.MAX_VALUE))
         );
 
         pack();
@@ -611,7 +661,9 @@ public class CadAtleta extends javax.swing.JInternalFrame {
         txtLast.setText("");
         txtAltura.setText("");
         txtSexo.setText("");
-        txtEmail.setText("");
+        ///*****
+        txtEmail.setText(user.getEmail());
+        ///*****
         txtNResponsavel.setText("");
         txtPosicao.setText("");
         txtNumeroResponsavel.setText("");
@@ -636,7 +688,7 @@ public class CadAtleta extends javax.swing.JInternalFrame {
                 ob.setSexo(this.obs.get(i).getSexo());
                 ob.setCidade(this.obs.get(i).getCidade());
                 ob.setObsDesde(this.obs.get(i).getObsDesde());
-                ob.setAnexo(this.obs.get(i).getAnexo());
+                ob.setImagem(this.obs.get(i).getImagem());
                 ob.setClubeAssociado(this.obs.get(i).getClubeAssociado());
                 ob.setCelular(this.obs.get(i).getCelular());
                 ob.setEmail(this.obs.get(i).getEmail());
@@ -735,7 +787,7 @@ public class CadAtleta extends javax.swing.JInternalFrame {
                 ob.setSexo(this.obs.get(i).getSexo());
                 ob.setCidade(this.obs.get(i).getCidade());
                 ob.setObsDesde(this.obs.get(i).getObsDesde());
-                ob.setAnexo(this.obs.get(i).getAnexo());
+                ob.setImagem(this.obs.get(i).getImagem());
                 ob.setClubeAssociado(this.obs.get(i).getClubeAssociado());
                 ob.setCelular(this.obs.get(i).getCelular());
                 ob.setEmail(this.obs.get(i).getEmail());
@@ -764,6 +816,7 @@ public class CadAtleta extends javax.swing.JInternalFrame {
         a.setImagem(new String[2]);
         a.setObservador(ob);
         control.inserir(a);
+       
         atualizaLista();
         indice = at.size() - 1;
         /////atualiza o nome da foto
@@ -779,8 +832,13 @@ public class CadAtleta extends javax.swing.JInternalFrame {
 //lblImagem campo da imagem de perfil                                           
             
             mostrarDadosDoBancoNaTela();
+          //**************
+            btnNovo.setEnabled(false);
+            user.setValido(true);
+            new UsuarioController().editar(user);
+           //***            
         } catch (ParseException ex) {
-            JOptionPane.showMessageDialog(null, "Cadastro incompleto! seu bosta");
+            JOptionPane.showMessageDialog(null, "Cadastro incompleto!");
             Logger.getLogger(CadAtleta.class.getName()).log(Level.SEVERE, null, ex);
         }   catch (IOException ex) {   
                 Logger.getLogger(CadAtleta.class.getName()).log(Level.SEVERE, null, ex);
@@ -801,7 +859,7 @@ public class CadAtleta extends javax.swing.JInternalFrame {
                 ob.setSexo(this.obs.get(i).getSexo());
                 ob.setCidade(this.obs.get(i).getCidade());
                 ob.setObsDesde(this.obs.get(i).getObsDesde());
-                ob.setAnexo(this.obs.get(i).getAnexo());
+                ob.setImagem(this.obs.get(i).getImagem());
                 ob.setClubeAssociado(this.obs.get(i).getClubeAssociado());
                 ob.setCelular(this.obs.get(i).getCelular());
                 ob.setEmail(this.obs.get(i).getEmail());
@@ -890,7 +948,6 @@ public class CadAtleta extends javax.swing.JInternalFrame {
     private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JProgressBar jProgressBar1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField4;
@@ -943,15 +1000,20 @@ public class CadAtleta extends javax.swing.JInternalFrame {
                 }
 
             }
+            //******
+            if (at.get(indice).getEmail().equals(user.getEmail())) {
+                btnEditar.setEnabled(true);
+            }else{btnEditar.setEnabled(false);}
+            //*****
             txtId.setText("" + at.get(indice).getId());
             txtNome.setText("" + at.get(indice).getNome());
             txtCelular.setText("" + at.get(indice).getCelular());
             txtTelefone.setText("" + at.get(indice).getTelefone());
             txtCidade.setText("" + at.get(indice).getCidade());
             txtLast.setText("" + at.get(indice).getLastClube());
-            txtAltura.setText("" + at.get(indice).getPosicao());
-            txtSexo.setText("" + at.get(indice).getAltura());
-            txtEmail.setText("" + at.get(indice).getSexo());
+            txtAltura.setText("" + at.get(indice).getAltura());
+            txtSexo.setText("" + at.get(indice).getSexo());
+            txtEmail.setText("" + at.get(indice).getEmail());
             txtPosicao.setText("" + at.get(indice).getPosicao());
             txtNResponsavel.setText("" + at.get(indice).getNomeResponsavel());
             txtPe.setText("" + at.get(indice).getPeDominante());

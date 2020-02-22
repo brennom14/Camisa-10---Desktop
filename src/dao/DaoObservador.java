@@ -12,6 +12,8 @@ public interface DaoObservador {
     public void excluir(Observador observador);
 
     public List<Observador> getObservador();
-    
+
+    public void alterarImagem(String[] img, int id);
+
     public List<Observador> getObservadorPorClube(String clube);
 }
