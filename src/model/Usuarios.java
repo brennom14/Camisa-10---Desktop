@@ -29,11 +29,12 @@ public class Usuarios implements Serializable {
         return valido;
     }
 
-    public void setValido(boolean valido) {
-        this.valido = valido;
+    public Usuarios() {
+        this.valido = false;
     }
 
-    public Usuarios() {
+    public void setValido(boolean valido) {
+        this.valido = valido;
     }
 
     public int getId() {

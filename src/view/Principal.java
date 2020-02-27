@@ -84,7 +84,9 @@ public class Principal extends javax.swing.JFrame {
         PorAltura = new javax.swing.JMenuItem();
         menuSobre = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
+        MenuAlterar = new javax.swing.JMenuItem();
         MenuValida = new javax.swing.JMenu();
+        ValidarLogin = new javax.swing.JMenuItem();
         menuSair = new javax.swing.JMenu();
 
         jMenu2.setText("jMenu2");
@@ -210,15 +212,27 @@ public class Principal extends javax.swing.JFrame {
         });
         menuSobre.add(jMenuItem1);
 
+        MenuAlterar.setText("Alterar Senha");
+        MenuAlterar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MenuAlterarActionPerformed(evt);
+            }
+        });
+        menuSobre.add(MenuAlterar);
+
         jMenuBar1.add(menuSobre);
 
         MenuValida.setText("Valida");
         MenuValida.setEnabled(false);
-        MenuValida.addActionListener(new java.awt.event.ActionListener() {
+
+        ValidarLogin.setText("Validar Login ");
+        ValidarLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MenuValidaActionPerformed(evt);
+                ValidarLoginActionPerformed(evt);
             }
         });
+        MenuValida.add(ValidarLogin);
+
         jMenuBar1.add(MenuValida);
 
         menuSair.setText("Sair");
@@ -281,7 +295,9 @@ public class Principal extends javax.swing.JFrame {
 
     private void menuItemObservadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemObservadorActionPerformed
         // TODO add your handling code here:
-        CadObservador co = new CadObservador();
+        System.out.println(user);
+                
+        CadObservador co = new CadObservador(user);
         co.setVisible(true);
         desktop.add(co);
     }//GEN-LAST:event_menuItemObservadorActionPerformed
@@ -289,8 +305,8 @@ public class Principal extends javax.swing.JFrame {
     private void menuItemAtletaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemAtletaActionPerformed
         // TODO add your handling code here:
         CadAtleta ca = new CadAtleta(user);
-        desktop.add(ca);
         ca.setVisible(true);
+        desktop.add(ca);
     }//GEN-LAST:event_menuItemAtletaActionPerformed
 
     private void relClubeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_relClubeActionPerformed
@@ -340,11 +356,17 @@ public class Principal extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_PorAlturaActionPerformed
 
-    private void MenuValidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuValidaActionPerformed
-        UsuarioController userC = new UsuarioController();
-        
-        
-    }//GEN-LAST:event_MenuValidaActionPerformed
+    private void ValidarLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ValidarLoginActionPerformed
+        // TODO add your handling code here:
+        Valida val = new Valida();
+        val.setVisible(true);
+    }//GEN-LAST:event_ValidarLoginActionPerformed
+
+    private void MenuAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuAlterarActionPerformed
+        // TODO add your handling code here:
+        AlterarSenha alt = new AlterarSenha(user);
+        alt.setVisible(true);
+    }//GEN-LAST:event_MenuAlterarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -373,7 +395,7 @@ public class Principal extends javax.swing.JFrame {
         }
         //</editor-fold>
 
-        /* Create and display the form */
+        /* Create and display the form .*/
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Principal().setVisible(true);
@@ -382,10 +404,12 @@ public class Principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem MenuAlterar;
     private javax.swing.JMenu MenuValida;
     private javax.swing.JMenuItem PorAltura;
     private javax.swing.JMenuItem TodosAtletas;
     private javax.swing.JMenuItem TodosObservadores;
+    private javax.swing.JMenuItem ValidarLogin;
     private javax.swing.JDesktopPane desktop;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;

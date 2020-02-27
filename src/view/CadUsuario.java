@@ -59,7 +59,7 @@ public class CadUsuario extends javax.swing.JFrame {
 
         lblSenha.setText("Senha:");
 
-        jLabel3.setText("Qual tipo de usuário irá se logar?");
+        jLabel3.setText("Qual tipo de usuário irá se cadastrar?");
 
         cbxUsuario.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Atleta", "Observador" }));
         cbxUsuario.addActionListener(new java.awt.event.ActionListener() {
@@ -172,26 +172,6 @@ public class CadUsuario extends javax.swing.JFrame {
         { case "Administrador": tipo=1; break;
         case "Observador": tipo=3; break; 
         default: tipo=2; break; }
-        /*if(cbxUsuario.getSelectedItem().toString() == "Administrador"){
-        tipo =1;
-        }
-        else
-        {
-            // txtEmail.equals("jose@gmail.com") cont>0
-            if(cbxUsuario.getSelectedItem().toString() == "Atleta" &&cont!=0)//&& email igual
-                {
-                    tipo =2;
-                }
-            else
-            {
-                if(cbxUsuario.getSelectedItem().toString() == "Observador")
-                {
-                    tipo =3;
-                }
-            }
-        }
-        */
-        //if(tipo!=0)       {
         u.setStatus(tipo);
         u.setEmail(txtEmail.getText());
         u.setSenha(txtSenha.getText());

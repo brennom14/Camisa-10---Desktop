@@ -79,6 +79,12 @@ public class Login extends javax.swing.JFrame {
             }
         });
 
+        txtSenha.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtSenhaActionPerformed(evt);
+            }
+        });
+
         btnsair.setBackground(new java.awt.Color(0, 0, 0));
         btnsair.setForeground(new java.awt.Color(102, 153, 255));
         btnsair.setText("Sair");
@@ -90,6 +96,8 @@ public class Login extends javax.swing.JFrame {
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/keys (1).png"))); // NOI18N
 
+        jButton1.setBackground(new java.awt.Color(0, 0, 0));
+        jButton1.setForeground(new java.awt.Color(102, 153, 255));
         jButton1.setText("Cadastrar Usuário");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -198,6 +206,8 @@ public class Login extends javax.swing.JFrame {
             {   new Principal(u).show();
                 this.dispose(); return;
             }
+        }
+             JOptionPane.showMessageDialog(null, "User ou senha errados");
         /*if(cont !=0)
         {
             int status = list.get(pos).getStatus();
@@ -209,7 +219,6 @@ public class Login extends javax.swing.JFrame {
            
        // }
         
-        }
         
     }//GEN-LAST:event_btnEntrarActionPerformed
 
@@ -225,6 +234,10 @@ public class Login extends javax.swing.JFrame {
         txtEmail.setText("");
         txtSenha.setText("");
     }//GEN-LAST:event_btnlimparActionPerformed
+
+    private void txtSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSenhaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtSenhaActionPerformed
 
     /**
      * @param args the command line arguments
