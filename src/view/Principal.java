@@ -40,14 +40,13 @@ public class Principal extends javax.swing.JFrame {
         int s = use.getStatus();
         user = use;
         this.setExtendedState(MAXIMIZED_BOTH);
+        if(!use.isValido() && s ==3 ){
+        menuItemAtleta.setEnabled(false);
+        menuRelatorio.setEnabled(false);
+        }
         if (s==2)
         {
             menuItemObservador.setEnabled(false);
-            relatorioObservador.setEnabled(false);
-            
-        }
-        if(s==3)
-        {
             relatorioObservador.setEnabled(false);
             
         }

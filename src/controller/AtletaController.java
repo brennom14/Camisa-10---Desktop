@@ -30,10 +30,12 @@ public class AtletaController {
         List<Atleta> atletas = dao.getAtletaPorPosicao(atleta);
         return atletas;
     }
+
     public List<Atleta> getAtletaPorAltura(String atleta) {
         List<Atleta> atletas = dao.getAtletaPorAltura(atleta);
         return atletas;
     }
+
     public List<Atleta> getAtletaPorClube(String atleta) {
         List<Atleta> atletas = dao.getAtletaPorClube(atleta);
         return atletas;
@@ -44,21 +46,31 @@ public class AtletaController {
         return atletas;
     }
 
-    public void inserir(Atleta at) {
-        if (at == null && at.getNome().equals("") && at.getCidade().equals("") && at.getNomeResponsavel().equals("") && at.getCelular().equals("") && at.getTelefone().equals("") && at.getEmail().equals("") && at.getPosicao().equals("") && at.getAltura().equals("") && at.getSexo().equals("") && at.getLastClube().equals("") && at.getCelularResponsavel().equals("") && at.getData().equals("") && at.getPeso().equals("") && at.getPeDominante().equals("") && at.getLink().equals("") && at.getImagem().equals("")) {
+    public boolean inserir(Atleta at) {
+        if (at == null && at.getNome().equals("") && at.getCidade().equals("") && at.getNomeResponsavel().equals("") && at.getCelular().equals("") && at.getTelefone().equals("") && at.getEmail().equals("") && at.getPosicao().equals("") && at.getAltura().equals("") && at.getSexo().equals("") && at.getLastClube().equals("") && at.getCelularResponsavel().equals("") && at.getData().equals("") && at.getPeso().equals("") && at.getPeDominante().equals("") && at.getLink().equals("") && at.getImagem().equals("") && at.getEstado().equals("")) {
             JOptionPane.showMessageDialog(null, "Erro ao tentar salvar - Todos os campos devem ser preenchidos");
+        return false;
         } else {
             dao.salvar(at);
             JOptionPane.showMessageDialog(null, "Atleta salvo com sucesso");
+            return true;
         }
     }
 
-    public void editar(Atleta at) {
-        if (at == null && at.getNome().equals("") && at.getCidade().equals("") && at.getNomeResponsavel().equals("") && at.getCelular().equals("") && at.getTelefone().equals("") && at.getEmail().equals("") && at.getPosicao().equals("") && at.getAltura().equals("") && at.getSexo().equals("") && at.getLastClube().equals("") && at.getCelularResponsavel().equals("") && at.getData().equals("") && at.getPeso().equals("") && at.getPeDominante().equals("") && at.getLink().equals("")) {
+    public void editarSemJO(Atleta at) {
+
+        dao.alterar(at);
+
+    }
+
+    public boolean editar(Atleta at) {
+        if (at == null && at.getNome().equals("") && at.getCidade().equals("") && at.getNomeResponsavel().equals("") && at.getCelular().equals("") && at.getTelefone().equals("") && at.getEmail().equals("") && at.getPosicao().equals("") && at.getAltura().equals("") && at.getSexo().equals("") && at.getLastClube().equals("") && at.getCelularResponsavel().equals("") && at.getData().equals("") && at.getPeso().equals("") && at.getPeDominante().equals("") && at.getLink().equals("") && at.getEstado().equals("")) {
             JOptionPane.showMessageDialog(null, "Erro ao tentar editar - Todos os campos devem ser preenchidos");
+            return false;
         } else {
             dao.alterar(at);
             JOptionPane.showMessageDialog(null, "Atleta alterado com sucesso");
+             return true;
         }
     }
 
@@ -85,7 +97,7 @@ public class AtletaController {
 
             JRBeanCollectionDataSource colecao = new JRBeanCollectionDataSource(getAtletaPorClube(atletaesc), false);
 
-            JasperPrint imprimir = JasperFillManager.fillReport("C:/Users/benep/Documents/TCC/Camisa-10---Desktop//src/relatorios/RelCliente.jasper", filtros, colecao);
+            JasperPrint imprimir = JasperFillManager.fillReport("C:/Users/benep/Documents/TCC/Camisa-10---Desktop//src/relatorios/RelatorioNome.jasper", filtros, colecao);
             JasperViewer visualizar = new JasperViewer(imprimir, false);
             visualizar.setVisible(true);
 
@@ -115,13 +127,13 @@ public class AtletaController {
     public void gerarPosAtleta() {
         try {
             HashMap filtros = new HashMap();
-            String posatleta = JOptionPane.showInputDialog("Digite o nome do atleta");
+            String posatleta = JOptionPane.showInputDialog("Digite a posição desejada");
             filtros.put("position", posatleta);
             lista = getAtletaPorPosicao(posatleta);
 
             JRBeanCollectionDataSource colecao = new JRBeanCollectionDataSource(getAtletaPorPosicao(posatleta), false);
 
-            JasperPrint imprimir = JasperFillManager.fillReport("C:/Users/benep/Documents/TCC/Camisa-10---Desktop//src/relatorios/RelPosicao.jasper", filtros, colecao);
+            JasperPrint imprimir = JasperFillManager.fillReport("C:/Users/benep/Documents/TCC/Camisa-10---Desktop//src/relatorios/RelatorioPosicao.jasper", filtros, colecao);
             JasperViewer visualizar = new JasperViewer(imprimir, false);
             visualizar.setVisible(true);
 
@@ -130,6 +142,7 @@ public class AtletaController {
             erro.printStackTrace();
         }
     }
+
     public void gerarAlturaAtleta() {
         try {
             HashMap filtros = new HashMap();
@@ -139,7 +152,7 @@ public class AtletaController {
 
             JRBeanCollectionDataSource colecao = new JRBeanCollectionDataSource(getAtletaPorAltura(altatleta), false);
 
-            JasperPrint imprimir = JasperFillManager.fillReport("C:/Users/benep/Documents/TCC/Camisa-10---Desktop//src/relatorios/RelatorioAltura.jasper", filtros, colecao);
+            JasperPrint imprimir = JasperFillManager.fillReport("C:/Users/benep/Documents/TCC/Camisa-10---Desktop//src/relatorios/RelatorioAltur.jasper", filtros, colecao);
             JasperViewer visualizar = new JasperViewer(imprimir, false);
             visualizar.setVisible(true);
 
@@ -148,4 +161,5 @@ public class AtletaController {
             erro.printStackTrace();
         }
     }
+
 }

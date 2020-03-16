@@ -22,9 +22,10 @@ import net.sf.jasperreports.view.JasperViewer;
  * @author brenn
  */
 public class ObservadorController {
-
+   
     DaoObservador dao = new DaoObservadorImp();
     List<Observador> lista1 = null;
+     
 
     public List<Observador> getObservadorPorClube(String clube) {
         List<Observador> observadores = dao.getObservadorPorClube(clube);
@@ -36,26 +37,33 @@ public class ObservadorController {
         return observadores;
     }
 
-    public void inserir(Observador obs) {
-        if (obs == null && obs.getNome().equals("") && obs.getDataNascimento().equals("") && obs.getCpf().equals("") && obs.getSexo().equals("") && obs.getCidade().equals("") && obs.getObsDesde().equals("") && obs.getImagem().equals("") && obs.getClubeAssociado().equals("") && obs.getCelular().equals("") && obs.getEmail().equals("")) {
+    public boolean inserir(Observador obs) {
+        if (obs == null && obs.getNome().equals("") && obs.getDataNascimento().equals("") && obs.getCpf().equals("") && obs.getSexo().equals("") && obs.getCidade().equals("") && obs.getObsDesde().equals("") && obs.getImagem().equals("") && obs.getClubeAssociado().equals("") && obs.getCelular().equals("") && obs.getEmail().equals("")&& obs.getEstado().equals("")) {
             JOptionPane.showMessageDialog(null, "Erro ao tentar salvar - Todos os campos devem ser preenchidos");
+            return false;
         } else {
             dao.salvar(obs);
             JOptionPane.showMessageDialog(null, "Observador salvo com sucesso");
+            return true;
         }
     }
 
-    public void editar(Observador obs) {
-        if (obs == null && obs.getNome().equals("") && obs.getDataNascimento().equals("") && obs.getCpf().equals("") && obs.getSexo().equals("") && obs.getCidade().equals("") && obs.getObsDesde().equals("") && obs.getImagem().equals("") && obs.getClubeAssociado().equals("") && obs.getCelular().equals("") && obs.getEmail().equals("")) {
+    public boolean editar(Observador obs) {
+        if (obs == null && obs.getNome().equals("") && obs.getDataNascimento().equals("") && obs.getCpf().equals("") && obs.getSexo().equals("") && obs.getCidade().equals("") && obs.getObsDesde().equals("") && obs.getImagem().equals("") && obs.getClubeAssociado().equals("") && obs.getCelular().equals("") && obs.getEmail().equals("")&& obs.getEstado().equals("")) {
             JOptionPane.showMessageDialog(null, "Erro ao tentar editar - Todos os campos devem ser preenchidos");
+            return false;
         } else {
             dao.alterar(obs);
             JOptionPane.showMessageDialog(null, "Observador alterado com sucesso");
+             return true;
         }
+    }
+    public void editarSemJO(Observador obs) {
+            dao.alterar(obs);
     }
 
     public void excluir(Observador obs) {
-        if (obs == null && obs.getNome().equals("") && obs.getDataNascimento().equals("") && obs.getCpf().equals("") && obs.getSexo().equals("") && obs.getCidade().equals("") && obs.getObsDesde().equals("") && obs.getImagem().equals("") && obs.getClubeAssociado().equals("") && obs.getCelular().equals("") && obs.getEmail().equals("")) {
+        if (obs == null && obs.getNome().equals("") && obs.getDataNascimento().equals("") && obs.getCpf().equals("") && obs.getSexo().equals("") && obs.getCidade().equals("") && obs.getObsDesde().equals("") && obs.getImagem().equals("") && obs.getClubeAssociado().equals("") && obs.getCelular().equals("") && obs.getEmail().equals("")&& obs.getEstado().equals("")) {
             JOptionPane.showMessageDialog(null, "Erro ao tentar excluir - Todos os campos devem ser preenchidos");
         } else {
             dao.excluir(obs);
@@ -75,7 +83,7 @@ public class ObservadorController {
 
             JRBeanCollectionDataSource colecao1 = new JRBeanCollectionDataSource(getObservadorPorClube(clubesc), false);
 
-            JasperPrint imprimir1 = JasperFillManager.fillReport("C:/Users/benep/Documents/TCC/Camisa-10---Desktop/src/relatorios/RelatorioObservador.jasper", filtros1, colecao1);
+            JasperPrint imprimir1 = JasperFillManager.fillReport("C:/Users/benep/Documents/TCC/Camisa-10---Desktop/src/relatorios/RelatorioObsNome.jasper", filtros1, colecao1);
             JasperViewer visualizar1 = new JasperViewer(imprimir1, false);
             visualizar1.setVisible(true);
 

@@ -12,5 +12,7 @@ public interface DaoUsuario {
     public void excluir(Usuarios usuario);
 
     public List<Usuarios> getUsuarios();
+    
+    public List<Usuarios> getUsuariosObservador();
 
 }

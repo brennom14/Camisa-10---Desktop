@@ -189,7 +189,10 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void btnsairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsairActionPerformed
+       int confirma = JOptionPane.showConfirmDialog(null, "Deseja sair do Login?","Atenção", JOptionPane.YES_NO_OPTION);
+        if(confirma == JOptionPane.YES_OPTION){
         System.exit(0);
+        }
     }//GEN-LAST:event_btnsairActionPerformed
 
     private void btnEntrarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnEntrarKeyPressed
@@ -198,11 +201,10 @@ public class Login extends javax.swing.JFrame {
             List<Usuarios> list = controle.getUsuarios();
             String usudig = txtEmail.getText();
             String senhadig = String.valueOf(txtSenha.getPassword());
-
-            JOptionPane.showMessageDialog(this, "Bem vindo ao Camisa10");
             for (Usuarios u : list) {
                 if(usudig.equals(u.getEmail()) && senhadig.equals(u.getSenha()))
                 {   new Principal(u).show();
+                JOptionPane.showMessageDialog(this, "Bem vindo ao Camisa10");
                     this.dispose(); return;
                 }
             }
@@ -215,35 +217,16 @@ public class Login extends javax.swing.JFrame {
         List<Usuarios> list = controle.getUsuarios();
         String usudig = txtEmail.getText();
         String senhadig = String.valueOf(txtSenha.getPassword());
-
-        JOptionPane.showMessageDialog(this, "Bem vindo ao Camisa10");
-        /*for(int i=0;i<list.size();i++)
-        {
-            if(usudig.equals(list.get(i).getEmail()) && senhadig.equals(list.get(i).getSenha()))
-            {
-                cont++;
-                pos = i;
-            }
-
-        }*/
+        
         for (Usuarios u : list) {
             if(usudig.equals(u.getEmail()) && senhadig.equals(u.getSenha()))
-            {   new Principal(u).show();
+                
+            {   JOptionPane.showMessageDialog(null, "Bem vindo ao Camisa10");
+                new Principal(u).show();
                 this.dispose(); return;
             }
-        }
+         }
         JOptionPane.showMessageDialog(null, "User ou senha incorretos");
-        /*if(cont !=0)
-        {
-            int status = list.get(pos).getStatus();
-            new Principal(status).show();//list.get(pos).getStatus();
-            this.dispose();
-        }
-        else
-        {*/
-
-            // }
-
     }//GEN-LAST:event_btnEntrarActionPerformed
 
     /**

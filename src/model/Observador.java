@@ -30,11 +30,12 @@ public class Observador implements Serializable {
     private String celular;
     private String email;
     private String[] imagem;
+    private String estado;
 
     public Observador() {
     }
 
-    public Observador(int id, String nome, String dataNascimento, String cpf, String sexo, String cidade, String obsDesde, String clubeAssociado, String celular, String email, String[] imagem, Set<Atleta> atleta) {
+    public Observador(int id, String nome, String dataNascimento, String cpf, String sexo, String cidade, String obsDesde, String clubeAssociado, String celular, String email, String[] imagem, String estado) {
         this.id = id;
         this.nome = nome;
         this.dataNascimento = dataNascimento;
@@ -46,14 +47,11 @@ public class Observador implements Serializable {
         this.celular = celular;
         this.email = email;
         this.imagem = imagem;
-        this.atleta = atleta;
+        this.estado = estado;
     }
 
     
-
-    @OneToMany(mappedBy = "observador", targetEntity = Atleta.class, fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    private Set<Atleta> atleta;
-
+  
     public int getId() {
         return id;
     }
@@ -142,19 +140,13 @@ public class Observador implements Serializable {
         this.imagem = imagem;
     }
 
-    public Set<Atleta> getAtleta() {
-        return atleta;
+   public String getEstado() {
+        return estado;
     }
 
-    public void setAtleta(Set<Atleta> atleta) {
-        this.atleta = atleta;
+    public void setEstado(String estado) {
+        this.estado = estado;
     }
-
-    @Override
-    public String toString() {
-        return "Observador{" + "id=" + id + ", nome=" + nome + ", dataNascimento=" + dataNascimento + ", cpf=" + cpf + ", sexo=" + sexo + ", cidade=" + cidade + ", obsDesde=" + obsDesde + ", clubeAssociado=" + clubeAssociado + ", celular=" + celular + ", email=" + email + ", imagem=" + imagem + ", atleta=" + atleta + '}';
-    }
-
-    
+ 
 
 }

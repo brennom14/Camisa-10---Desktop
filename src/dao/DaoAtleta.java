@@ -2,7 +2,6 @@ package dao;
 
 import java.util.List;
 import model.Atleta;
-import model.Observador;
 
 public interface DaoAtleta {
 

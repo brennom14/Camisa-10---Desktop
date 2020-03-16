@@ -6,9 +6,7 @@
 package dao;
 
 import java.util.List;
-import javax.persistence.*;
 import model.Usuarios;
-import org.hibernate.Query;
 import org.hibernate.SessionFactory;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -66,6 +64,19 @@ public class DaoUsuarioImp implements DaoUsuario {
         session.close();
         return lista;
 
+    }
+    @Override
+    @SuppressWarnings("unchecked")
+    public List<Usuarios> getUsuariosObservador(){
+        SessionFactory sf = HibernateUtil.getSessionFactory();
+        Session session = sf.openSession();
+        Transaction t = session.beginTransaction();
+        @SuppressWarnings("rawtypes")
+        List lista = session.createQuery("from Usuarios where status = 3 and valido = 0").list();
+        t.commit();
+        session.flush();
+        session.close();
+        return lista;
     }
    /* @Override
     @SuppressWarnings("unchecked")

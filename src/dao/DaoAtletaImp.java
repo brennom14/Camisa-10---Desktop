@@ -9,7 +9,6 @@ package dao;
 import java.util.List;
 import javax.persistence.*;
 import model.Atleta;
-import model.Observador;
 import org.hibernate.Query;
 import org.hibernate.SessionFactory;
 import org.hibernate.Session;
@@ -117,6 +116,18 @@ public class DaoAtletaImp implements DaoAtleta {
         Transaction t = session.beginTransaction();
         @SuppressWarnings("rawtypes")
         List lista = session.createQuery("from Atleta where altura='" + atleta + "' ").list();
+        t.commit();
+        session.flush();
+        session.close();
+        return lista;
+    }
+    @SuppressWarnings("unchecked")
+    public List<Atleta> getAtleta(String atleta) {
+        SessionFactory sf = HibernateUtil.getSessionFactory();
+        Session session = sf.openSession();
+        Transaction t = session.beginTransaction();
+        @SuppressWarnings("rawtypes")
+        List lista = session.createQuery("from Observador where idlogado='" + atleta + "' ").list();
         t.commit();
         session.flush();
         session.close();
