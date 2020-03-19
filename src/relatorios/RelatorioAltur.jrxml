@@ -3,8 +3,11 @@
 	<property name="ireport.zoom" value="1.0"/>
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
-	<queryString language="SQL">
-		<![CDATA[select * from tb_atleta]]>
+	<parameter name="alt" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[select * from tb_atleta where altura = $P{alt}]]>
 	</queryString>
 	<field name="id" class="java.lang.Integer">
 		<fieldDescription><![CDATA[]]></fieldDescription>
@@ -69,110 +72,123 @@
 	<title>
 		<band height="79" splitType="Stretch">
 			<staticText>
-				<reportElement x="0" y="27" width="273" height="29" uuid="b570b016-6a82-44fe-b476-7d41d80a2cbc"/>
+				<reportElement x="82" y="50" width="273" height="29" uuid="b570b016-6a82-44fe-b476-7d41d80a2cbc"/>
 				<textElement>
 					<font fontName="Arial" size="20"/>
 				</textElement>
 				<text><![CDATA[Relatório de Atleta por Altura]]></text>
 			</staticText>
+			<staticText>
+				<reportElement x="290" y="8" width="100" height="20" uuid="acccab37-31c2-4fcf-aa77-c291570fa7af"/>
+				<text><![CDATA[Gerado em:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="11" y="28" width="490" height="1" uuid="a19d9059-9c42-4add-aa5f-4f06764516a7"/>
+			</line>
 			<textField pattern="EEEEE dd MMMMM yyyy">
-				<reportElement x="360" y="31" width="158" height="20" uuid="43d4de10-b9d8-4108-8463-93f1d37e49a9"/>
+				<reportElement x="350" y="8" width="160" height="20" uuid="f6958969-23f9-4297-9e02-da3ca0f2c85a"/>
+				<textElement>
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
 				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
 			</textField>
 		</band>
 	</title>
 	<pageHeader>
-		<band height="35" splitType="Stretch"/>
+		<band height="25" splitType="Stretch"/>
 	</pageHeader>
 	<columnHeader>
-		<band height="22" splitType="Stretch">
+		<band height="43" splitType="Stretch">
+			<rectangle>
+				<reportElement x="11" y="9" width="490" height="20" backcolor="#FF3333" uuid="cba929c1-a004-4617-b126-9bf9f10b1625"/>
+			</rectangle>
 			<staticText>
-				<reportElement x="22" y="2" width="100" height="20" uuid="2a8c3af8-e105-48ba-876c-61ad849a3a97"/>
+				<reportElement x="51" y="12" width="100" height="20" forecolor="#FFFFFF" uuid="6b5bbacb-2ad9-46f2-92a0-210cf672972a"/>
 				<textElement>
 					<font fontName="Arial" size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Nome]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="109" y="2" width="100" height="20" uuid="f254cfbf-7d56-463c-b838-acbd114176fb"/>
-				<textElement>
-					<font fontName="Arial" size="12" isBold="true"/>
-				</textElement>
-				<text><![CDATA[Altura]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="276" y="2" width="100" height="20" uuid="d70779e5-f320-4d84-9835-27c78f521d20"/>
-				<textElement>
-					<font fontName="Arial" size="12" isBold="true"/>
-				</textElement>
-				<text><![CDATA[Posição]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="355" y="2" width="100" height="20" uuid="5d7bf10c-b0be-4861-947f-dc46f52f010a"/>
+				<reportElement x="320" y="12" width="100" height="20" forecolor="#FFFFFF" uuid="5915653b-4c7f-4798-860e-059f53045714"/>
 				<textElement>
 					<font fontName="Arial" size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Pé Dominante]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="455" y="2" width="100" height="20" uuid="99845bcb-18e0-4f06-b23b-924a266c66e1"/>
+				<reportElement x="428" y="13" width="100" height="20" forecolor="#FFFFFF" uuid="0fa51b39-aa22-4239-b447-02f18f2295ee"/>
 				<textElement>
 					<font fontName="Arial" size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Estado]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="173" y="2" width="100" height="20" uuid="b84ef679-002e-4b90-8a09-735d68126d86"/>
+				<reportElement x="232" y="12" width="100" height="20" forecolor="#FFFFFF" uuid="d8d938fa-060b-4cdc-b115-3a7fa28af0e0"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Posição]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="132" y="12" width="100" height="20" forecolor="#FFFFFF" uuid="5aee7096-ae40-43fa-9db1-0f7a0516ec6b"/>
 				<textElement>
 					<font fontName="Arial" size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[D/Nascimento]]></text>
 			</staticText>
+			<staticText>
+				<reportElement x="16" y="13" width="100" height="20" forecolor="#FFFFFF" uuid="6818240b-590d-4651-8e52-0bb0ffc37f9a"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ID]]></text>
+			</staticText>
 		</band>
 	</columnHeader>
 	<detail>
-		<band height="20" splitType="Stretch">
+		<band height="39" splitType="Stretch">
 			<textField>
-				<reportElement x="22" y="0" width="100" height="20" uuid="0a1b1241-dd3a-4946-9d0e-a1b1eac04061"/>
-				<textElement>
-					<font fontName="Arial"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{nome}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="122" y="0" width="100" height="20" uuid="5978fc62-33cf-48f7-b606-973fc5e49274"/>
-				<textElement>
-					<font fontName="Arial"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{altura}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="276" y="0" width="100" height="20" uuid="3cb95d78-93c1-42ed-b095-031ff94a43ae"/>
-				<textElement>
-					<font fontName="Arial"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{posicao}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="376" y="0" width="100" height="20" uuid="210dc0ae-6a0a-411a-b3e0-1cd5f66f843b"/>
-				<textElement>
-					<font fontName="Arial"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{peDominante}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="455" y="0" width="100" height="20" uuid="adebb7d2-c2c4-41b9-82af-f84fdc1416f8"/>
+				<reportElement x="418" y="19" width="100" height="20" uuid="c6606b22-a850-4857-82d7-916ec8702fd3"/>
 				<textElement>
 					<font fontName="Arial"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{estado}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="188" y="0" width="100" height="20" uuid="36181e81-bdf0-49d8-853c-390b979ce338"/>
+				<reportElement x="133" y="19" width="100" height="20" uuid="38ec1654-4b6c-4c06-9555-3a77dd9a9c2a"/>
 				<textElement>
 					<font fontName="Arial"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{data}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="233" y="19" width="100" height="20" uuid="fc14ed52-0e1a-43c7-b2bb-9de2123bdeca"/>
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{posicao}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="333" y="19" width="100" height="20" uuid="2bddb692-63f6-484e-a6e6-c6df027c7621"/>
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{peDominante}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="51" y="19" width="100" height="20" uuid="e02b66be-3d08-4505-a5d0-d4c52436eaaf"/>
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nome}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="11" y="14" width="499" height="1" uuid="35341fda-e648-4336-84f2-fe92203cebf5"/>
+			</line>
+			<textField>
+				<reportElement x="11" y="19" width="100" height="20" uuid="0a1ed86a-eba3-46cd-9ec2-60f5a15a3a1c"/>
+				<textFieldExpression><![CDATA[$F{id}]]></textFieldExpression>
 			</textField>
 		</band>
 	</detail>
@@ -181,18 +197,26 @@
 	</columnFooter>
 	<pageFooter>
 		<band height="54" splitType="Stretch">
+			<textField evaluationTime="Report">
+				<reportElement x="501" y="31" width="54" height="20" uuid="15f4b235-4a94-4113-a62a-2c4b9dad584f"/>
+				<textElement>
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
 			<staticText>
-				<reportElement x="133" y="24" width="100" height="20" uuid="9eec4a48-f0d0-4aed-8876-5fae978ed1b0"/>
+				<reportElement x="11" y="31" width="114" height="20" uuid="aa55daf4-3f76-48d9-8dda-c7324e5312c0"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
 				<text><![CDATA[© 2020 Camisa10]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="420" y="24" width="80" height="20" uuid="9e27bd07-6af4-4f2c-8b08-9f3b74671dfd"/>
-				<textElement textAlignment="Right"/>
+				<reportElement x="403" y="31" width="94" height="20" uuid="bd25846b-e2d8-4df0-bc2d-bb58d7b3347c"/>
+				<textElement textAlignment="Right">
+					<font fontName="Arial" size="12"/>
+				</textElement>
 				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
-			</textField>
-			<textField evaluationTime="Report">
-				<reportElement x="500" y="24" width="40" height="20" uuid="efa420b9-9d07-450d-93ed-b019537e79fa"/>
-				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
 			</textField>
 		</band>
 	</pageFooter>

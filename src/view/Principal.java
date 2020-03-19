@@ -142,6 +142,7 @@ public class Principal extends javax.swing.JFrame {
         relatorioObservador.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/analysis.png"))); // NOI18N
         relatorioObservador.setText("Observador");
 
+        TodosObservadores.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/analysis.png"))); // NOI18N
         TodosObservadores.setText("Relatório de todos observadores");
         TodosObservadores.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -150,6 +151,7 @@ public class Principal extends javax.swing.JFrame {
         });
         relatorioObservador.add(TodosObservadores);
 
+        relClube.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/analysis.png"))); // NOI18N
         relClube.setText("Relatório por Clube");
         relClube.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -163,7 +165,8 @@ public class Principal extends javax.swing.JFrame {
         jMenu3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/analysis.png"))); // NOI18N
         jMenu3.setText("Atleta");
 
-        TodosAtletas.setText("Relatório de todos Atletas");
+        TodosAtletas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/analysis.png"))); // NOI18N
+        TodosAtletas.setText("Relatório de Todos Atletas");
         TodosAtletas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 TodosAtletasActionPerformed(evt);
@@ -171,7 +174,8 @@ public class Principal extends javax.swing.JFrame {
         });
         jMenu3.add(TodosAtletas);
 
-        jMenuItem2.setText("Relatório por Atleta");
+        jMenuItem2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/analysis.png"))); // NOI18N
+        jMenuItem2.setText("Relatório por Nome");
         jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem2ActionPerformed(evt);
@@ -179,7 +183,8 @@ public class Principal extends javax.swing.JFrame {
         });
         jMenu3.add(jMenuItem2);
 
-        porPosicao.setText("Relatório por posição");
+        porPosicao.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/analysis.png"))); // NOI18N
+        porPosicao.setText("Relatório por Posição");
         porPosicao.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 porPosicaoActionPerformed(evt);
@@ -187,7 +192,8 @@ public class Principal extends javax.swing.JFrame {
         });
         jMenu3.add(porPosicao);
 
-        PorAltura.setText("Relatório por altura");
+        PorAltura.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/analysis.png"))); // NOI18N
+        PorAltura.setText("Relatório por Altura");
         PorAltura.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 PorAlturaActionPerformed(evt);

@@ -185,7 +185,7 @@ public class Login extends javax.swing.JFrame {
         // TODO add your handling code here:
         CadUsuario cad = new CadUsuario();
         cad.setVisible(true);
-        //this.dispose();
+        this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void btnsairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsairActionPerformed

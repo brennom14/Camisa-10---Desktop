@@ -83,7 +83,7 @@ public class ObservadorController {
 
             JRBeanCollectionDataSource colecao1 = new JRBeanCollectionDataSource(getObservadorPorClube(clubesc), false);
 
-            JasperPrint imprimir1 = JasperFillManager.fillReport("C:/Users/benep/Documents/TCC/Camisa-10---Desktop/src/relatorios/RelatorioObsNome.jasper", filtros1, colecao1);
+            JasperPrint imprimir1 = JasperFillManager.fillReport("C:/Users/benep/Documents/TCC/Camisa-10---Desktop/src/relatorios/ObsClube.jasper", filtros1, colecao1);
             JasperViewer visualizar1 = new JasperViewer(imprimir1, false);
             visualizar1.setVisible(true);
 

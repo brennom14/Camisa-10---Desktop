@@ -19,11 +19,14 @@ public class CadUsuario extends javax.swing.JFrame {
      * Creates new form CadUsuario
      */
     UsuarioController controle = new UsuarioController();
-        Usuarios u = new Usuarios();
+    Usuarios u = new Usuarios();
+
     public CadUsuario() {
         initComponents();
+        setLocationRelativeTo(null);
+        setDefaultCloseOperation(TelaSobre.DISPOSE_ON_CLOSE);
     }
-    
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -187,18 +190,27 @@ public class CadUsuario extends javax.swing.JFrame {
 
     private void BtnCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnCadastrarActionPerformed
         // TODO add your handling code here:
-        int tipo =2;
+        int tipo = 2;
         int cont = 0;
-        switch(cbxUsuario.getSelectedItem().toString())
-        { case "Administrador": tipo=1; break;
-        case "Observador": tipo=3; break; 
-        default: tipo=2; break; }
+        switch (cbxUsuario.getSelectedItem().toString()) {
+            case "Administrador":
+                tipo = 1;
+                break;
+            case "Observador":
+                tipo = 3;
+                break;
+            default:
+                tipo = 2;
+                break;
+        }
         u.setStatus(tipo);
         u.setEmail(txtEmail.getText());
         u.setSenha(txtSenha.getText());
-        
+
         controle.inserir(u);
         this.dispose();
+        Login log = new Login();
+        log.setVisible(true);
     }//GEN-LAST:event_BtnCadastrarActionPerformed
 
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed

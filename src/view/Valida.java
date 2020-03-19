@@ -300,6 +300,7 @@ public class Valida extends javax.swing.JFrame {
     private void btnPrimeiroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPrimeiroActionPerformed
         // TODO add your handling code here:
         indice = 0;
+        JOptionPane.showMessageDialog(this, "Você já está no último cadastro");
         try {
             mostrarDadosDoBancoNaTela();
         } catch (ParseException ex) {
@@ -441,7 +442,6 @@ public class Valida extends javax.swing.JFrame {
         indice=obs.size();
     }
     void limpaTela(){
-    //fazer jovem
     }
 }
 
