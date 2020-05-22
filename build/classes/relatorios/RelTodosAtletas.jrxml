@@ -209,7 +209,7 @@
 	<pageFooter>
 		<band height="54" splitType="Stretch">
 			<textField>
-				<reportElement x="438" y="27" width="94" height="20" uuid="3f5873c1-6b8b-4e8e-9898-f48149664079"/>
+				<reportElement x="424" y="27" width="94" height="20" uuid="3f5873c1-6b8b-4e8e-9898-f48149664079"/>
 				<textElement textAlignment="Right">
 					<font fontName="Arial" size="12"/>
 				</textElement>

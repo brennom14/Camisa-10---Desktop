@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="RelatorioTodosObservadores" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="12e641f7-484d-4767-b948-d44bcf5a5ad8">
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="TodosObservadores" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="931369fe-1f7c-44b6-b54a-49e94e140dd2">
 	<property name="ireport.zoom" value="1.0"/>
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
@@ -50,114 +50,111 @@
 	</background>
 	<title>
 		<band height="79" splitType="Stretch">
-			<staticText>
-				<reportElement x="89" y="53" width="407" height="26" uuid="f30e1844-6d8e-4e6f-8e85-864f85270747"/>
-				<textElement>
-					<font size="18"/>
-				</textElement>
-				<text><![CDATA[Relatório de Observador de Todos Observadores]]></text>
-			</staticText>
+			<line>
+				<reportElement x="10" y="30" width="555" height="1" uuid="72eab0be-2c01-482a-99f8-17563a043da1"/>
+			</line>
 			<textField pattern="EEEEE dd MMMMM yyyy">
-				<reportElement x="379" y="12" width="160" height="20" uuid="345065cc-0f13-4ae4-812d-86971e8dbaab"/>
+				<reportElement x="389" y="10" width="160" height="20" uuid="a8da182a-d887-4659-8108-bacb5f4360ad"/>
 				<textElement>
 					<font fontName="Arial" isBold="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="311" y="12" width="100" height="20" uuid="e450876b-6b68-4f22-8738-9e1a318adfa1"/>
+				<reportElement x="99" y="51" width="407" height="26" uuid="4c23daf9-52d0-43d1-aaae-c6ce2b80c50c"/>
+				<textElement>
+					<font size="18"/>
+				</textElement>
+				<text><![CDATA[Relatório de Observador de Todos Observadores]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="321" y="10" width="100" height="20" uuid="e59f13bc-4b45-4c9d-b703-ba5b7b641b06"/>
 				<text><![CDATA[Gerado em:]]></text>
 			</staticText>
-			<line>
-				<reportElement x="0" y="32" width="555" height="1" uuid="99177030-b3f8-4f49-abd2-3546b8ab0009"/>
-			</line>
 		</band>
 	</title>
 	<pageHeader>
 		<band height="35" splitType="Stretch"/>
 	</pageHeader>
 	<columnHeader>
-		<band height="47" splitType="Stretch">
+		<band height="61" splitType="Stretch">
 			<rectangle>
-				<reportElement x="0" y="11" width="555" height="20" backcolor="#3333FF" uuid="7d24d08a-278b-4875-908e-a09b54880b21"/>
+				<reportElement x="10" y="9" width="555" height="20" backcolor="#3333FF" uuid="4b858f2c-337c-4778-864c-e1d87ad90b7b"/>
 			</rectangle>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="34" splitType="Stretch">
 			<staticText>
-				<reportElement x="248" y="14" width="100" height="20" forecolor="#FFFFFF" uuid="14eb41c5-1ccc-48b1-a32e-1a2494c3e44d"/>
-				<textElement>
-					<font fontName="Arial" size="12" isBold="true"/>
-				</textElement>
-				<text><![CDATA[Clube Associado]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="5" y="14" width="127" height="20" forecolor="#FFFFFF" uuid="33e35a82-9246-445e-9ddd-1ae1d8adf232"/>
-				<textElement>
-					<font fontName="Arial" size="12" isBold="true"/>
-				</textElement>
-				<text><![CDATA[Nome do Observador]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="481" y="14" width="100" height="20" forecolor="#FFFFFF" uuid="59578c5c-c1e9-4481-bfa7-d654183460d1"/>
+				<reportElement x="491" y="-49" width="100" height="20" forecolor="#FFFFFF" uuid="aec6c8a5-1c0b-41ab-b045-198fe7691513"/>
 				<textElement>
 					<font fontName="Arial" size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Estado]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="143" y="14" width="100" height="20" forecolor="#FFFFFF" uuid="26d51aaf-256f-4389-8402-bbb774cdc68f"/>
+				<reportElement x="258" y="-49" width="100" height="20" forecolor="#FFFFFF" uuid="72229fbf-b038-461a-8505-5a1aaa709a14"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Clube Associado]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="366" y="-49" width="113" height="20" forecolor="#FFFFFF" uuid="858c638c-6a83-40e0-b5c4-f2b32da3636b"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Observador desde?]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="153" y="-49" width="100" height="20" forecolor="#FFFFFF" uuid="3c3e733d-36de-4917-80da-d04eced40b13"/>
 				<textElement>
 					<font fontName="Arial" size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[D/Nascimento]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="356" y="14" width="113" height="20" forecolor="#FFFFFF" uuid="b9eb72f9-80b1-44f3-a212-25ec3f125314"/>
+				<reportElement x="15" y="-49" width="127" height="20" forecolor="#FFFFFF" uuid="8d844307-d5d6-4d06-8d04-4f6f8ca49562"/>
 				<textElement>
 					<font fontName="Arial" size="12" isBold="true"/>
 				</textElement>
-				<text><![CDATA[Observador desde?]]></text>
+				<text><![CDATA[Nome do Observador]]></text>
 			</staticText>
-		</band>
-	</columnHeader>
-	<detail>
-		<band height="42" splitType="Stretch">
 			<textField>
-				<reportElement x="482" y="16" width="100" height="20" uuid="e76093d3-c2b1-48d5-8256-af1371ab809f"/>
-				<textElement>
-					<font fontName="Arial"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{estado}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="0" y="16" width="100" height="20" uuid="291047de-889d-4624-ba5f-381d5ba77ac9"/>
+				<reportElement x="10" y="8" width="100" height="20" uuid="265e2183-2650-4c7d-82d9-a8283aa89bc9"/>
 				<textElement>
 					<font fontName="Arial"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{nome}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="144" y="16" width="100" height="20" uuid="9aaef8b8-e242-4293-b6cf-bb8f76c010a5"/>
+				<reportElement x="259" y="8" width="100" height="20" uuid="316eca2a-55eb-494a-b7cf-9969fde7a4b1"/>
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{clubeAssociado}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="154" y="8" width="100" height="20" uuid="7f6ace05-0d96-4a0b-a4a0-196214d5621b"/>
 				<textElement>
 					<font fontName="Arial"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{dataNascimento}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="358" y="16" width="100" height="20" uuid="b4f3894c-5f18-47e9-a9a2-9db1b623c00a"/>
+				<reportElement x="481" y="8" width="100" height="20" uuid="cc289e4b-d271-4aef-9ad2-ce3c743042ec"/>
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{estado}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="368" y="8" width="100" height="20" uuid="696a8f88-a204-4bf3-b08a-e750ba4e404c"/>
 				<textElement>
 					<font fontName="Arial"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{obsDesde}]]></textFieldExpression>
 			</textField>
-			<textField>
-				<reportElement x="249" y="16" width="100" height="20" uuid="1dbcbff2-cf33-41b6-9529-ff2f78936b52"/>
-				<textElement>
-					<font fontName="Arial"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{clubeAssociado}]]></textFieldExpression>
-			</textField>
-			<line>
-				<reportElement x="0" y="8" width="555" height="1" uuid="95c4d3a1-aaff-4b18-b665-221017ea400c"/>
-			</line>
 		</band>
 	</detail>
 	<columnFooter>
@@ -165,26 +162,26 @@
 	</columnFooter>
 	<pageFooter>
 		<band height="54" splitType="Stretch">
-			<textField evaluationTime="Report">
-				<reportElement x="483" y="34" width="54" height="20" uuid="7968c89a-fb7d-4001-a5e9-61a9d4ac31cf"/>
-				<textElement>
+			<textField>
+				<reportElement x="397" y="32" width="94" height="20" uuid="d2db48b1-46f9-4468-9581-68f53dc4529d"/>
+				<textElement textAlignment="Right">
 					<font fontName="Arial" size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="5" y="34" width="114" height="20" uuid="94081d3b-f6c8-4dbe-abcf-e258b5e63c06"/>
+				<reportElement x="15" y="32" width="114" height="20" uuid="14abdf38-add4-4fa9-8e27-9f9b7d5a51bc"/>
 				<textElement>
 					<font fontName="Arial" size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[© 2020 Camisa10]]></text>
 			</staticText>
-			<textField>
-				<reportElement x="387" y="34" width="94" height="20" uuid="513e6b69-3d9a-4f66-9752-7a33fd8d0f92"/>
-				<textElement textAlignment="Right">
+			<textField evaluationTime="Report">
+				<reportElement x="493" y="32" width="54" height="20" uuid="35c5f373-bcdd-4273-a850-3ae01eb9dcee"/>
+				<textElement>
 					<font fontName="Arial" size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
 			</textField>
 		</band>
 	</pageFooter>

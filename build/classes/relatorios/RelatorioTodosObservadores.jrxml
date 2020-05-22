@@ -51,11 +51,11 @@
 	<title>
 		<band height="79" splitType="Stretch">
 			<staticText>
-				<reportElement x="89" y="53" width="298" height="26" uuid="f30e1844-6d8e-4e6f-8e85-864f85270747"/>
+				<reportElement x="89" y="53" width="407" height="26" uuid="f30e1844-6d8e-4e6f-8e85-864f85270747"/>
 				<textElement>
 					<font size="18"/>
 				</textElement>
-				<text><![CDATA[Relatório de Observador por Nome]]></text>
+				<text><![CDATA[Relatório de Observador de Todos Observadores]]></text>
 			</staticText>
 			<textField pattern="EEEEE dd MMMMM yyyy">
 				<reportElement x="379" y="12" width="160" height="20" uuid="345065cc-0f13-4ae4-812d-86971e8dbaab"/>
